@@ -1,0 +1,47 @@
+{
+  "dreaming_journey_to_the_west:ScorchPower": {
+    "NAME": "Scorch",
+    "DESCRIPTIONS": [
+      "Receive #b",
+      "% more damage from #yAttacks .",
+      "Loses #b ",
+      " HP at the end of each turn."
+    ]
+  },
+  "dreaming_journey_to_the_west:FireTouchPower": {
+    "NAME": "Fire Touch",
+    "DESCRIPTIONS": [
+      "Whenever an Attack deals unblocked damage, apply #b%d #yscorch ."
+    ]
+  },
+  "dreaming_journey_to_the_west:FieryEyesPower": {
+    "NAME": "Fiery Eyes",
+    "DESCRIPTIONS": [
+      "At the start of your turn, apply #yscorch  to ALL enemies."
+    ]
+  },
+  "dreaming_journey_to_the_west:BloodThirstyPower": {
+    "NAME": "Blood Thirsty",
+    "DESCRIPTIONS": [
+      "Heal HP equal to unblocked damage x0.33 #b%d . Loses 3 HP at the start of each turn."
+    ]
+  },
+  "dreaming_journey_to_the_west:SeventyTwoSlashesPower": {
+    "NAME": "Seventy-Two Slashes",
+    "DESCRIPTIONS": [
+      "Your next #yAttack that costs 2 or less is played #b%d times this turn."
+    ]
+  },
+  "dreaming_journey_to_the_west:FireBarrierPower": {
+    "NAME": "Fire Barrier",
+    "DESCRIPTIONS": [
+      "When attacked,，give #b%d  #yscorch back ."
+    ]
+  },
+  "dreaming_journey_to_the_west:FireApeStrikesPower": {
+    "NAME": "Fire Ape Strikes",
+    "DESCRIPTIONS": [
+      "Whenever you play a Attack card with #y boxing ,deal #b%d damage to a random enemy. Whenever you play a Skill card with #y boxing ,gain #b%d Plated Armor. "
+    ]
+  }
+}

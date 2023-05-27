@@ -1,0 +1,23 @@
+{
+  "dreaming_journey_to_the_west:BloodthirstyFireEyes": {
+    "NAME": "Bloodthirsty Fire Eyes",
+    "FLAVOR": "Bloodthirsty.",
+    "DESCRIPTIONS": [
+      "For every two attack cards played, restore 2 life points."
+    ]
+  },
+  "dreaming_journey_to_the_west:Bracelets": {
+    "NAME": "Bracelets",
+    "FLAVOR": "A protective gear that helps a little with boxing.",
+    "DESCRIPTIONS": [
+      "Whenever you play an #yAttack with #yBoxing , gain #b1 temporary #yDexterity . Whenever you play an #ySkill with #yBoxing  gain #b1 #yVigor ."
+    ]
+  },
+  "dreaming_journey_to_the_west:FuriousRing": {
+    "NAME": "Furious Ring",
+    "FLAVOR": "Humiliated and indignant, unhappy or angry.",
+    "DESCRIPTIONS": [
+      "Whenever you would receive  5  or more than unblocked attack damage,you have 1 additional #yStrength and #yFrail ."
+    ]
+  }
+}

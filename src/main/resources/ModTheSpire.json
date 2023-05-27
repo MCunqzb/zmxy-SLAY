@@ -1,0 +1,10 @@
+{
+  "modid": "dreaming_journey_to_the_west",
+  "name": "Dreaming Journey to the West Mod",
+  "author_list": ["Sprinkle Pen"],
+  "description": "Integrating the characters, skills and magic treasures of the Dreamcast into the Slay The Spire.",
+  "version": "1.0.0",
+  "sts_version": "2.0",
+  "mts_version": "3.6.0",
+  "dependencies": ["basemod", "stslib"]
+}

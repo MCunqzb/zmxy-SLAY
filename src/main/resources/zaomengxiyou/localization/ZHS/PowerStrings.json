@@ -1,0 +1,47 @@
+{
+  "dreaming_journey_to_the_west:ScorchPower": {
+    "NAME": "灼烧",
+    "DESCRIPTIONS": [
+      "从 #y攻击 受到的伤害增加",
+      "%",
+      ",每回合结束失去 #b",
+      " 点生命。"
+    ]
+  },
+  "dreaming_journey_to_the_west:FireTouchPower": {
+    "NAME": "火焰之触",
+    "DESCRIPTIONS": [
+      "每有一次攻击造成未被格挡的伤害，就给予 #b%d 层 #y灼烧  。"
+    ]
+  },
+  "dreaming_journey_to_the_west:FieryEyesPower": {
+    "NAME": "火眼金睛",
+    "DESCRIPTIONS": [
+      "在你的回合开始时，就给予所有敌人 #b%d 层 #y灼烧  。"
+    ]
+  },
+  "dreaming_journey_to_the_west:BloodThirstyPower": {
+    "NAME": "嗜血",
+    "DESCRIPTIONS": [
+      "回复未被 格挡 的伤害 #b%d x0.33 点生命。每回合开始失去3生命"
+    ]
+  },
+  "dreaming_journey_to_the_west:SeventyTwoSlashesPower": {
+    "NAME": "七十二斩",
+    "DESCRIPTIONS": [
+      "在这个回合，你打出的下一张耗能小于等于2 #y攻击牌 会打出 #b%d 次。"
+    ]
+  },
+  "dreaming_journey_to_the_west:FireBarrierPower": {
+    "NAME": "火焰屏障",
+    "DESCRIPTIONS": [
+      "你在这个回合每受到一次攻击，给予攻击者 #b%d 层 #y灼烧 。"
+    ]
+  },
+  "dreaming_journey_to_the_west:FireApeStrikesPower": {
+    "NAME": "火猿出击",
+    "DESCRIPTIONS": [
+      "每打出一张 #y 拳击 的 #y攻击 牌 随机造成 #b%d 点伤害，每打出一张 #y 拳击 的 技能牌 获得 #b%d 点多层护甲。 "
+    ]
+  }
+}

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="Encoding">
+    <file url="file://$PROJECT_DIR$/src/main/java/cards/Attack_MonkeyKing.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cards/Defend_MonkeyKing.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/cards/Flaming_Storm.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/characters/MonkeyKing.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/demoMod/MonkeyKingMod.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/pathes/AbstractCardEnum.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/pathes/LibraryTypeEnum.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/pathes/ThmodClassEnum.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/java/relics/BloodthirstyFireEyes.java" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/localization/ENG/CardsStrings.json" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/localization/ENG/RelicsStrings.json" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/localization/ZHS/CardsStrings.json" charset="GBK" />
+    <file url="file://$PROJECT_DIR$/src/main/resources/localization/ZHS/RelicsStrings.json" charset="GBK" />
+  </component>
+</project>

@@ -1,0 +1,30 @@
+{
+  "dreaming_journey_to_the_west:BloodthirstyFireEyes": {
+    "NAME": "嗜血火眼",
+    "FLAVOR": "嗜血成性。",
+    "DESCRIPTIONS": [
+      "每打出两张攻击牌，恢复2点生命。"
+    ]
+  },
+  "dreaming_journey_to_the_west:Bracelets": {
+    "NAME": "手环",
+    "FLAVOR": "对拳击有些许帮助的护具。",
+    "DESCRIPTIONS": [
+      "打出带 #y拳击 的 #y攻击牌 时获得 #b1 点临时 #y敏捷 。 打出带 #y拳击 的 #y技能牌 时获得 #b1 点 #y活力 。"
+    ]
+  },
+  "dreaming_journey_to_the_west:FuriousRing": {
+    "NAME": "嗔怒之戒",
+    "FLAVOR": "受辱愤慨，不喜则嗔。",
+    "DESCRIPTIONS": [
+      "受到5点以上伤害时，获得1点 #y力量 ，获得1层 #y脆弱 。"
+    ]
+  },
+  "dreaming_journey_to_the_west:GreedRing": {
+    "NAME": "贪欲之戒",
+    "FLAVOR": "财、色、名、食、睡五欲之贪",
+    "DESCRIPTIONS": [
+      "受到5点以上伤害时，获得1点 #y力量 ，获得1层 #y脆弱 。"
+    ]
+  }
+}

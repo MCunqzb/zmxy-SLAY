@@ -1,0 +1,135 @@
+{
+  "dreaming_journey_to_the_west:Attack_MonkeyKing": {
+    "NAME": "Strike",
+    "DESCRIPTION": "Deals !D! damage."
+  },
+  "dreaming_journey_to_the_west:Defend_MonkeyKing": {
+    "NAME": "Defend",
+    "DESCRIPTION": "Gain !B! block."
+  },
+  "dreaming_journey_to_the_west:Flaming_Storm": {
+    "NAME": "Flaming_Storm",
+    "DESCRIPTION": "Deals !D! damage to all enemies !M! times."
+  },
+  "dreaming_journey_to_the_west:Anger": {
+    "NAME": "Anger",
+    "DESCRIPTION": "Gain a !M! temporary Strength."
+  },
+  "dreaming_journey_to_the_west:FireBlitz": {
+  "NAME": "FireBlitz",
+  "DESCRIPTION": "Deals !D! damage. NL Apply !M! dreaming_journey_to_the_west:scorch ."
+},
+  "dreaming_journey_to_the_west:FireTouch": {
+    "NAME": "FireTouch",
+    "DESCRIPTION": "Whenever an Attack deals unblocked damage, apply !M! dreaming_journey_to_the_west:scorch ."
+  },
+  "dreaming_journey_to_the_west:BoxingCard": {
+    "NAME": "Boxing",
+    "DESCRIPTION": "Deals !D! damage. NL dreaming_journey_to_the_west:boxing "
+  },
+  "dreaming_journey_to_the_west:RisingDragonSlash": {
+    "NAME": "Rising Dragon Slash",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Vulnerable."
+  },
+  "dreaming_journey_to_the_west:HeavySlash": {
+    "NAME": "Heavy Slash",
+    "DESCRIPTION": "Deal !D! damage. NL Can be Upgraded any number of times. "
+  },
+  "dreaming_journey_to_the_west:FireMagicSlash": {
+    "NAME": "Fire Magic Slash",
+    "DESCRIPTION": "Deals !D! /3 damage to all enemies 9 times. NL Strength affects 1/3 times. NL Deal !D! X3 damage. NL Strength affects 3 times."
+  },
+  "dreaming_journey_to_the_west:ShiningPillar": {
+    "NAME": "Shining Pillar",
+    "DESCRIPTION": "Deal !D! damage to ALL enemies. NL Draw 1 less card !M! turn."
+  },
+  "dreaming_journey_to_the_west:ChargeSlash": {
+    "NAME": "Charge Slash",
+    "DESCRIPTION": "Deal !D! damage. NL Shuffle a *Dazed into your draw pile. NL Deal !D! damage to a random enemy"
+  },
+  "dreaming_journey_to_the_west:SomersaultCloud": {
+    "NAME": "Somersault Cloud",
+    "DESCRIPTION":"Gain !B! Block. NL Block is not removed at the start of your next turn."
+  },
+  "dreaming_journey_to_the_west:ExorcismClaw": {
+    "NAME": "Exorcism Claw",
+    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Weak. NL If the enemy intends to attack, apply !M! Vulnerable . NL dreaming_journey_to_the_west:boxing "
+  },
+  "dreaming_journey_to_the_west:CrackingFist": {
+    "NAME": "Cracking Fist",
+    "DESCRIPTION": "Deal !D! damage. NL If the enemy intends is not to attack ,stun an enemy. NL Decrease this card's damage by !M! this combat. NL dreaming_journey_to_the_west:boxing "
+  },
+  "dreaming_journey_to_the_west:FieryEyes": {
+    "NAME": "Fiery Eyes",
+    "DESCRIPTION":  "At the start of your turn, NL apply !M! dreaming_journey_to_the_west:scorch  to ALL enemies."
+  },
+  "dreaming_journey_to_the_west:FlamingFlash": {
+    "NAME": "Flaming Flash",
+    "DESCRIPTION":  "Lose 6 HP.  NL Gain 1 Intangible. NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Lose 6 HP.  NL Gain 1 Intangible."
+  },
+  "dreaming_journey_to_the_west:BloodThirsty": {
+    "NAME": "Blood Thirsty",
+    "DESCRIPTION":  "Gain !M! dreaming_journey_to_the_west:BloodThirsty NL Lose 3 HP at the start of your turn."
+  },
+  "dreaming_journey_to_the_west:FakePunch": {
+    "NAME": "Fake Punch",
+    "DESCRIPTION":  "Gain !B! block. NL dreaming_journey_to_the_west:boxing "
+  },
+  "dreaming_journey_to_the_west:StepFloor": {
+    "NAME": "Step Floor",
+    "DESCRIPTION":  "Play the top card of your draw pile !M! time. NL dreaming_journey_to_the_west:boxing NL Exhaust "
+  },
+  "dreaming_journey_to_the_west:HelpfulHairs": {
+    "NAME": "Helpful Hairs",
+    "DESCRIPTION":  " Retain. NL Lose 1 HP. NL Draw !M! card. NL Exhaust "
+  },
+  "dreaming_journey_to_the_west:SeventyTwoSlashes": {
+    "NAME": "SeventyTwoSlashes",
+    "DESCRIPTION":  "This turn, your next Attack that costs 2 or less is played !M! times."
+  },
+  "dreaming_journey_to_the_west:FlameStrike": {
+    "NAME": "Flame Strike",
+    "DESCRIPTION":  "Deal !D! damage. NL If the enemy has dreaming_journey_to_the_west:scorch, deal !D! damage again."
+  },
+  "dreaming_journey_to_the_west:FireBarrier": {
+    "NAME": "Fire Barrier",
+    "DESCRIPTION":  "Gain !B! Block. NL When attacked,give !M! dreaming_journey_to_the_west:scorch back ."
+  },
+  "dreaming_journey_to_the_west:FlameExtraction": {
+    "NAME": "Flame Extraction",
+    "DESCRIPTION":  "Remove all dreaming_journey_to_the_west:scorch ， NL Gain !M! times block .",
+    "UPGRADE_DESCRIPTION":  "Update dreaming_journey_to_the_west:scorch  , NL Remove all dreaming_journey_to_the_west:scorch ， NL Gain !M! times block ."
+  },
+  "dreaming_journey_to_the_west:FlameCyclone": {
+    "NAME": "Flame Cyclone",
+    "DESCRIPTION":  "Triggers dreaming_journey_to_the_west:scorch for all enemies. NL Exhaust",
+    "UPGRADE_DESCRIPTION":"Triggers dreaming_journey_to_the_west:scorch for all enemies. NL Retain Exhaust.",
+    "EXTENDED_DESCRIPTION": [
+      " NL (Deals !M! damage.)"
+    ]
+  },
+  "dreaming_journey_to_the_west:Impenetrable": {
+    "NAME": "Impenetrable by sword and spear",
+    "DESCRIPTION":  "Gain !B! Block X times. NL Gain 1 Vigor X times.",
+    "UPGRADE_DESCRIPTION":"Gain !B! Block X times. NL Gain 1 Vigor X times."
+  },
+  "dreaming_journey_to_the_west:GodDestroyingStrikeIII": {
+    "NAME": "God Destroy Strike III",
+    "DESCRIPTION":  " Ethereal . NL Deals !D! damage. NL Exhaust 。"
+  },
+  "dreaming_journey_to_the_west:GodDestroyingStrikeII": {
+    "NAME": "God Destroy Strike II",
+    "DESCRIPTION":  " Ethereal . NL Deals !D! damage. NL Shuffle a *GodDestroyingStrikeIII into your draw pile. NL Exhaust  ."
+  },
+  "dreaming_journey_to_the_west:GodDestroyingStrikeI": {
+    "NAME": "God Destroy Strike I",
+    "DESCRIPTION":  "Deals !D! damage. NL Shuffle a *GodDestroyingStrikeII into your draw pile."
+  },
+  "dreaming_journey_to_the_west:FireApeStrikes": {
+    "NAME": "Fire Ape Strikes",
+    "DESCRIPTION":  "Whenever you play a Attack card with dreaming_journey_to_the_west:boxing ,deal !M! * 6 damage to a random enemy. NL Whenever you play a Skill card with dreaming_journey_to_the_west:boxing ,gain !M! *Plated Armor. ",
+    "UPGRADE_DESCRIPTION":" Innate . NL Whenever you play a Attack card with dreaming_journey_to_the_west:boxing ,deal !M! * 6 damage to a random enemy. NL Whenever you play a Skill card with dreaming_journey_to_the_west:boxing ,gain !M! *Plated Armor. "
+  }
+
+}

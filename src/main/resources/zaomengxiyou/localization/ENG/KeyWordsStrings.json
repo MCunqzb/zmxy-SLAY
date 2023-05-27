@@ -1,0 +1,23 @@
+[
+  {
+    "NAMES": [
+      "scorch",
+      "Scorch"
+    ],
+    "DESCRIPTION": "Scorched creatures lose HP at the start of their turn.Receive more damage from #yAttacks ."
+  },
+  {
+    "NAMES": [
+      "boxing",
+      "Boxing"
+    ],
+    "DESCRIPTION": "Card Effect."
+  },
+  {
+    "NAMES": [
+      "BloodThirsty",
+      "bloodthirsty"
+    ],
+    "DESCRIPTION": "Heal HP equal to unblocked damage."
+  }
+]
