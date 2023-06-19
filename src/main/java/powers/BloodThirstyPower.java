@@ -26,26 +26,27 @@ public class BloodThirstyPower extends AbstractPower implements HealthBarRenderP
         this.ID = POWER_ID;
         this.owner = owner;
         this.amount = Amount;
-        // 如果需要不能叠加的能力，只需将上面的Amount参数删掉，并把下面的Amount改成-1就行
+
         if (this.amount >= 9) {
             this.amount = 9;
         }
-        // 添加一大一小两张能力图
+
         String path128 = "img/powers/blood_thirsty84.png";
         String path48 = "img/powers/blood_thirsty32.png";
         this.region128 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path128), 0, 0, 84, 84);
         this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path48), 0, 0, 32, 32);
 
-        // 首次添加能力更新描述
         this.updateDescription();
         this.isTurnBased = true;
     }
 
     public void onAttack(DamageInfo info, int damageAmount, AbstractCreature target) {
-        if (damageAmount/3 >= 1 && target != this.owner && info.type == DamageInfo.DamageType.NORMAL) {
+        int heal_amount =Math.min(damageAmount, target.currentHealth);
+        if (heal_amount/3.0 >= 1 && target != this.owner && info.type == DamageInfo.DamageType.NORMAL) {
             this.flash();
+
             //BaseMod.logger.info("AMT"+this.amount/3*damageAmount);
-            this.addToTop(new HealAction(this.owner, this.owner, (int)(damageAmount*this.amount*0.3334) ));
+            this.addToTop(new HealAction(this.owner, this.owner, (int)(heal_amount*this.amount*0.3334) ));
         }
 
     }
@@ -56,7 +57,7 @@ public class BloodThirstyPower extends AbstractPower implements HealthBarRenderP
 
 
     public void updateDescription() {
-        this.description = String.format(DESCRIPTIONS[0], this.amount);
+        this.description = String.format(DESCRIPTIONS[0], this.amount,3*this.amount);
     }
 
     @Override

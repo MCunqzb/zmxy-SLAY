@@ -19,5 +19,25 @@
       "bloodthirsty"
     ],
     "DESCRIPTION": "Heal HP equal to unblocked damage."
+  },
+  {
+    "NAMES": [
+      "Indignation",
+      "indignation"
+    ],
+    "DESCRIPTION": "At the start of your turn, gain Strength ,lose HP."
+  },
+  {
+    "NAMES": [
+      "exhaustion"
+    ],
+    "DESCRIPTION": "Exhaust when causing less than 0 damage ."
+  },
+  {
+    "NAMES": [
+      "Boost",
+      "boost"
+    ],
+    "DESCRIPTION": " #yAttacks deal more 50% damage."
   }
 ]

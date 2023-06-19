@@ -26,7 +26,7 @@ public class CrackingFist extends CustomCard {
     public static final String IMG_PATH = "img/cards/cracking_fist.png";
     private static final int COST = 2;
     private static final int ATTACK_DMG = 13;
-    private static final int MAGIC_NUM = -3;
+    private static final int MAGIC_NUM = 3;
     public static final String ID = "CrackingFist";
 
     public CrackingFist() {
@@ -41,7 +41,7 @@ public class CrackingFist extends CustomCard {
         if (!this.upgraded) {
             this.upgradeName();
             this.upgradeDamage(1);
-            this.upgradeMagicNumber(1);
+            this.upgradeMagicNumber(-1);
         }
     }
 
@@ -51,10 +51,10 @@ public class CrackingFist extends CustomCard {
         if (m != null && m.getIntentBaseDmg() <= 0 && this.damage > 0  ) {
             AbstractDungeon.actionManager.addToBottom((AbstractGameAction)new StunMonsterAction(m, (AbstractCreature)AbstractDungeon.player));
         }
-        else if (this.damage == 0){
+        else if (this.damage <= 0){
             this.exhaust = true;
         }
-        AbstractDungeon.actionManager.addToBottom(new ModifyDamageAction(this.uuid, this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new ModifyDamageAction(this.uuid, -this.magicNumber));
     }
 
     @Override

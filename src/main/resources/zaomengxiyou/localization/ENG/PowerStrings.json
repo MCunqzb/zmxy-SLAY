@@ -23,7 +23,7 @@
   "dreaming_journey_to_the_west:BloodThirstyPower": {
     "NAME": "Blood Thirsty",
     "DESCRIPTIONS": [
-      "Heal HP equal to unblocked damage x0.33 #b%d . Loses 3 HP at the start of each turn."
+      "Heal HP equal to unblocked damage x0.33 #b%d . Loses #b%d HP at the start of each turn."
     ]
   },
   "dreaming_journey_to_the_west:SeventyTwoSlashesPower": {
@@ -42,6 +42,30 @@
     "NAME": "Fire Ape Strikes",
     "DESCRIPTIONS": [
       "Whenever you play a Attack card with #y boxing ,deal #b%d damage to a random enemy. Whenever you play a Skill card with #y boxing ,gain #b%d Plated Armor. "
+    ]
+  },
+  "dreaming_journey_to_the_west:IndignationPower": {
+    "NAME": "Indignation",
+    "DESCRIPTIONS": [
+      "At the start of your turn, gain #b%d #yStrength ,lose #r%d HP。"
+    ]
+  },
+  "dreaming_journey_to_the_west:AttackMiragePower": {
+    "NAME": "Attack Mirage",
+    "DESCRIPTIONS": [
+      "Whenever you play a card with #y boxing,gain #r%d Vigor 。 "
+    ]
+  },
+  "dreaming_journey_to_the_west:DefenceMiragePower": {
+    "NAME": "Defence Mirage",
+    "DESCRIPTIONS": [
+      "Whenever you play a card with #y boxing,gain #r%d Block  "
+    ]
+  },
+  "dreaming_journey_to_the_west:BoostPower": {
+    "NAME": "Boost",
+    "DESCRIPTIONS": [
+      "All attack damage dealt is increased by #b%d %% ,lasts #r%d round. "
     ]
   }
 }

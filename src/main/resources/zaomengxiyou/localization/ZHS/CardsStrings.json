@@ -58,7 +58,7 @@
   },
   "dreaming_journey_to_the_west:CrackingFist": {
     "NAME": "辟地拳",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 如果目标敌人的意图不是攻击，击晕敌人 。 NL 这张牌每被打出一次，在本场战斗中其伤害减少 !M! 。 NL dreaming_journey_to_the_west:拳击 "
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 如果目标敌人的意图不是攻击，击晕敌人 。 NL 这张牌每被打出一次，在本场战斗中其伤害减少 !M! 。 NL dreaming_journey_to_the_west:拳击 。 NL dreaming_journey_to_the_west:力竭 。"
   },
   "dreaming_journey_to_the_west:FieryEyes": {
     "NAME": "火眼金睛",
@@ -71,7 +71,7 @@
   },
   "dreaming_journey_to_the_west:BloodThirsty": {
     "NAME": "嗜血",
-    "DESCRIPTION":  "获得 !M! 层 dreaming_journey_to_the_west:嗜血 NL 每回合开始失去3点生命。"
+    "DESCRIPTION":  "获得 !M! 层 dreaming_journey_to_the_west:嗜血 NL 每回合开始失去 3* !M! 点生命。"
   },
   "dreaming_journey_to_the_west:FakePunch": {
     "NAME": "虚假一拳",
@@ -117,20 +117,41 @@
   },
   "dreaming_journey_to_the_west:GodDestroyingStrikeIII": {
     "NAME": "灭神一击·Ⅲ",
-    "DESCRIPTION":  " 虚无 。 NL 造成 !D! 点伤害。 NL 消耗 。"
+    "DESCRIPTION":  " 虚无 。 NL 造成 !D! 点伤害。 NL 消耗 。 NL dreaming_journey_to_the_west:拳击 。"
   },
   "dreaming_journey_to_the_west:GodDestroyingStrikeII": {
     "NAME": "灭神一击·Ⅱ",
-    "DESCRIPTION":  " 虚无 。 NL 造成 !D! 点伤害。 NL 将一张 *灭神一击Ⅲ 放入你的抽牌堆中。 NL 消耗  。"
+    "DESCRIPTION":  " 虚无 。 NL 造成 !D! 点伤害。 NL 将一张 *灭神一击Ⅲ 放入你的抽牌堆中。 NL 消耗  。 NL dreaming_journey_to_the_west:拳击 。"
   },
   "dreaming_journey_to_the_west:GodDestroyingStrikeI": {
     "NAME": "灭神一击·Ⅰ",
-    "DESCRIPTION":  "造成 !D! 点伤害。 NL 将一张 *灭神一击Ⅱ 放入你的抽牌堆中。 "
+    "DESCRIPTION":  "造成 !D! 点伤害。 NL 将一张 *灭神一击Ⅱ 放入你的抽牌堆中。 NL dreaming_journey_to_the_west:拳击 。 "
   },
   "dreaming_journey_to_the_west:FireApeStrikes": {
     "NAME": "火猿出击",
     "DESCRIPTION":  "每打出一张带 dreaming_journey_to_the_west:拳击 的攻击牌，随机造成 6* !M! 点伤害。 NL 每打出一张带 dreaming_journey_to_the_west:拳击 的技能牌，获得 !M! 点 *多层护甲 。",
     "UPGRADE_DESCRIPTION":" 固有 。 NL 每打出一张带 dreaming_journey_to_the_west:拳击 的攻击牌，随机造成 6* !M! 点伤害。 NL 每打出一张带 dreaming_journey_to_the_west:拳击 的技能牌，获得 !M! 点 *多层护甲 。"
+  },
+  "dreaming_journey_to_the_west:AttackMirage": {
+    "NAME": "攻击幻影",
+    "DESCRIPTION":  "每打出一张 dreaming_journey_to_the_west:拳击 牌，获得 !M! 活力 。"
+  },
+  "dreaming_journey_to_the_west:DefenceMirage": {
+    "NAME": "防御幻影",
+    "DESCRIPTION":  "每打出一张 dreaming_journey_to_the_west:拳击 牌，获得 !M! 格挡 。"
+  },
+  "dreaming_journey_to_the_west:SurgeBoxing": {
+    "NAME": "涌动之拳",
+    "DESCRIPTION":  "保留 。 NL 造成 !D! 点伤害。 NL 打出带 dreaming_journey_to_the_west:拳击 的 *技能 牌时， NL 本场战斗伤害加 !M! 。"
+  },
+  "dreaming_journey_to_the_west:Boost": {
+    "NAME": "无双爆气",
+    "DESCRIPTION":  "获得 [R] [R] 。 NL 获得 !M! 层 dreaming_journey_to_the_west:爆气 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION":"获得 [R] [R] [R] 。 NL 获得 !M! 层 dreaming_journey_to_the_west:爆气 。 NL 消耗 。"
+  },
+  "dreaming_journey_to_the_west:Ignition": {
+    "NAME": "点燃",
+    "DESCRIPTION":  "给予 !M! 层 dreaming_journey_to_the_west:灼烧 。"
   }
 
 }

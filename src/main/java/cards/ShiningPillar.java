@@ -27,8 +27,8 @@ public class ShiningPillar extends CustomCard {
     public static final String IMG_PATH = "img/cards/shining_pillar.png";
     private static final int COST = 3;
     private static final int ATTACK_DMG = 28;
-    private static final int MAGIC_NUM = 2;
-    private static final int UPGRADE_PLUS_DMG = 8;
+    private static final int MAGIC_NUM = 1;
+    private static final int UPGRADE_PLUS_DMG = 7;
     public static final String ID = "ShiningPillar";
 
     public ShiningPillar() {
@@ -57,7 +57,7 @@ public class ShiningPillar extends CustomCard {
         if (!this.upgraded) {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_DMG);
-            this.upgradeMagicNumber(-1);
+
         }
     }
 }

@@ -23,7 +23,7 @@
   "dreaming_journey_to_the_west:BloodThirstyPower": {
     "NAME": "嗜血",
     "DESCRIPTIONS": [
-      "回复未被 格挡 的伤害 #b%d x0.33 点生命。每回合开始失去3生命"
+      "回复未被 格挡 的伤害 #b%d x0.33 点生命。每回合开始失去 #b%d 生命"
     ]
   },
   "dreaming_journey_to_the_west:SeventyTwoSlashesPower": {
@@ -41,7 +41,31 @@
   "dreaming_journey_to_the_west:FireApeStrikesPower": {
     "NAME": "火猿出击",
     "DESCRIPTIONS": [
-      "每打出一张 #y 拳击 的 #y攻击 牌 随机造成 #b%d 点伤害，每打出一张 #y 拳击 的 技能牌 获得 #b%d 点多层护甲。 "
+      "每打出一张 #y 拳击 的 #y攻击 牌 随机造成 #b%d 点伤害，每打出一张 #y 拳击 的 技能牌 获得 #b%d 点 多层护甲 。 "
+    ]
+  },
+  "dreaming_journey_to_the_west:IndignationPower": {
+    "NAME": "嗔怒",
+    "DESCRIPTIONS": [
+      "每回合开始，获得 #b%d 点 #y力量，失去 #r%d 点生命。"
+    ]
+  },
+  "dreaming_journey_to_the_west:AttackMiragePower": {
+    "NAME": "攻击幻影",
+    "DESCRIPTIONS": [
+      "每打出一张 #y 拳击 牌，获得 #b%d 点 活力 。 "
+    ]
+  },
+  "dreaming_journey_to_the_west:DefenceMiragePower": {
+    "NAME": "防御幻影",
+    "DESCRIPTIONS": [
+      "每打出一张 #y 拳击 牌，获得 #b%d 点 格挡 。 "
+    ]
+  },
+  "dreaming_journey_to_the_west:BoostPower": {
+    "NAME": "无双爆气",
+    "DESCRIPTIONS": [
+      "伤害提升 #b%d %% ，持续 #b%d 回合 。 "
     ]
   }
 }

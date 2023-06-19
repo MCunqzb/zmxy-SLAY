@@ -1,5 +1,6 @@
 package demoMod;
 
+import Helpers.ModHelper;
 import basemod.BaseMod;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
@@ -14,15 +15,20 @@ import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.cards.red.FlameBarrier;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.Exordium;
+import com.megacrit.cardcrawl.dungeons.TheBeyond;
+import com.megacrit.cardcrawl.events.shrines.FaceTrader;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.*;
+import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import com.megacrit.cardcrawl.monsters.MonsterGroup;
+import com.megacrit.cardcrawl.monsters.MonsterInfo;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
+import monsters.KingYurong;
 import pathes.AbstractCardEnum;
 import pathes.ThmodClassEnum;
 import powers.FieryEyesPower;
-import relics.BloodthirstyFireEyes;
-import relics.Bracelets;
-import relics.FuriousRing;
+import relics.*;
 
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
@@ -103,6 +109,11 @@ public class MonkeyKingMod implements EditKeywordsSubscriber, EditCardsSubscribe
         BaseMod.addCard(new GodDestroyingStrikeII());
         BaseMod.addCard(new GodDestroyingStrikeI());
         BaseMod.addCard(new FireApeStrikes());
+        BaseMod.addCard(new AttackMirage());
+        BaseMod.addCard(new DefenceMirage());
+        BaseMod.addCard(new SurgeBoxing());
+        BaseMod.addCard(new Boost());
+        BaseMod.addCard(new Ignition());
     }
 
 
@@ -123,6 +134,7 @@ public class MonkeyKingMod implements EditKeywordsSubscriber, EditCardsSubscribe
         BaseMod.loadCustomStringsFile(CharacterStrings.class, "zaomengxiyou/localization/" + lang + "/CharactersString.json");
         BaseMod.loadCustomStringsFile(RelicStrings.class, "zaomengxiyou/localization/" + lang + "/RelicsStrings.json");
         BaseMod.loadCustomStringsFile(PowerStrings.class, "zaomengxiyou/localization/" + lang + "/PowerStrings.json");
+        BaseMod.loadCustomStringsFile(MonsterStrings.class, "zaomengxiyou/localization/" + lang + "/MonsterStrings.json");
         //BaseMod.loadCustomStringsFile(Keyword.class, "zaomengxiyou/localization/" +lang +"/KeyWordsStrings.json");
         //BaseMod.loadCustomStringsFile(PotionStrings.class, "zaomengxiyou/localization/" + lang + "/potions.json");
         //BaseMod.loadCustomStringsFile(UIStrings.class, "zaomengxiyou/localization/" + lang + "/uiString.json");
@@ -136,6 +148,8 @@ public class MonkeyKingMod implements EditKeywordsSubscriber, EditCardsSubscribe
         BaseMod.addRelicToCustomPool(new BloodthirstyFireEyes(), AbstractCardEnum.MonkeyKing_RED);
         BaseMod.addRelicToCustomPool(new Bracelets(), AbstractCardEnum.MonkeyKing_RED);
         BaseMod.addRelic(new FuriousRing(), RelicType.SHARED);
+        BaseMod.addRelic(new GreedRing(), RelicType.SHARED);
+        BaseMod.addRelic(new ObsessionRing(), RelicType.SHARED);
     }
 
 
@@ -162,7 +176,7 @@ public class MonkeyKingMod implements EditKeywordsSubscriber, EditCardsSubscribe
 
     @Override
     public void receiveAddAudio() {
-
+        BaseMod.addAudio(ModHelper.MakePath("fire_demon_slash"), "sound/fire_demon_slash.ogg");
     }
 
     @Override
@@ -170,6 +184,13 @@ public class MonkeyKingMod implements EditKeywordsSubscriber, EditCardsSubscribe
 
     }
 
+    public void receivePostInitialize() {//Register for monsters, events
+        initializeMonsters();
+    }
+    private void initializeMonsters() {
+        BaseMod.addMonster("dreaming_journey_to_the_west:KingYurong",KingYurong.NAME,() -> new MonsterGroup(new AbstractMonster[] { new KingYurong() }));
+        BaseMod.addEliteEncounter("Exordium", new MonsterInfo(KingYurong.ID, 0.9F));
+    }
     @SpireEnum
     public static AbstractCard.CardTags BOXING;
 

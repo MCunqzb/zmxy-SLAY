@@ -1,5 +1,6 @@
 package characters;
 
+import Helpers.ModHelper;
 import basemod.abstracts.CustomPlayer;
 import cards.FireBlitz;
 import com.badlogic.gdx.graphics.Color;
@@ -10,9 +11,11 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.cutscenes.CutscenePanel;
 import com.megacrit.cardcrawl.events.beyond.SpireHeart;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
+import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
@@ -22,6 +25,7 @@ import relics.BloodthirstyFireEyes;
 import relics.Bracelets;
 
 import java.util.ArrayList;
+import java.util.List;
 
 public class MonkeyKing extends CustomPlayer {
 
@@ -130,14 +134,15 @@ public class MonkeyKing extends CustomPlayer {
 
     @Override
     public void doCharSelectScreenSelectEffect() {
-
+        CardCrawlGame.sound.playA(ModHelper.MakePath("fire_demon_slash"), 1.0F);
+        CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.MED, ScreenShake.ShakeDur.SHORT, true);
     }
     public void updateOrb(int orbCount) {
         this.energyOrb.updateOrb(orbCount);
     }
     @Override
     public String getCustomModeCharacterButtonSoundKey() {
-        return null;
+        return ModHelper.MakePath("fire_demon_slash");
     }
 
     @Override
@@ -165,6 +170,14 @@ public class MonkeyKing extends CustomPlayer {
         return new AbstractGameAction.AttackEffect[] { AbstractGameAction.AttackEffect.SLASH_HEAVY, AbstractGameAction.AttackEffect.SLASH_VERTICAL, AbstractGameAction.AttackEffect.SLASH_HORIZONTAL };
     }
 
+    @Override
+    public List<CutscenePanel> getCutscenePanels() {
+        List<CutscenePanel> panels = new ArrayList();
+        panels.add(new CutscenePanel("img/chars/monkeyking1.png", "ATTACK_HEAVY"));
+        panels.add(new CutscenePanel("img/chars/monkeyking2.png"));
+        panels.add(new CutscenePanel("img/chars/monkeyking3.png"));
+        return panels;
+    }
     @Override
     public String getVampireText() {
         return characterStrings.TEXT[1];

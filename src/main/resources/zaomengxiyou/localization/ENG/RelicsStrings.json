@@ -17,7 +17,21 @@
     "NAME": "Furious Ring",
     "FLAVOR": "Humiliated and indignant, unhappy or angry.",
     "DESCRIPTIONS": [
-      "Whenever you would receive  5  or more than unblocked attack damage,you have 1 additional #yStrength and #yFrail ."
+      "Start each combat with #b2 #yStrength .While your HP is at or below #b50%,gain #yIndignation."
+    ]
+  },
+  "dreaming_journey_to_the_west:GreedRing": {
+    "NAME": "Greed Ring",
+    "FLAVOR": "The greed for money, sex, fame, food and sleep.",
+    "DESCRIPTIONS": [
+      "Upon pickup, decline your Max HP by #r10% ,gain an extra level when you gain #yVulnerable, #yFragile, #yWeak，At the end of combat,gain  #y20 #yGold，double the chance of finding #yRare cards from combat rewards."
+    ]
+  },
+  "dreaming_journey_to_the_west:ObsessionRing": {
+    "NAME": "痴迷之戒",
+    "FLAVOR": "不明事理，是非不分。",
+    "DESCRIPTIONS": [
+      "Lose [E] ，At the end of your turn, gain #b1 #yblock ,whenever you gain a #rDebuff ,gain #b1 extra #yBuffer . "
     ]
   }
 }

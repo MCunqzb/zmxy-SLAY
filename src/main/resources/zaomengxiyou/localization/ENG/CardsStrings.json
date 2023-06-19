@@ -57,7 +57,7 @@
   },
   "dreaming_journey_to_the_west:CrackingFist": {
     "NAME": "Cracking Fist",
-    "DESCRIPTION": "Deal !D! damage. NL If the enemy intends is not to attack ,stun an enemy. NL Decrease this card's damage by !M! this combat. NL dreaming_journey_to_the_west:boxing "
+    "DESCRIPTION": "Deal !D! damage. NL If the enemy intends is not to attack ,stun an enemy. NL Decrease this card's damage by !M! this combat. NL dreaming_journey_to_the_west:boxing . NL dreaming_journey_to_the_west:exhaustion ."
   },
   "dreaming_journey_to_the_west:FieryEyes": {
     "NAME": "Fiery Eyes",
@@ -70,11 +70,11 @@
   },
   "dreaming_journey_to_the_west:BloodThirsty": {
     "NAME": "Blood Thirsty",
-    "DESCRIPTION":  "Gain !M! dreaming_journey_to_the_west:BloodThirsty NL Lose 3 HP at the start of your turn."
+    "DESCRIPTION":  "Gain !M! dreaming_journey_to_the_west:BloodThirsty NL Lose 3* !M! HP at the start of your turn."
   },
   "dreaming_journey_to_the_west:FakePunch": {
     "NAME": "Fake Punch",
-    "DESCRIPTION":  "Gain !B! block. NL dreaming_journey_to_the_west:boxing "
+    "DESCRIPTION":  "Gain !B! block. NL dreaming_journey_to_the_west:boxing ."
   },
   "dreaming_journey_to_the_west:StepFloor": {
     "NAME": "Step Floor",
@@ -104,7 +104,7 @@
   "dreaming_journey_to_the_west:FlameCyclone": {
     "NAME": "Flame Cyclone",
     "DESCRIPTION":  "Triggers dreaming_journey_to_the_west:scorch for all enemies. NL Exhaust",
-    "UPGRADE_DESCRIPTION":"Triggers dreaming_journey_to_the_west:scorch for all enemies. NL Retain Exhaust.",
+    "UPGRADE_DESCRIPTION":"Triggers dreaming_journey_to_the_west:scorch for all enemies. NL Retain Exhaust .",
     "EXTENDED_DESCRIPTION": [
       " NL (Deals !M! damage.)"
     ]
@@ -116,20 +116,41 @@
   },
   "dreaming_journey_to_the_west:GodDestroyingStrikeIII": {
     "NAME": "God Destroy Strike III",
-    "DESCRIPTION":  " Ethereal . NL Deals !D! damage. NL Exhaust 。"
+    "DESCRIPTION":  " Ethereal . NL Deals !D! damage. NL Exhaust .  NL dreaming_journey_to_the_west:boxing ."
   },
   "dreaming_journey_to_the_west:GodDestroyingStrikeII": {
     "NAME": "God Destroy Strike II",
-    "DESCRIPTION":  " Ethereal . NL Deals !D! damage. NL Shuffle a *GodDestroyingStrikeIII into your draw pile. NL Exhaust  ."
+    "DESCRIPTION":  " Ethereal . NL Deals !D! damage. NL Shuffle a *GodDestroyingStrikeIII into your draw pile. NL Exhaust  . NL dreaming_journey_to_the_west:boxing ."
   },
   "dreaming_journey_to_the_west:GodDestroyingStrikeI": {
     "NAME": "God Destroy Strike I",
-    "DESCRIPTION":  "Deals !D! damage. NL Shuffle a *GodDestroyingStrikeII into your draw pile."
+    "DESCRIPTION":  "Deals !D! damage. NL Shuffle a *GodDestroyingStrikeII into your draw pile. NL dreaming_journey_to_the_west:boxing ."
   },
   "dreaming_journey_to_the_west:FireApeStrikes": {
     "NAME": "Fire Ape Strikes",
     "DESCRIPTION":  "Whenever you play a Attack card with dreaming_journey_to_the_west:boxing ,deal !M! * 6 damage to a random enemy. NL Whenever you play a Skill card with dreaming_journey_to_the_west:boxing ,gain !M! *Plated Armor. ",
     "UPGRADE_DESCRIPTION":" Innate . NL Whenever you play a Attack card with dreaming_journey_to_the_west:boxing ,deal !M! * 6 damage to a random enemy. NL Whenever you play a Skill card with dreaming_journey_to_the_west:boxing ,gain !M! *Plated Armor. "
+  },
+  "dreaming_journey_to_the_west:AttackMirage": {
+    "NAME": "Attack Mirage",
+    "DESCRIPTION":  "Whenever you play a card with dreaming_journey_to_the_west:boxing ,gain !M! Vigor ."
+  },
+  "dreaming_journey_to_the_west:DefenceMirage": {
+    "NAME": "Defence Mirage",
+    "DESCRIPTION":  "Whenever you play a card with dreaming_journey_to_the_west:boxing ,gain !M! Block ."
+  },
+  "dreaming_journey_to_the_west:SurgeBoxing": {
+    "NAME": "Surge Boxing",
+    "DESCRIPTION":  "Retain. NL Deal !D! damage. NL When you use a Skill with dreaming_journey_to_the_west:boxing , this deals !M! more damage this combat."
+  },
+  "dreaming_journey_to_the_west:Boost": {
+    "NAME": "Boost",
+    "DESCRIPTION":  "Gain [R] [R] . NL Gain !M! dreaming_journey_to_the_west:Boost . NL Exhaust .",
+    "UPGRADE_DESCRIPTION":"Gain [R] [R] [R] . NL Gain !M! dreaming_journey_to_the_west:Boost . NL Exhaust ."
+  },
+  "dreaming_journey_to_the_west:Ignition": {
+    "NAME": "Ignition",
+    "DESCRIPTION":  "Give !M! dreaming_journey_to_the_west:scorch ."
   }
 
 }
