@@ -141,7 +141,7 @@
   },
   "dreaming_journey_to_the_west:SurgeBoxing": {
     "NAME": "Surge Boxing",
-    "DESCRIPTION":  "Retain. NL Deal !D! damage. NL When you use a Skill with dreaming_journey_to_the_west:boxing , this deals !M! more damage this combat."
+    "DESCRIPTION":  "Retain. NL Deal !D! damage. NL When you use a Card with dreaming_journey_to_the_west:boxing , this deals !M! more damage this combat. NL Exhaust "
   },
   "dreaming_journey_to_the_west:Boost": {
     "NAME": "Boost",
@@ -151,6 +151,64 @@
   "dreaming_journey_to_the_west:Ignition": {
     "NAME": "Ignition",
     "DESCRIPTION":  "Give !M! dreaming_journey_to_the_west:scorch ."
+  },
+  "dreaming_journey_to_the_west:FlamesBurst": {
+    "NAME": "Flames Burst",
+    "DESCRIPTION":  "Give !M! 层 dreaming_journey_to_the_west:scorch and 2 Vulnerable . NL Exhaust ."
+  },
+  "dreaming_journey_to_the_west:DoubleBoxing": {
+    "NAME": "Double Boxing",
+    "DESCRIPTION":  "Deal !D! damage twice. NL dreaming_journey_to_the_west:boxing ."
+  },
+  "dreaming_journey_to_the_west:PerfectedBoxing": {
+    "NAME": "Perfected Boxing",
+    "DESCRIPTION": "Deal !D! damage. NL Deals !M! additional damage for ALL your cards containing dreaming_journey_to_the_west:boxing . NL dreaming_journey_to_the_west:boxing "
+  },
+  "dreaming_journey_to_the_west:HeavyBoxing": {
+  "NAME": "Heavy Boxing",
+  "DESCRIPTION": "Deal !D! damage. NL Strength and Vigor affects this card !M! times. NL dreaming_journey_to_the_west:boxing "
+  },
+  "dreaming_journey_to_the_west:ChaosBoxing": {
+    "NAME": "Chaos Boxing",
+    "DESCRIPTION": "Deal !D! damage to a random enemy !M! times. NL dreaming_journey_to_the_west:boxing "
+  },
+  "dreaming_journey_to_the_west:YinYangBoxing": {
+    "NAME": "Yin Yang Boxing",
+    "DESCRIPTION": "Gain !B! Block. NL Deal !D! damage. NL dreaming_journey_to_the_west:boxing "
+  },
+  "dreaming_journey_to_the_west:GrowingBoxing": {
+    "NAME": "Growing Boxing",
+    "DESCRIPTION": "Deal !D! damage. Permanently increase this card's Attack by !M!. NL Exhaust . NL dreaming_journey_to_the_west:boxing "
+  },
+  "dreaming_journey_to_the_west:InHighSpirits": {
+    "NAME": "In High Spirits",
+    "DESCRIPTION": "Gain 1 Vigor . NL Double your Vigor . NL Exhaust.",
+    "UPGRADE_DESCRIPTION": "Gain 1 Vigor . NL Double your Vigor ."
+  },
+  "dreaming_journey_to_the_west:BurnBlood": {
+    "NAME": "Burn Blood",
+    "DESCRIPTION": "Whenever you lose HP from a card, NL gain !M! dreaming_journey_to_the_west:IronBone ."
+  },
+  "dreaming_journey_to_the_west:RisingDragonSlashBlood": {
+    "NAME": "Rising Dragon Slash Burn Blood",
+    "DESCRIPTION": "Lose !M! HP. NL Deal !D! damage. NL Apply !M! Vulnerable. ."
+  },
+  "dreaming_journey_to_the_west:FlamingStormBlood": {
+    "NAME": "Flaming Storm Burn Blood",
+    "DESCRIPTION": "Lose !M! HP. Deals !D! damage to all enemies X+1 times.",
+    "UPGRADE_DESCRIPTION": "Lose !M! HP. Deals !D! damage to all enemies X+2 times."
+  },
+  "dreaming_journey_to_the_west:FireMagicSlashBlood": {
+    "NAME": "Fire Magic Slash Burn Blood",
+    "DESCRIPTION": "Lose !M! HP. NL Deals !D! /3 damage to all enemies 9 times.  NL Deal !D! X3 damage. NL Costs 1 less [R] NL for each time you lose HP this combat. NL Causing no less than 1 damage."
+  },
+  "dreaming_journey_to_the_west:BurningBloodBoxing": {
+    "NAME": "Burn Blood Boxing",
+    "DESCRIPTION": "Lose !M! HP. NL Gain !B! Block. NL Deals !D! damage. NL dreaming_journey_to_the_west:boxing "
+  },
+  "dreaming_journey_to_the_west:ExtraLegalSemblance": {
+    "NAME": "Extra Legal Semblance",
+    "DESCRIPTION": "Add a random Attack into your hand. NL It costs 0 this turn. NL Exhaust."
   }
 
 }

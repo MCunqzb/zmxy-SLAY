@@ -65,7 +65,19 @@
   "dreaming_journey_to_the_west:BoostPower": {
     "NAME": "Boost",
     "DESCRIPTIONS": [
-      "All attack damage dealt is increased by #b%d %% ,lasts #r%d round. "
+      "All attack damage dealt is increased by #b%d %% ,lasts #r%d rounds. "
+    ]
+  },
+  "dreaming_journey_to_the_west:IronBonePower": {
+    "NAME": "Iron Bone",
+    "DESCRIPTIONS": [
+      "All attack damage receive is decreased by #b%d %% ，lasts #r%d rounds."
+    ]
+  },
+  "dreaming_journey_to_the_west:BurnBloodPower": {
+    "NAME": "Burn Blood",
+    "DESCRIPTIONS": [
+      "Whenever you lose HP from a card,  gain #b%d #bIronBone ."
     ]
   }
 }

@@ -53,7 +53,7 @@ public class ScorchPower extends AbstractPower implements HealthBarRenderPower, 
     public void atStartOfTurn() {
         if (AbstractDungeon.getCurrRoom().phase == AbstractRoom.RoomPhase.COMBAT && !AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
             this.flashWithoutSound();
-            this.addToBot(new ScorchLoseHpAction(this.owner, this.source, this.amount, AbstractGameAction.AttackEffect.FIRE));
+            this.addToTop(new ScorchLoseHpAction(this.owner, this.source, this.amount, AbstractGameAction.AttackEffect.FIRE));
         }
 
     }

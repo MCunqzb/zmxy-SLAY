@@ -67,5 +67,17 @@
     "DESCRIPTIONS": [
       "伤害提升 #b%d %% ，持续 #b%d 回合 。 "
     ]
+  },
+  "dreaming_journey_to_the_west:IronBonePower": {
+    "NAME": "铁骨",
+    "DESCRIPTIONS": [
+      "受到伤害减少 #b%d %% ，持续 #b%d 回合 。"
+    ]
+  },
+  "dreaming_journey_to_the_west:BurnBloodPower": {
+    "NAME": "燃血铁骨",
+    "DESCRIPTIONS": [
+      "当你从一张牌中失去生命时，获得 #b%d #y铁骨 。"
+    ]
   }
 }

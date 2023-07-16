@@ -36,7 +36,7 @@ import java.util.ArrayList;
 import static com.megacrit.cardcrawl.core.Settings.language;
 
 @SpireInitializer
-public class MonkeyKingMod implements EditKeywordsSubscriber, EditCardsSubscriber, EditStringsSubscriber, EditCharactersSubscriber, EditRelicsSubscriber, AddAudioSubscriber, SetUnlocksSubscriber {
+public class MonkeyKingMod implements  PostInitializeSubscriber,EditKeywordsSubscriber, EditCardsSubscriber, EditStringsSubscriber, EditCharactersSubscriber, EditRelicsSubscriber, AddAudioSubscriber, SetUnlocksSubscriber {
     //private static final String MOD_BADGE = "img/charSelect/MonkeyKingButton.png";
 
     private static final String ATTACK_CC = "img/512/bg_attack_monkeyking.png";
@@ -114,6 +114,20 @@ public class MonkeyKingMod implements EditKeywordsSubscriber, EditCardsSubscribe
         BaseMod.addCard(new SurgeBoxing());
         BaseMod.addCard(new Boost());
         BaseMod.addCard(new Ignition());
+        BaseMod.addCard(new FlamesBurst());
+        BaseMod.addCard(new DoubleBoxing());
+        BaseMod.addCard(new PerfectedBoxing());
+        BaseMod.addCard(new HeavyBoxing());
+        BaseMod.addCard(new ChaosBoxing());
+        BaseMod.addCard(new YinYangBoxing());
+        BaseMod.addCard(new GrowingBoxing());
+        BaseMod.addCard(new InHighSpirits());
+        BaseMod.addCard(new BurnBlood());
+        BaseMod.addCard(new RisingDragonSlashBlood());
+        BaseMod.addCard(new FlamingStormBlood());
+        BaseMod.addCard(new FireMagicSlashBlood());
+        BaseMod.addCard(new BurningBloodBoxing());
+        BaseMod.addCard(new ExtraLegalSemblance());
     }
 
 
@@ -144,7 +158,6 @@ public class MonkeyKingMod implements EditKeywordsSubscriber, EditCardsSubscribe
 
     @Override
     public void receiveEditRelics() {
-
         BaseMod.addRelicToCustomPool(new BloodthirstyFireEyes(), AbstractCardEnum.MonkeyKing_RED);
         BaseMod.addRelicToCustomPool(new Bracelets(), AbstractCardEnum.MonkeyKing_RED);
         BaseMod.addRelic(new FuriousRing(), RelicType.SHARED);
@@ -183,7 +196,6 @@ public class MonkeyKingMod implements EditKeywordsSubscriber, EditCardsSubscribe
     public void receiveSetUnlocks() {
 
     }
-
     public void receivePostInitialize() {//Register for monsters, events
         initializeMonsters();
     }

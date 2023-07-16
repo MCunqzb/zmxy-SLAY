@@ -35,9 +35,9 @@ public class IndignationPower extends AbstractPower {
 
     public void atStartOfTurnPostDraw() {
         this.flash();
-        this.addToBot(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, this.amount*2), this.amount*2));
-        this.addToBot(new LoseHPAction(this.owner,this.owner,1));
-        this.addToBot(new VFXAction(this.owner, new VerticalAuraEffect(Color.FIREBRICK, this.owner.hb.cX, this.owner.hb.cY), 0.0F));
+        this.addToTop(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, this.amount*2), this.amount*2));
+        this.addToTop(new LoseHPAction(this.owner,this.owner,1));
+        this.addToTop(new VFXAction(this.owner, new VerticalAuraEffect(Color.FIREBRICK, this.owner.hb.cX, this.owner.hb.cY), 0.0F));
     }
 
 

@@ -3,6 +3,7 @@ package characters;
 import Helpers.ModHelper;
 import basemod.abstracts.CustomPlayer;
 import cards.FireBlitz;
+import cards.FireMagicSlash;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -51,7 +52,6 @@ public class MonkeyKing extends CustomPlayer {
     public static final Color OrangeRed = CardHelper.getColor(212, 126, 107);
 
     public MonkeyKing(String name) {
-
         super(name, ThmodClassEnum.MonkeyKing_CLASS, ORB_TEXTURES, ORB_VFX, LAYER_SPEED, (String)null, (String)null);
         this.dialogX = this.drawX + 0.0F * Settings.scale;
         this.dialogY = this.drawY + 220.0F * Settings.scale;
@@ -114,7 +114,7 @@ public class MonkeyKing extends CustomPlayer {
 
     @Override
     public AbstractCard getStartCardForEvent() {
-        return null;
+        return new FireMagicSlash();
     }
 
     @Override
@@ -134,7 +134,7 @@ public class MonkeyKing extends CustomPlayer {
 
     @Override
     public void doCharSelectScreenSelectEffect() {
-        CardCrawlGame.sound.playA(ModHelper.MakePath("fire_demon_slash"), 1.0F);
+        CardCrawlGame.sound.playA(ModHelper.MakePath("fire_demon_slash"), 0.1F);
         CardCrawlGame.screenShake.shake(ScreenShake.ShakeIntensity.MED, ScreenShake.ShakeDur.SHORT, true);
     }
     public void updateOrb(int orbCount) {

@@ -46,7 +46,7 @@ public class FieryEyesPower extends AbstractPower {
             while(var1.hasNext()) {
                 AbstractMonster m = (AbstractMonster)var1.next();
                 if (!m.isDead && !m.isDying) {
-                    this.addToBot(new ApplyPowerAction(m, this.owner, new ScorchPower(m, this.owner, this.amount), this.amount));
+                    this.addToTop(new ApplyPowerAction(m, this.owner, new ScorchPower(m, this.owner, this.amount), this.amount));
                 }
             }
         }

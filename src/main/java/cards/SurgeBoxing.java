@@ -28,7 +28,7 @@ public class SurgeBoxing extends CustomCard {
     private static final int UPGRADE_PLUS_ATTACK = 4;
     private static final int BLOCK_AMT = 0;
     private static final int UPGRADE_PLUS_BLOCK = 3;
-    private static final int MAGIC_AMT = 3;
+    private static final int MAGIC_AMT = 2;
     private static final int UPGRADE_PLUS_MAGIC_AMT = 1;
     public static final String IMG_PATH = "img/cards/surge_boxing.png";
 
@@ -40,14 +40,15 @@ public class SurgeBoxing extends CustomCard {
         this.baseMagicNumber=MAGIC_AMT;
         this.magicNumber=this.baseMagicNumber;
         this.selfRetain = true;
+        this.exhaust=true;
     }
 
     public void onPlayCard(AbstractCard c, AbstractMonster m) {
         super.onPlayCard(c, m);
-        if (c.type == AbstractCard.CardType.SKILL && AbstractDungeon.player.hand.group.contains(this) && c.hasTag(MonkeyKingMod.BOXING)) {
+        if ( AbstractDungeon.player.hand.group.contains(this) && c.hasTag(MonkeyKingMod.BOXING)) {
             this.baseDamage += this.magicNumber;
             applyPowers();
-            superFlash(Color.RED.cpy());
+            superFlash(Color.ORANGE.cpy());
         }
     }
 
@@ -64,6 +65,7 @@ public class SurgeBoxing extends CustomCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
+            upgradeMagicNumber(UPGRADE_PLUS_ATTACK);
             upgradeMagicNumber(UPGRADE_PLUS_MAGIC_AMT);
         }
     }

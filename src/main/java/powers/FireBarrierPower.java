@@ -51,7 +51,7 @@ public class FireBarrierPower extends AbstractPower  {
     }
 
     public void atStartOfTurn() {
-        this.addToBot(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, POWER_ID));
+        this.addToTop(new RemoveSpecificPowerAction(AbstractDungeon.player, AbstractDungeon.player, POWER_ID));
     }
 
 

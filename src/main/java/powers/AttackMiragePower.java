@@ -42,7 +42,7 @@ public class AttackMiragePower extends AbstractPower {
 
     public void onUseCard(AbstractCard card, UseCardAction action) {
        if (card.hasTag(MonkeyKingMod.BOXING)){
-           this.addToBot(new ApplyPowerAction(this.owner,this.owner,new VigorPower(this.owner, this.amount)));
+           this.addToTop(new ApplyPowerAction(this.owner,this.owner,new VigorPower(this.owner, this.amount)));
        }
     }
 

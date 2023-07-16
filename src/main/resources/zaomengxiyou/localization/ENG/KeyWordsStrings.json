@@ -39,5 +39,12 @@
       "boost"
     ],
     "DESCRIPTION": " #yAttacks deal more 50% damage."
+  },
+  {
+    "NAMES": [
+      "IronBone",
+      "ironbone"
+    ],
+    "DESCRIPTION": "All attack damage receive is decreased."
   }
 ]

@@ -142,7 +142,7 @@
   },
   "dreaming_journey_to_the_west:SurgeBoxing": {
     "NAME": "涌动之拳",
-    "DESCRIPTION":  "保留 。 NL 造成 !D! 点伤害。 NL 打出带 dreaming_journey_to_the_west:拳击 的 *技能 牌时， NL 本场战斗伤害加 !M! 。"
+    "DESCRIPTION":  "保留 。 NL 造成 !D! 点伤害。 NL 打出带 dreaming_journey_to_the_west:拳击 的牌时， NL 本场战斗伤害加 !M! 。 NL 消耗 dreaming_journey_to_the_west:拳击 。"
   },
   "dreaming_journey_to_the_west:Boost": {
     "NAME": "无双爆气",
@@ -152,6 +152,64 @@
   "dreaming_journey_to_the_west:Ignition": {
     "NAME": "点燃",
     "DESCRIPTION":  "给予 !M! 层 dreaming_journey_to_the_west:灼烧 。"
+  },
+  "dreaming_journey_to_the_west:FlamesBurst": {
+    "NAME": "火焰迸发",
+    "DESCRIPTION":  "给予 !M! 层 dreaming_journey_to_the_west:灼烧 和 2 层 易伤 。 NL 消耗 。"
+  },
+  "dreaming_journey_to_the_west:DoubleBoxing": {
+    "NAME": "双重拳击",
+    "DESCRIPTION":  "造成 !D! 点伤害两次。 NL dreaming_journey_to_the_west:拳击 。"
+  },
+  "dreaming_journey_to_the_west:PerfectedBoxing": {
+    "NAME": "完美拳击",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 你每有一张名字中有 dreaming_journey_to_the_west:拳击 的牌，伤害+ !M! 。 NL dreaming_journey_to_the_west:拳击 "
+  },
+  "dreaming_journey_to_the_west:HeavyBoxing": {
+    "NAME": "重拳",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 力量 和 活力 在 重拳 上发挥 !M! 倍效果。 NL dreaming_journey_to_the_west:拳击 "
+  },
+  "dreaming_journey_to_the_west:ChaosBoxing": {
+    "NAME": "乱拳",
+    "DESCRIPTION": "随机对敌人造成 !D! 点伤害 !M! 次。 NL dreaming_journey_to_the_west:拳击 "
+  },
+  "dreaming_journey_to_the_west:YinYangBoxing": {
+    "NAME": "攻守拳",
+    "DESCRIPTION": "获得 !B! 点 格挡 。 NL 造成 !D! 点伤害。 NL dreaming_journey_to_the_west:拳击 "
+  },
+  "dreaming_journey_to_the_west:GrowingBoxing": {
+    "NAME": "成长拳",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 每打出一次，这张牌在本局游戏中的伤害值永久性增加 !M! 。 NL 消耗 。 NL dreaming_journey_to_the_west:拳击 "
+  },
+  "dreaming_journey_to_the_west:InHighSpirits": {
+    "NAME": "精神抖擞",
+    "DESCRIPTION": "获得 1 活力。 NL 将你的 活力 翻倍 。 消耗 ",
+    "UPGRADE_DESCRIPTION": "获得 1 活力。 NL 将你的 力量 翻倍。"
+  },
+  "dreaming_journey_to_the_west:BurnBlood": {
+    "NAME": "燃血铁骨",
+    "DESCRIPTION": "当你从一张牌中失去生命时，获得 !M! dreaming_journey_to_the_west:铁骨 。"
+  },
+  "dreaming_journey_to_the_west:RisingDragonSlashBlood": {
+    "NAME": "燃血升龙斩",
+    "DESCRIPTION": "失去 !M! 点生命。 NL 造成 !D! 点伤害。 NL 给予 !M! 层 易伤 。"
+  },
+  "dreaming_journey_to_the_west:FlamingStormBlood": {
+    "NAME": "燃血烈焰风暴",
+    "DESCRIPTION": "失去 !M! 点生命。 NL 对所有敌人造成 !D! 点伤害 X+1 次。",
+    "UPGRADE_DESCRIPTION": "失去 !M! 点生命。 NL 对所有敌人造成 !D! 点伤害 X+2 次。"
+  },
+  "dreaming_journey_to_the_west:FireMagicSlashBlood": {
+    "NAME": "燃血火魔斩",
+    "DESCRIPTION": "失去 !M! 点生命。 造成 !D! /3 点伤害9次。 NL 造成 !D! x3 点伤害。 NL 你每在战斗中失去生命一次，这张牌的耗能就减少1 [R] 。 NL 造成伤害不会小于1。"
+  },
+  "dreaming_journey_to_the_west:BurningBloodBoxing": {
+    "NAME": "燃血拳",
+    "DESCRIPTION": "失去 !M! 点生命。 NL 获得 !B! 点格挡。 NL 造成 !D! 点伤害。 NL dreaming_journey_to_the_west:拳击 。"
+  },
+  "dreaming_journey_to_the_west:ExtraLegalSemblance": {
+    "NAME": "法外分身",
+    "DESCRIPTION": "增加一张随机攻击牌到你的手牌。 NL 这张牌在本回合耗能变为0。 NL 消耗 。"
   }
 
 }

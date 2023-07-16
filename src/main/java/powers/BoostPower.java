@@ -42,9 +42,9 @@ public class BoostPower extends AbstractPower {
             this.justApplied = false;
         } else {
             if (this.amount == 0) {
-                this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, "dreaming_journey_to_the_west:BoostPower"));
+                this.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, "dreaming_journey_to_the_west:BoostPower"));
             } else {
-                this.addToBot(new ReducePowerAction(this.owner, this.owner, "dreaming_journey_to_the_west:BoostPower", 1));
+                this.addToTop(new ReducePowerAction(this.owner, this.owner, "dreaming_journey_to_the_west:BoostPower", 1));
             }
 
         }
