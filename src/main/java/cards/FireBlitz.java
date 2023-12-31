@@ -25,8 +25,8 @@ public class FireBlitz extends CustomCard {
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "img/cards/fireblitz.png";
     private static final int COST = 1;
-    private static final int ATTACK_DMG = 6;
-    private static final int MAGIC_NUM = 2;
+    private static final int ATTACK_DMG = 5;
+    private static final int MAGIC_NUM = 3;
     private static final int UPGRADE_PLUS_DMG = 1;
 
     public FireBlitz() {

@@ -15,6 +15,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 
 
@@ -43,11 +44,12 @@ public class ScorchPower extends AbstractPower implements HealthBarRenderPower, 
         // 首次添加能力更新描述
         this.updateDescription();
         this.isTurnBased = true;
+
     }
 
     // 能力在更新时如何修改描述
     public void updateDescription() {
-        this.description = DESCRIPTIONS[0] + (this.amount)*2.5 + DESCRIPTIONS[1]+ DESCRIPTIONS[2] + (this.amount) + DESCRIPTIONS[3];
+        this.description = DESCRIPTIONS[0] + Math.min((this.amount)*2.5, 50 )+ DESCRIPTIONS[1]+ DESCRIPTIONS[2] + (this.amount) + DESCRIPTIONS[3];
     }
 
     public void atStartOfTurn() {
@@ -55,7 +57,7 @@ public class ScorchPower extends AbstractPower implements HealthBarRenderPower, 
             this.flashWithoutSound();
             this.addToTop(new ScorchLoseHpAction(this.owner, this.source, this.amount, AbstractGameAction.AttackEffect.FIRE));
         }
-
+        this.updateDescription();
     }
 
     public float atDamageReceive(float damage, DamageInfo.DamageType type) {
@@ -63,7 +65,7 @@ public class ScorchPower extends AbstractPower implements HealthBarRenderPower, 
             if (this.owner.isPlayer && AbstractDungeon.player.hasRelic("Odd Mushroom")) {
                 return damage *(0.025F * this.amount+1);
             } else {
-                return this.owner != null && !this.owner.isPlayer && AbstractDungeon.player.hasRelic("Paper Frog") ? damage * (0.05F * this.amount+1) : damage * (0.025F * this.amount+1);
+                return this.owner != null && !this.owner.isPlayer && AbstractDungeon.player.hasRelic("Paper Frog") ? damage * Math.min((0.0375F * this.amount+1),0.75f) : damage * Math.min((0.025F * this.amount+1),0.5f);
             }
         } else {
             return damage;
@@ -75,7 +77,12 @@ public class ScorchPower extends AbstractPower implements HealthBarRenderPower, 
     }
 
     public int getHealthBarAmount() {
-        return this.amount;
+        if(this.owner.hasPower(VulnerablePower.POWER_ID)){
+            return 2*this.amount;
+        }
+        else
+            return this.amount;
+
     }
 
     @Override

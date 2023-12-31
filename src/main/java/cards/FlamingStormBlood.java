@@ -33,8 +33,8 @@ public class FlamingStormBlood extends CustomCard {
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     private static final int COST = -1;
-    private static final int ATTACK_AMT = 3;
-    private static final int UPGRADE_PLUS_ATTACK = 1;
+    private static final int ATTACK_AMT = 4;
+    private static final int UPGRADE_PLUS_ATTACK = 3;
     private static final int BLOCK_AMT = 0;
     private static final int UPGRADE_PLUS_BLOCK = 3;
     private static final int MAGIC_AMT = 2;
@@ -52,10 +52,10 @@ public class FlamingStormBlood extends CustomCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (m != null) {
-            this.addToBot(new VFXAction(new HemokinesisEffect(p.hb.cX, p.hb.cY, p.hb.cX, p.hb.cY+10F), 0.5F));
+            this.addToBot(new VFXAction(new HemokinesisEffect(p.hb.cX, p.hb.cY, p.hb.cX, p.hb.cY+10F), 0.1F));
         }
         this.addToBot(new LoseHPAction(p,p,this.magicNumber));
-        this.addToBot(new FlamingStormBloodAction(p, this.multiDamage, this.damageTypeForTurn, this.freeToPlayOnce, this.energyOnUse+this.magicNumber-1));
+        this.addToBot(new FlamingStormBloodAction(p, this.multiDamage, this.damageTypeForTurn, this.freeToPlayOnce, this.energyOnUse));
 
     }
 
@@ -71,8 +71,6 @@ public class FlamingStormBlood extends CustomCard {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_ATTACK);
             upgradeMagicNumber(UPGRADE_PLUS_MAGIC_AMT);
-            this.rawDescription = UPGRADE_DESCRIPTION;
-            this.initializeDescription();
         }
     }
 }

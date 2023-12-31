@@ -20,6 +20,8 @@ import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import com.megacrit.cardcrawl.vfx.combat.WeightyImpactEffect;
 import pathes.AbstractCardEnum;
 
+import java.util.Iterator;
+
 public class ShiningPillar extends CustomCard {
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings("dreaming_journey_to_the_west:ShiningPillar");
     public static final String NAME = cardStrings.NAME;
@@ -40,11 +42,18 @@ public class ShiningPillar extends CustomCard {
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        for (AbstractMonster mon : (AbstractDungeon.getCurrRoom()).monsters.monsters)
-            AbstractDungeon.actionManager.addToBottom((AbstractGameAction)new VFXAction((AbstractGameEffect)new WeightyImpactEffect(mon.hb.cX, mon.hb.cY, new Color(1.0F, 0.1F, 0.1F, 0.0F))));
-        AbstractDungeon.actionManager.addToBottom((AbstractGameAction)new WaitAction(0.8F));
-        AbstractDungeon.actionManager.addToBottom((AbstractGameAction) new DamageAllEnemiesAction((AbstractCreature)p,this.multiDamage,this.damageTypeForTurn, AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-        AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(p,p,new DrawReductionPower(p,this.magicNumber)));
+        Iterator var1 = AbstractDungeon.getMonsters().monsters.iterator();
+        while(var1.hasNext()) {
+            AbstractMonster m1 = (AbstractMonster)var1.next();
+            if (!m1.isDead && !m1.isDying) {
+                this.addToBot(new VFXAction(new WeightyImpactEffect(m1.hb.cX, m1.hb.cY, new Color(1.0F, 0.1F, 0.1F, 0.0F))));
+            }
+        }
+        //for (AbstractMonster mon : (AbstractDungeon.getCurrRoom()).monsters.monsters)
+            
+        this.addToBot(new WaitAction(0.8F));
+        this.addToBot( new DamageAllEnemiesAction(p,this.multiDamage,this.damageTypeForTurn, AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+        this.addToBot(new ApplyPowerAction(p,p,new DrawReductionPower(p,this.magicNumber)));
     }
 
     @Override

@@ -69,6 +69,10 @@ public class GreedRing extends CustomRelic implements OnReceivePowerRelic {
     }
 
     @Override
+    public int changeUncommonCardRewardChance(int uncommonCardChance) {
+        return uncommonCardChance * 3;}
+
+    @Override
     public String getUpdatedDescription() {
         return this.DESCRIPTIONS[0];
     }

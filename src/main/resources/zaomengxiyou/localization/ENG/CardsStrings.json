@@ -53,7 +53,7 @@
   },
   "dreaming_journey_to_the_west:ExorcismClaw": {
     "NAME": "Exorcism Claw",
-    "DESCRIPTION": "Deal !D! damage. NL Apply !M! Weak. NL If the enemy intends to attack, apply !M! Vulnerable . NL dreaming_journey_to_the_west:boxing "
+    "DESCRIPTION": "Deal !D! damage. NL If the target is not Weak ,apply !M! Weak.  NL dreaming_journey_to_the_west:boxing "
   },
   "dreaming_journey_to_the_west:CrackingFist": {
     "NAME": "Cracking Fist",
@@ -72,8 +72,8 @@
     "NAME": "Blood Thirsty",
     "DESCRIPTION":  "Gain !M! dreaming_journey_to_the_west:BloodThirsty NL Lose 3* !M! HP at the start of your turn."
   },
-  "dreaming_journey_to_the_west:FakePunch": {
-    "NAME": "Fake Punch",
+  "dreaming_journey_to_the_west:Dodge": {
+    "NAME": "Dodge",
     "DESCRIPTION":  "Gain !B! block. NL dreaming_journey_to_the_west:boxing ."
   },
   "dreaming_journey_to_the_west:StepFloor": {
@@ -103,11 +103,9 @@
   },
   "dreaming_journey_to_the_west:FlameCyclone": {
     "NAME": "Flame Cyclone",
-    "DESCRIPTION":  "Triggers dreaming_journey_to_the_west:scorch for all enemies. NL Exhaust",
-    "UPGRADE_DESCRIPTION":"Triggers dreaming_journey_to_the_west:scorch for all enemies. NL Retain Exhaust .",
-    "EXTENDED_DESCRIPTION": [
-      " NL (Deals !M! damage.)"
-    ]
+    "DESCRIPTION":  "Apply all enemy with !M! dreaming_journey_to_the_west:scorch . NL Exhaust",
+    "UPGRADE_DESCRIPTION":"Apply all enemy with !M! dreaming_journey_to_the_west:scorch . NL Retain. NL Exhaust .",
+
   },
   "dreaming_journey_to_the_west:Impenetrable": {
     "NAME": "Impenetrable by sword and spear",
@@ -137,7 +135,7 @@
   },
   "dreaming_journey_to_the_west:DefenceMirage": {
     "NAME": "Defence Mirage",
-    "DESCRIPTION":  "Whenever you play a card with dreaming_journey_to_the_west:boxing ,gain !M! Block ."
+    "DESCRIPTION":  "Whenever you play a card with dreaming_journey_to_the_west:boxing ,gain !M! dreaming_journey_to_the_west:Tenacity ."
   },
   "dreaming_journey_to_the_west:SurgeBoxing": {
     "NAME": "Surge Boxing",
@@ -145,8 +143,8 @@
   },
   "dreaming_journey_to_the_west:Boost": {
     "NAME": "Boost",
-    "DESCRIPTION":  "Gain [R] [R] . NL Gain !M! dreaming_journey_to_the_west:Boost . NL Exhaust .",
-    "UPGRADE_DESCRIPTION":"Gain [R] [R] [R] . NL Gain !M! dreaming_journey_to_the_west:Boost . NL Exhaust ."
+    "DESCRIPTION":  "Gain [E] [E] . NL Gain !M! dreaming_journey_to_the_west:Boost . NL Exhaust .",
+    "UPGRADE_DESCRIPTION":"Gain [E] [E] [E] . NL Gain !M! dreaming_journey_to_the_west:Boost . NL Exhaust ."
   },
   "dreaming_journey_to_the_west:Ignition": {
     "NAME": "Ignition",
@@ -154,7 +152,7 @@
   },
   "dreaming_journey_to_the_west:FlamesBurst": {
     "NAME": "Flames Burst",
-    "DESCRIPTION":  "Give !M! 层 dreaming_journey_to_the_west:scorch and 2 Vulnerable . NL Exhaust ."
+    "DESCRIPTION":  "Give !M! 层 dreaming_journey_to_the_west:scorch and 3 Weak . NL Exhaust ."
   },
   "dreaming_journey_to_the_west:DoubleBoxing": {
     "NAME": "Double Boxing",
@@ -195,20 +193,88 @@
   },
   "dreaming_journey_to_the_west:FlamingStormBlood": {
     "NAME": "Flaming Storm Burn Blood",
-    "DESCRIPTION": "Lose !M! HP. Deals !D! damage to all enemies X+1 times.",
-    "UPGRADE_DESCRIPTION": "Lose !M! HP. Deals !D! damage to all enemies X+2 times."
+    "DESCRIPTION": "Lose !M! HP. Deals !D! damage to all enemies X times.",
+    "UPGRADE_DESCRIPTION": "Lose !M! HP. Deals !D! damage to all enemies X+1 times."
   },
   "dreaming_journey_to_the_west:FireMagicSlashBlood": {
     "NAME": "Fire Magic Slash Burn Blood",
-    "DESCRIPTION": "Lose !M! HP. NL Deals !D! /3 damage to all enemies 9 times.  NL Deal !D! X3 damage. NL Costs 1 less [R] NL for each time you lose HP this combat. NL Causing no less than 1 damage."
+    "DESCRIPTION": "Lose !M! HP. NL Deals !D! /3 damage to all enemies 9 times.  NL Deal !D! X3 damage. NL Costs 1 less [E] NL for each time you lose HP this combat. NL Causing no less than 1 damage."
   },
   "dreaming_journey_to_the_west:BurningBloodBoxing": {
     "NAME": "Burn Blood Boxing",
     "DESCRIPTION": "Lose !M! HP. NL Gain !B! Block. NL Deals !D! damage. NL dreaming_journey_to_the_west:boxing "
   },
-  "dreaming_journey_to_the_west:ExtraLegalSemblance": {
-    "NAME": "Extra Legal Semblance",
-    "DESCRIPTION": "Add a random Attack into your hand. NL It costs 0 this turn. NL Exhaust."
+  "dreaming_journey_to_the_west:ExtraPhantom": {
+    "NAME": "Extra Phantom",
+    "DESCRIPTION": "Add !M! random Attack card into your hand. NL It costs 0 this turn. NL Exhaust .",
+    "UPGRADE_DESCRIPTION": "Add !M! random Attack or Colorless card into your hand. NL It costs 0 this turn. NL Exhaust ."
+  },
+  "dreaming_journey_to_the_west:PhantomStab": {
+    "NAME": "Phantom Stab",
+    "DESCRIPTION": "Deal !D! Damage. NL Retain . NL Exhaust ."
+  },
+  "dreaming_journey_to_the_west:PhantomSweep": {
+    "NAME": "Phantom Sweep",
+    "DESCRIPTION": "Deal !D! Damage. NL Retain . NL Exhaust ."
+  },
+  "dreaming_journey_to_the_west:PhantomSlash": {
+    "NAME": "Phantom Slash",
+    "DESCRIPTION": "Deal !D! Damage. NL Shuffle a *PhantomSweep into your draw pile."
+  },
+  "dreaming_journey_to_the_west:PhantomAssault": {
+    "NAME": "Phantom Assault",
+    "DESCRIPTION": "At the start of each turn, add a *PhantomStab into your hand.",
+    "UPGRADE_DESCRIPTION": "Innate. NL At the start of each turn, add a *PhantomStab into your hand. "
+  },
+  "dreaming_journey_to_the_west:ControlPhantom": {
+    "NAME": "Control Phantom",
+    "DESCRIPTION": "At the start of your turn, play  your (1+ expansioncontent:Temp_HP /3)cards from left to right.",
+    "UPGRADE_DESCRIPTION":"At the start of your turn, play  your (1+ expansioncontent:Temp_HP /3)cards from left to right."
+  },
+  "dreaming_journey_to_the_west:PhantomDestruction": {
+    "NAME": "Phantom Destruction",
+    "DESCRIPTION": "Exhaust your Special , Status , Curse . NL Deal !D! damage for each card Exhausted. ",
+    "EXTENDED_DESCRIPTION": [
+      "( Exhaust !M! Cards .)"
+    ]
+  },
+  "dreaming_journey_to_the_west:PhantomShield": {
+    "NAME": "Phantom Shield",
+    "DESCRIPTION": " Retain. NL Gain !B! Block. NL Exhaust ."
+  },
+  "dreaming_journey_to_the_west:PhantomProtection": {
+    "NAME": "Phantom Protection",
+    "DESCRIPTION": " Gain !B! Block. NL Add a *PhantomShield into NL your hand."
+  },
+  "dreaming_journey_to_the_west:Phantom": {
+    "NAME": "Phantom",
+    "DESCRIPTION": "Gain !M! expansioncontent:Temp_HP. NL Exhaust."
+  },
+  "dreaming_journey_to_the_west:PhantomKindle": {
+    "NAME": "PhantomKindle",
+    "DESCRIPTION": " When the player has temporary life, use the attack card ,the enemy apply !M! dreaming_journey_to_the_west:scorch ."
+  },
+  "dreaming_journey_to_the_west:Vellus": {
+    "NAME": "Vellus",
+    "DESCRIPTION": "After Exhaust a card ,gain !M! expansioncontent:Temp_HP ."
+  },
+  "dreaming_journey_to_the_west:Overawe": {
+    "NAME": "Overawe",
+    "DESCRIPTION": "Apply !M! Weak to ALL enemies. NL Exhaust."
+  },
+  "dreaming_journey_to_the_west:PhantomBoxing": {
+    "NAME": "Phantom Boxing",
+    "DESCRIPTION": "Deals !D! damage. NL dreaming_journey_to_the_west:boxing . NL Exhaust."
+  },
+  "dreaming_journey_to_the_west:ExtraPhantomBoxing": {
+    "NAME": "Extra Phantom Boxing",
+    "DESCRIPTION": "Add !M! *PhantomBoxing into your hand."
+  },
+  "dreaming_journey_to_the_west:Agglomerate": {
+    "NAME": "Agglomerate",
+    "DESCRIPTION": " Exhaust 3 cards ,gain  [E]   ."
   }
+
+
 
 }

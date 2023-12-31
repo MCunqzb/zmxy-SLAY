@@ -38,24 +38,27 @@ public class FireMagicSlash extends CustomCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        for(int i = 0; i < (ATTACK_TIME/3); ++i) {
-            AbstractDungeon.actionManager.addToBottom((AbstractGameAction)new DamageAction((AbstractCreature)m, new DamageInfo((AbstractCreature)p, this.damage/3, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
-        }
-        for(int i = 0; i < (ATTACK_TIME/3); ++i) {
-            AbstractDungeon.actionManager.addToBottom((AbstractGameAction)new DamageAction((AbstractCreature)m, new DamageInfo((AbstractCreature)p, this.damage/3, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
-        }
-        for(int i = 0; i < (ATTACK_TIME/3); ++i) {
-            AbstractDungeon.actionManager.addToBottom((AbstractGameAction)new DamageAction((AbstractCreature)m, new DamageInfo((AbstractCreature)p, this.damage/3, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY));
-        }
+        this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage/3, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+        this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage/3, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+        this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage/3, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_VERTICAL));
+
+        this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage/3, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+        this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage/3, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+        this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage/3, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_DIAGONAL));
+
+        this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage/3, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY));
+        this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage/3, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY));
+        this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage/3, this.damageTypeForTurn), AbstractGameAction.AttackEffect.SLASH_HEAVY));
+
         if (m != null) {
             this.addToBot(new VFXAction(new VerticalImpactEffect(m.hb.cX + m.hb.width / 4.0F, m.hb.cY - m.hb.height / 4.0F)));
         }
-        AbstractDungeon.actionManager.addToBottom((AbstractGameAction)new DamageAction((AbstractCreature)m, new DamageInfo((AbstractCreature)p, this.damage*3, this.damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
+        this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage*3, this.damageTypeForTurn), AbstractGameAction.AttackEffect.NONE));
     }
 
     @Override
     public AbstractCard makeCopy() {
-        return (AbstractCard)new FireMagicSlash();
+        return new FireMagicSlash();
     }
 
     @Override

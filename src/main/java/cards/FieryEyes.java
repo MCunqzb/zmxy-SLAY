@@ -24,7 +24,7 @@ public class FieryEyes extends CustomCard {
 
     public FieryEyes() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.POWER, AbstractCardEnum.MonkeyKing_RED, CardRarity.UNCOMMON, CardTarget.SELF);
-        this.baseMagicNumber = 2;
+        this.baseMagicNumber = 3;
         this.magicNumber=this.baseMagicNumber;
     }
 

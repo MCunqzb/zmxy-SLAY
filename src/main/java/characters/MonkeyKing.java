@@ -1,11 +1,14 @@
 package characters;
 
 import Helpers.ModHelper;
+import basemod.BaseMod;
 import basemod.abstracts.CustomPlayer;
 import cards.FireBlitz;
 import cards.FireMagicSlash;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
+import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.evacipated.cardcrawl.mod.stslib.patches.core.AbstractCreature.TempHPField;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -13,17 +16,21 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.EnergyManager;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.cutscenes.CutscenePanel;
+import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.events.beyond.SpireHeart;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.helpers.FontHelper;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.CharacterStrings;
+import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import pathes.AbstractCardEnum;
 import pathes.ThmodClassEnum;
 import relics.BloodthirstyFireEyes;
 import relics.Bracelets;
+import util.RenderOnlyMonkeyKingPhantom;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -49,6 +56,8 @@ public class MonkeyKing extends CustomPlayer {
     private static final int HAND_SIZE = 0;
     private static final int ASCENSION_MAX_HP_LOSS = 5;
 
+    public RenderOnlyMonkeyKingPhantom monkeyKingPhantom;
+
     public static final Color OrangeRed = CardHelper.getColor(212, 126, 107);
 
     public MonkeyKing(String name) {
@@ -73,7 +82,7 @@ public class MonkeyKing extends CustomPlayer {
         retVal.add("Defend_MonkeyKing");
         retVal.add("Defend_MonkeyKing");
         retVal.add("Defend_MonkeyKing");
-        retVal.add("FakePunch");
+        retVal.add("Dodge");
         retVal.add("Anger");
 
         return retVal;
@@ -185,5 +194,25 @@ public class MonkeyKing extends CustomPlayer {
     public void applyEndOfTurnTriggers() {
         super.applyEndOfTurnTriggers();
     }
+
+    private static final float monkeyKingPhantom_XDIFF = 220.0F * Settings.scale;
+
+    private static final float monkeyKingPhantom_YDIFF = 0.0F * Settings.scale;
+
+    public static boolean isInCombat() {
+        return (CardCrawlGame.isInARun() && AbstractDungeon.currMapNode != null && AbstractDungeon.getCurrRoom() != null && (AbstractDungeon.getCurrRoom()).phase == AbstractRoom.RoomPhase.COMBAT);
+    }
+    
+    //public void combatUpdate() {
+    //    super.combatUpdate();
+    //        if (this.isInCombat() && ((Integer) TempHPField.tempHp.get(AbstractDungeon.player)).intValue() > 0) {
+    //            AbstractDungeon.player.img = ImageMaster.loadImage("img/chars/MonkeyKingPhantom.png");
+    //        }
+    //        else
+    //            AbstractDungeon.player.img = ImageMaster.loadImage("img/chars/MonkeyKing.png");
+//
+    //}
+
 }
+
 

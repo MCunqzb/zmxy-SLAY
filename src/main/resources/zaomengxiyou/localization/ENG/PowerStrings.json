@@ -3,9 +3,9 @@
     "NAME": "Scorch",
     "DESCRIPTIONS": [
       "Receive #b",
-      "% more damage from #yAttacks .",
+      "% (MAX #b50 %)more damage from #yAttacks .",
       "Loses #b ",
-      " HP at the end of each turn."
+      " HP at the end of each turn.When there is #bWeak , the number of layers does not decrease. When there is #bVulnerable , the end of the turn deals double damage and disappears."
     ]
   },
   "dreaming_journey_to_the_west:FireTouchPower": {
@@ -59,7 +59,7 @@
   "dreaming_journey_to_the_west:DefenceMiragePower": {
     "NAME": "Defence Mirage",
     "DESCRIPTIONS": [
-      "Whenever you play a card with #y boxing,gain #r%d Block  "
+      "Whenever you play a card with #y boxing,gain #r%d Tenacity  "
     ]
   },
   "dreaming_journey_to_the_west:BoostPower": {
@@ -71,13 +71,49 @@
   "dreaming_journey_to_the_west:IronBonePower": {
     "NAME": "Iron Bone",
     "DESCRIPTIONS": [
-      "All attack damage receive is decreased by #b%d %% ，lasts #r%d rounds."
+      "All attack damage receive is decreased by #b%d %% (MAX #b80% ) ,lose Half at the end of each round. "
     ]
   },
   "dreaming_journey_to_the_west:BurnBloodPower": {
     "NAME": "Burn Blood",
     "DESCRIPTIONS": [
       "Whenever you lose HP from a card,  gain #b%d #bIronBone ."
+    ]
+  },
+  "dreaming_journey_to_the_west:PhantomAssaultPower": {
+    "NAME": "Phantom Assault",
+    "DESCRIPTIONS": [
+      "At the start of your turn, add #b%d #yPhantomStab into your hand."
+    ]
+  },
+  "dreaming_journey_to_the_west:ControlPhantomPower": {
+    "NAME": "Control Phantom",
+    "DESCRIPTIONS": [
+      "At the start of your turn, play  your #b%d (1+ expansioncontent:Temp_HP /3)cards from left to right. "
+    ]
+  },
+  "dreaming_journey_to_the_west:PhantomKindlePower": {
+    "NAME": "PhantomKindle",
+    "DESCRIPTIONS": [
+      "When the player has #ytemporary life, use the attack card when the enemy apply #b%d #yScorch ."
+    ]
+  },
+  "dreaming_journey_to_the_west:VellusPower": {
+    "NAME": "Vellus",
+    "DESCRIPTIONS": [
+      "After #rExhaust a card ，gain #b%d #ytemporary life ."
+    ]
+  },
+  "dreaming_journey_to_the_west:TenacityPower": {
+    "NAME": "Tenacity",
+    "DESCRIPTIONS": [
+      "This turn, your next #bBlock add #b%d  ."
+    ]
+  },
+  "dreaming_journey_to_the_west:AgglomeratePower": {
+    "NAME": "Agglomerate",
+    "DESCRIPTIONS": [
+      " #rExhaust #b%d cards，gain #b%d  [E] ."
     ]
   }
 }

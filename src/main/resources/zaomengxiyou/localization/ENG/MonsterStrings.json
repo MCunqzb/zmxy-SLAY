@@ -9,5 +9,16 @@
     "DIALOG": [
       "Can't let you get in the way of big brother."
     ]
+  },
+  "dreaming_journey_to_the_west:KingMonkey": {
+    "MOVES": [
+      "Clubbing",
+      "Gale",
+      "Whirlwind Chop"
+    ],
+    "NAME": "KingMonkey",
+    "DIALOG": [
+      "Big Brother is going to lead us to unify the three worlds!"
+    ]
   }
 }

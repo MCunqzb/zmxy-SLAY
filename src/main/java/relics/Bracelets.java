@@ -18,6 +18,7 @@ import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.watcher.VigorPower;
 import com.megacrit.cardcrawl.relics.AbstractRelic;
 import demoMod.MonkeyKingMod;
+import powers.TenacityPower;
 
 public class Bracelets extends CustomRelic {
     public static final String ID = "dreaming_journey_to_the_west:Bracelets";
@@ -33,8 +34,7 @@ public class Bracelets extends CustomRelic {
 
         if (card.hasTag(MonkeyKingMod.BOXING) && card.type == AbstractCard.CardType.ATTACK ) {
             flash();
-            this.addToTop(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new DexterityPower(AbstractDungeon.player,1),1));
-            this.addToTop(new ApplyPowerAction(AbstractDungeon.player,AbstractDungeon.player,new LoseDexterityPower(AbstractDungeon.player,1),1));
+            this.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new TenacityPower(AbstractDungeon.player, 1), 1));
             this.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
 
         }

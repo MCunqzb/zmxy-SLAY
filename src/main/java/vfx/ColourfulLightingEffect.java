@@ -41,7 +41,7 @@ public class ColourfulLightingEffect extends AbstractGameEffect {
         }
 
         this.duration -= Gdx.graphics.getDeltaTime();
-        CardCrawlGame.sound.play("ORB_LIGHTNING_EVOKE", 0.2F);
+        CardCrawlGame.sound.play("ORB_LIGHTNING_EVOKE", 0.01F);
 
         if (this.duration < 0.0F) {
             this.isDone = true;

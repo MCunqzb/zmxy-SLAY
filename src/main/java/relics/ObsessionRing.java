@@ -29,13 +29,7 @@ public class ObsessionRing extends CustomRelic implements OnReceivePowerRelic {
     private static final String IMG_OTL = "img/relics/outline/ObsessionRing_outline.png";
 
     public ObsessionRing() {
-        super(ID, ImageMaster.loadImage(IMG), ImageMaster.loadImage(IMG_OTL), RelicTier.UNCOMMON, AbstractRelic.LandingSound.CLINK);
-    }
-
-    @Override
-    public void atBattleStart() {
-        this.flash();
-        this.addToTop(new ApplyPowerAction(AbstractDungeon.player, AbstractDungeon.player, new MetallicizePower(AbstractDungeon.player, 6), 6));
+        super(ID, ImageMaster.loadImage(IMG), ImageMaster.loadImage(IMG_OTL), RelicTier.RARE, AbstractRelic.LandingSound.CLINK);
     }
 
 

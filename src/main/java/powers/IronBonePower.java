@@ -11,6 +11,8 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
+import static com.megacrit.cardcrawl.cards.DamageInfo.DamageType.HP_LOSS;
+
 public class IronBonePower extends AbstractPower {
     public static final String POWER_ID = ModHelper.MakePath("IronBonePower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
@@ -38,19 +40,24 @@ public class IronBonePower extends AbstractPower {
         } else {
             if (this.amount == 0) {
                 this.addToTop(new RemoveSpecificPowerAction(this.owner, this.owner, "dreaming_journey_to_the_west:IronBonePower"));
-            } else {
+            }else if (this.amount == 1){
                 this.addToTop(new ReducePowerAction(this.owner, this.owner, "dreaming_journey_to_the_west:IronBonePower", 1));
+            }
+            else {
+                this.addToTop(new ReducePowerAction(this.owner, this.owner, "dreaming_journey_to_the_west:IronBonePower", this.amount/2));
             }
 
         }
     }
 
     public float atDamageFinalReceive(float damage, DamageInfo.DamageType type) {
-        damage= (float) Math.max((1-0.1*this.amount)*damage,0);
+        if(!type.equals(HP_LOSS)) {
+            damage = (float) Math.max((1 - 0.1 * this.amount) * damage, 0);
+        }
         return damage;
     }
 
     public void updateDescription() {
-        this.description = String.format(DESCRIPTIONS[0],10*this.amount,this.amount);
+        this.description = String.format(DESCRIPTIONS[0],Math.min(10*this.amount,80));
     }
 }

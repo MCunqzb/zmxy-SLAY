@@ -9,5 +9,17 @@
     "DIALOG": [
       "不能让你坏了大哥的好事。"
     ]
+  },
+  "dreaming_journey_to_the_west:KingMonkey": {
+    "MOVES": [
+      "棍击",
+      "狂风",
+      "旋风斩"
+    ],
+    "NAME": "弥猴王",
+    "DIALOG": [
+      "大哥将要带我们一统三界！"
+    ]
   }
+
 }

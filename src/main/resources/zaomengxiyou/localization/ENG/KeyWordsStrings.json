@@ -46,5 +46,11 @@
       "ironbone"
     ],
     "DESCRIPTION": "All attack damage receive is decreased."
+  },
+  {
+    "NAMES": [
+      "Tenacity"
+    ],
+    "DESCRIPTION": " This turn , improves Block gained from cards."
   }
 ]

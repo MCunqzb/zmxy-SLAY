@@ -36,12 +36,12 @@ public class IndignationPower extends AbstractPower {
     public void atStartOfTurnPostDraw() {
         this.flash();
         this.addToTop(new ApplyPowerAction(this.owner, this.owner, new StrengthPower(this.owner, this.amount*2), this.amount*2));
-        this.addToTop(new LoseHPAction(this.owner,this.owner,1));
+        this.addToTop(new LoseHPAction(this.owner,this.owner,2));
         this.addToTop(new VFXAction(this.owner, new VerticalAuraEffect(Color.FIREBRICK, this.owner.hb.cX, this.owner.hb.cY), 0.0F));
     }
 
 
     public void updateDescription() {
-        this.description = String.format(DESCRIPTIONS[0], this.amount*2,this.amount);
+        this.description = String.format(DESCRIPTIONS[0], this.amount*2,this.amount*2);
     }
 }

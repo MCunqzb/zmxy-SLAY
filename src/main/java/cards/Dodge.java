@@ -14,8 +14,8 @@ import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import demoMod.MonkeyKingMod;
 import pathes.AbstractCardEnum;
 
-public class FakePunch extends CustomCard {
-    public static final String ID = "FakePunch";
+public class Dodge extends CustomCard {
+    public static final String ID = "Dodge";
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings(ModHelper.MakePath(ID));
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
@@ -24,7 +24,7 @@ public class FakePunch extends CustomCard {
     private static final int UPGRADE_PLUS_BLOCK = 3;
     public static final String IMG_PATH = "img/cards/fake_punch.png";
 
-    public FakePunch() {
+    public Dodge() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, AbstractCardEnum.MonkeyKing_RED, CardRarity.BASIC, CardTarget.SELF);
         this.tags.add(MonkeyKingMod.BOXING);
         this.baseBlock = BLOCK_AMT;
@@ -36,7 +36,7 @@ public class FakePunch extends CustomCard {
 
     @Override
     public AbstractCard makeCopy() {
-        return (AbstractCard)new FakePunch();
+        return (AbstractCard)new Dodge();
     }
 
     @Override

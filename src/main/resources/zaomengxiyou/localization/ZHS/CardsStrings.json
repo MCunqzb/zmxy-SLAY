@@ -54,7 +54,7 @@
   },
   "dreaming_journey_to_the_west:ExorcismClaw": {
     "NAME": "擒魔爪",
-    "DESCRIPTION": "造成 !D! 点伤害。 NL 给予 !M! 层 虚弱 。 NL 如果目标敌人的意图是攻击，则给予其 !M! 层 易伤 。 NL dreaming_journey_to_the_west:拳击 "
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 如果没有 虚弱 ，给予 !M! 层 虚弱 。 NL  NL dreaming_journey_to_the_west:拳击 "
   },
   "dreaming_journey_to_the_west:CrackingFist": {
     "NAME": "辟地拳",
@@ -73,8 +73,8 @@
     "NAME": "嗜血",
     "DESCRIPTION":  "获得 !M! 层 dreaming_journey_to_the_west:嗜血 NL 每回合开始失去 3* !M! 点生命。"
   },
-  "dreaming_journey_to_the_west:FakePunch": {
-    "NAME": "虚假一拳",
+  "dreaming_journey_to_the_west:Dodge": {
+    "NAME": "闪身",
     "DESCRIPTION":  "获得 !B! 点 格挡 。 NL dreaming_journey_to_the_west:拳击 "
   },
   "dreaming_journey_to_the_west:StepFloor": {
@@ -104,11 +104,9 @@
   },
   "dreaming_journey_to_the_west:FlameCyclone": {
     "NAME": "火焰飓风",
-    "DESCRIPTION":  "触发所有敌人的 dreaming_journey_to_the_west:灼烧 。 NL 消耗",
-    "UPGRADE_DESCRIPTION":"触发所有敌人的 dreaming_journey_to_the_west:灼烧 。 NL 消耗 。 保留 。",
-    "EXTENDED_DESCRIPTION": [
-      "  NL （造成 !M! 点伤害。）"
-    ]
+    "DESCRIPTION":  "给予 所有敌人 !M! 点 dreaming_journey_to_the_west:灼烧 。 NL 消耗 。 ",
+    "UPGRADE_DESCRIPTION":"给予 所有敌人 !M! 点 dreaming_journey_to_the_west:灼烧 。 NL 消耗 。 NL 保留 。"
+
   },
   "dreaming_journey_to_the_west:Impenetrable": {
     "NAME": "刀枪不入",
@@ -138,16 +136,16 @@
   },
   "dreaming_journey_to_the_west:DefenceMirage": {
     "NAME": "防御幻影",
-    "DESCRIPTION":  "每打出一张 dreaming_journey_to_the_west:拳击 牌，获得 !M! 格挡 。"
+    "DESCRIPTION":  "每打出一张 dreaming_journey_to_the_west:拳击 牌，获得 !M! dreaming_journey_to_the_west:坚韧 。"
   },
   "dreaming_journey_to_the_west:SurgeBoxing": {
     "NAME": "涌动之拳",
-    "DESCRIPTION":  "保留 。 NL 造成 !D! 点伤害。 NL 打出带 dreaming_journey_to_the_west:拳击 的牌时， NL 本场战斗伤害加 !M! 。 NL 消耗 dreaming_journey_to_the_west:拳击 。"
+    "DESCRIPTION":  "保留 。 NL 造成 !D! 点伤害。 NL 打出带 dreaming_journey_to_the_west:拳击 的牌时， NL 本场战斗伤害加 !M! 。 NL 消耗。 NL dreaming_journey_to_the_west:拳击 。"
   },
   "dreaming_journey_to_the_west:Boost": {
     "NAME": "无双爆气",
-    "DESCRIPTION":  "获得 [R] [R] 。 NL 获得 !M! 层 dreaming_journey_to_the_west:爆气 。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION":"获得 [R] [R] [R] 。 NL 获得 !M! 层 dreaming_journey_to_the_west:爆气 。 NL 消耗 。"
+    "DESCRIPTION":  "获得 [E] [E] 。 NL 获得 !M! 层 dreaming_journey_to_the_west:爆气 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION":"获得 [E] [E] [E] 。 NL 获得 !M! 层 dreaming_journey_to_the_west:爆气 。 NL 消耗 。"
   },
   "dreaming_journey_to_the_west:Ignition": {
     "NAME": "点燃",
@@ -155,7 +153,7 @@
   },
   "dreaming_journey_to_the_west:FlamesBurst": {
     "NAME": "火焰迸发",
-    "DESCRIPTION":  "给予 !M! 层 dreaming_journey_to_the_west:灼烧 和 2 层 易伤 。 NL 消耗 。"
+    "DESCRIPTION":  "给予 !M! 层 dreaming_journey_to_the_west:灼烧 和 3 层 虚弱 。 NL 消耗 。"
   },
   "dreaming_journey_to_the_west:DoubleBoxing": {
     "NAME": "双重拳击",
@@ -183,7 +181,7 @@
   },
   "dreaming_journey_to_the_west:InHighSpirits": {
     "NAME": "精神抖擞",
-    "DESCRIPTION": "获得 1 活力。 NL 将你的 活力 翻倍 。 消耗 ",
+    "DESCRIPTION": "获得 1 活力。 NL 将你的 活力 翻倍 。 NL 消耗 ",
     "UPGRADE_DESCRIPTION": "获得 1 活力。 NL 将你的 力量 翻倍。"
   },
   "dreaming_journey_to_the_west:BurnBlood": {
@@ -196,20 +194,87 @@
   },
   "dreaming_journey_to_the_west:FlamingStormBlood": {
     "NAME": "燃血烈焰风暴",
-    "DESCRIPTION": "失去 !M! 点生命。 NL 对所有敌人造成 !D! 点伤害 X+1 次。",
-    "UPGRADE_DESCRIPTION": "失去 !M! 点生命。 NL 对所有敌人造成 !D! 点伤害 X+2 次。"
+    "DESCRIPTION": "失去 !M! 点生命。 NL 对所有敌人造成 !D! 点伤害 X 次。",
+    "UPGRADE_DESCRIPTION": "失去 !M! 点生命。 NL 对所有敌人造成 !D! 点伤害 X+1 次。"
   },
   "dreaming_journey_to_the_west:FireMagicSlashBlood": {
     "NAME": "燃血火魔斩",
-    "DESCRIPTION": "失去 !M! 点生命。 造成 !D! /3 点伤害9次。 NL 造成 !D! x3 点伤害。 NL 你每在战斗中失去生命一次，这张牌的耗能就减少1 [R] 。 NL 造成伤害不会小于1。"
+    "DESCRIPTION": "失去 !M! 点生命。 造成 !D! /3 点伤害9次。 NL 造成 !D! x3 点伤害。 NL 你每在战斗中失去生命一次，这张牌的耗能就减少1 [E] 。 NL 造成伤害不会小于1。"
   },
   "dreaming_journey_to_the_west:BurningBloodBoxing": {
     "NAME": "燃血拳",
     "DESCRIPTION": "失去 !M! 点生命。 NL 获得 !B! 点格挡。 NL 造成 !D! 点伤害。 NL dreaming_journey_to_the_west:拳击 。"
   },
-  "dreaming_journey_to_the_west:ExtraLegalSemblance": {
+  "dreaming_journey_to_the_west:ExtraPhantom": {
     "NAME": "法外分身",
-    "DESCRIPTION": "增加一张随机攻击牌到你的手牌。 NL 这张牌在本回合耗能变为0。 NL 消耗 。"
+    "DESCRIPTION": "增加 !M! 张随机攻击牌到你的手牌。 NL 这张牌在本回合耗能变为0。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "增加 !M! 张随机攻击牌或无色牌到你的手牌。 NL 这张牌在本回合耗能变为0。 NL 消耗 。"
+  },
+  "dreaming_journey_to_the_west:PhantomStab": {
+    "NAME": "分身刺",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 保留 。 NL 消耗 。"
+  },
+  "dreaming_journey_to_the_west:PhantomSweep": {
+    "NAME": "分身扫",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 保留 。 NL 消耗 。"
+  },
+  "dreaming_journey_to_the_west:PhantomSlash": {
+    "NAME": "分身斩",
+    "DESCRIPTION": "造成 !D! 点伤害。 NL 将一张 *分身扫 放入你的抽牌堆中。"
+  },
+  "dreaming_journey_to_the_west:PhantomAssault": {
+    "NAME": "分身幻袭",
+    "DESCRIPTION": "在每回合开始时，将一张 *分身刺 加入你的手牌。",
+    "UPGRADE_DESCRIPTION": " 固有 。 NL 在每回合开始时，将一张 *分身刺 加入你的手牌。"
+  },
+  "dreaming_journey_to_the_west:ControlPhantom": {
+    "NAME": "控制分身",
+    "DESCRIPTION": "在你的回合开始时，从左至右打出 (1+ 临时生命 /3) 张牌。",
+    "UPGRADE_DESCRIPTION": " 在你的回合开始时，从左至右打出 (1+ 临时生命 /3) 张牌。"
+  },
+  "dreaming_journey_to_the_west:PhantomDestruction": {
+    "NAME": "幻灭",
+    "DESCRIPTION": " 消耗 所有特殊牌 、状态牌 、诅咒牌 。 NL 每张被 消耗 的牌造成 !D! 点伤害。",
+    "EXTENDED_DESCRIPTION": [
+      "（消耗 !M! 张 。）"
+    ]
+  },
+  "dreaming_journey_to_the_west:PhantomShield": {
+    "NAME": "分身罩",
+    "DESCRIPTION": " 保留 。 NL 获得 !B! 点 格挡 。 NL 消耗 。"
+  },
+  "dreaming_journey_to_the_west:PhantomProtection": {
+    "NAME": "分身护体",
+    "DESCRIPTION": " 获得 !B! 点 格挡 。 NL 将一张 *分身罩 加入你的手牌。"
+  },
+  "dreaming_journey_to_the_west:Phantom": {
+    "NAME": "分身",
+    "DESCRIPTION": " 获得 !M! 点 临时生命 。 NL 消耗",
+    "UPGRADE_DESCRIPTION": " 获得 !M! 点 临时生命 。 NL 有 临时生命 则 消耗。"
+  },
+  "dreaming_journey_to_the_west:PhantomKindle": {
+    "NAME": "分身引火",
+    "DESCRIPTION": " 当玩家有 临时生命 时，使用攻击牌，使敌人获得 !M! dreaming_journey_to_the_west:灼烧 。"
+  },
+  "dreaming_journey_to_the_west:Vellus": {
+    "NAME": "毫毛",
+    "DESCRIPTION": "每 消耗 一张牌 ，获得 !M! 点 临时生命 。"
+  },
+  "dreaming_journey_to_the_west:Overawe": {
+    "NAME": "威慑",
+    "DESCRIPTION": "给予所有敌人 !M! 层 虚弱 。 NL 消耗 。"
+  },
+  "dreaming_journey_to_the_west:PhantomBoxing": {
+    "NAME": "分身拳",
+    "DESCRIPTION": "造成 !D! 点伤害 。 NL dreaming_journey_to_the_west:拳击 。 NL 消耗 。"
+  },
+  "dreaming_journey_to_the_west:ExtraPhantomBoxing": {
+    "NAME": "法外分身·拳",
+    "DESCRIPTION": "增加 !M! 张 *分身拳 到你的手牌。"
+  },
+  "dreaming_journey_to_the_west:Agglomerate": {
+    "NAME": "凝聚元神",
+    "DESCRIPTION": "每 消耗 3 张牌， NL 获得  [E] 。"
   }
 
 }

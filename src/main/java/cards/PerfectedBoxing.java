@@ -24,7 +24,7 @@ public class PerfectedBoxing extends CustomCard {
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     private static final int COST = 2;
     private static final int ATTACK_AMT = 6;
-    private static final int UPGRADE_PLUS_ATTACK = 9;
+    private static final int UPGRADE_PLUS_ATTACK = 3;
     private static final int BLOCK_AMT = 0;
     private static final int UPGRADE_PLUS_BLOCK = 3;
     private static final int MAGIC_AMT = 2;

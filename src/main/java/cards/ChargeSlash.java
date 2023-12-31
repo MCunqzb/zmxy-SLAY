@@ -28,7 +28,7 @@ public class ChargeSlash extends CustomCard {
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "img/cards/charge_slash.png";
     private static final int COST = 0;
-    private static final int ATTACK_DMG = 5;
+    private static final int ATTACK_DMG = 4;
     private static final int UPGRADE_PLUS_DMG = 2;
     public static final String ID = "ChargeSlash";
 

@@ -35,7 +35,8 @@ public class DefenceMiragePower extends AbstractPower {
 
     public void onUseCard(AbstractCard card, UseCardAction action) {
         if (card.hasTag(MonkeyKingMod.BOXING)){
-            this.addToTop(new GainBlockAction(this.owner,this.owner,this.amount));
+            //this.addToTop(new GainBlockAction(this.owner,this.owner,this.amount));
+            this.addToBot(new ApplyPowerAction(this.owner,this.owner,new TenacityPower(this.owner,this.amount)));
         }
     }
 

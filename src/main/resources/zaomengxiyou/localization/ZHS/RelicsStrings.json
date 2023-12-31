@@ -10,7 +10,7 @@
     "NAME": "手环",
     "FLAVOR": "对拳击有些许帮助的护具。",
     "DESCRIPTIONS": [
-      "打出带 #y拳击 的 #y攻击牌 时获得 #b1 点临时 #y敏捷 。 打出带 #y拳击 的 #y技能牌 时获得 #b1 点 #y活力 。"
+      "打出带 #y拳击 的 #y攻击牌 时获得 #b1 点 #y坚韧 。 打出带 #y拳击 的 #y技能牌 时获得 #b1 点 #y活力 。"
     ]
   },
   "dreaming_journey_to_the_west:FuriousRing": {
@@ -24,7 +24,7 @@
     "NAME": "贪欲之戒",
     "FLAVOR": "财、色、名、食、睡五欲之贪。",
     "DESCRIPTIONS": [
-      "拾起时，将你的最大生命值降低 #r10% ,获得 #y易伤 、 #y脆弱 、 #y虚弱 时多获得一层，战斗胜利后获得 #y20 金币，使你在怪物奖励中遇见稀有牌的几率变为 #b二倍 。"
+      "拾起时，将你的最大生命值降低 #r10% ,获得 #y易伤 、 #y脆弱 、 #y虚弱 时多获得一层，战斗胜利后获得 #y20 金币，使你在怪物奖励中遇见稀有牌的几率变为 #b2 倍 ,遇见罕见牌的几率变为 #b3 倍 。"
     ]
   },
   "dreaming_journey_to_the_west:ObsessionRing": {
@@ -32,6 +32,13 @@
     "FLAVOR": "不明事理，是非不分。",
     "DESCRIPTIONS": [
       "失去 [E] ，每回合结束获得 #b1 点 #y格挡 , 获得 #r负面效果 时随机获得 #b1层 #y增益效果。"
+    ]
+  },
+  "dreaming_journey_to_the_west:EmergingBoxingGloves": {
+    "NAME": "新锐拳套",
+    "FLAVOR": "五岳拽力内，百川倾意中。",
+    "DESCRIPTIONS": [
+      "替换 #r手环 。打出带 #y拳击 的 #y攻击牌 时获得 #b2 点 #y坚韧  。 打出带 #y拳击 的 #y技能牌 时获得 #b2 点 #y活力 。"
     ]
   }
 }

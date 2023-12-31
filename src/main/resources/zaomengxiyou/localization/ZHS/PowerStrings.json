@@ -3,9 +3,9 @@
     "NAME": "灼烧",
     "DESCRIPTIONS": [
       "从 #y攻击 受到的伤害增加",
-      "%",
+      "% (最高#b50 %) ",
       ",每回合结束失去 #b",
-      " 点生命。"
+      " 点生命。当有 #b虚弱 状态时 ，层数不会减少，当有 #b易伤 时回合结束造成双倍伤害并消失。"
     ]
   },
   "dreaming_journey_to_the_west:FireTouchPower": {
@@ -71,13 +71,49 @@
   "dreaming_journey_to_the_west:IronBonePower": {
     "NAME": "铁骨",
     "DESCRIPTIONS": [
-      "受到伤害减少 #b%d %% ，持续 #b%d 回合 。"
+      "受到伤害减少 #b%d %% （最高 #b80% ），每回合结束失去 一半 层数。"
     ]
   },
   "dreaming_journey_to_the_west:BurnBloodPower": {
     "NAME": "燃血铁骨",
     "DESCRIPTIONS": [
-      "当你从一张牌中失去生命时，获得 #b%d #y铁骨 。"
+      "当你从一张牌中失去生命时，获得 #b%d #y铁骨 。 "
+    ]
+  },
+  "dreaming_journey_to_the_west:PhantomAssaultPower": {
+    "NAME": "幻袭",
+    "DESCRIPTIONS": [
+      "在你的回合开始时，在你的手牌中加入 #b%d 张 #y分身刺 。"
+    ]
+  },
+  "dreaming_journey_to_the_west:ControlPhantomPower": {
+    "NAME": "法外分身",
+    "DESCRIPTIONS": [
+      "在你的回合开始时，从左至右打出 #b%d 张牌(1+临时生命/3)"
+    ]
+  },
+  "dreaming_journey_to_the_west:PhantomKindlePower": {
+    "NAME": "分身引火",
+    "DESCRIPTIONS": [
+      "当玩家有 #y临时生命 时，使用攻击牌，时敌人获得 #b%d 点 灼烧 。"
+    ]
+  },
+  "dreaming_journey_to_the_west:VellusPower": {
+    "NAME": "毫毛",
+    "DESCRIPTIONS": [
+      "每消耗一张牌，获得 #b%d 点 临时生命 。"
+    ]
+  },
+  "dreaming_journey_to_the_west:TenacityPower": {
+    "NAME": "坚韧",
+    "DESCRIPTIONS": [
+      "在这个回合，你的下一次格挡增加 #b%d 点 。"
+    ]
+  },
+  "dreaming_journey_to_the_west:AgglomeratePower": {
+    "NAME": "凝聚元神",
+    "DESCRIPTIONS": [
+      "再消耗 #b%d 张牌，获得 #b%d 点 [E] 。"
     ]
   }
 }

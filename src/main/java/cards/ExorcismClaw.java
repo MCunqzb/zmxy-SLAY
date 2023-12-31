@@ -23,7 +23,7 @@ public class ExorcismClaw extends CustomCard {
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "img/cards/exorcism_claw.png";
     private static final int COST = 2;
-    private static final int ATTACK_DMG = 11;
+    private static final int ATTACK_DMG = 13;
     private static final int MAGIC_NUM = 2;
     public static final String ID = "ExorcismClaw";
 
@@ -46,10 +46,9 @@ public class ExorcismClaw extends CustomCard {
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom((AbstractGameAction)new DamageAction((AbstractCreature)m, new DamageInfo((AbstractCreature)p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+        if (!m.hasPower(WeakPower.POWER_ID))
         AbstractDungeon.actionManager.addToBottom(new ApplyPowerAction(m, AbstractDungeon.player, new WeakPower(m,this.magicNumber, false), this.magicNumber));
-        if (m != null && m.getIntentBaseDmg() >= 0) {
-            AbstractDungeon.actionManager.addToBottom((AbstractGameAction)new ApplyPowerAction(m, p, new VulnerablePower(m, this.magicNumber, false), this.magicNumber));
-        }
+
     }
 
     @Override

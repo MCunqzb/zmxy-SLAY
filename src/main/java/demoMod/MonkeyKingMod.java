@@ -12,22 +12,17 @@ import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
-import com.megacrit.cardcrawl.cards.red.FlameBarrier;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.Settings;
-import com.megacrit.cardcrawl.dungeons.Exordium;
-import com.megacrit.cardcrawl.dungeons.TheBeyond;
-import com.megacrit.cardcrawl.events.shrines.FaceTrader;
 import com.megacrit.cardcrawl.helpers.CardHelper;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
 import com.megacrit.cardcrawl.monsters.MonsterInfo;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
+import monsters.KingMonkey;
 import monsters.KingYurong;
+import monsters.MonkeyKingPhantom;
 import pathes.AbstractCardEnum;
 import pathes.ThmodClassEnum;
-import powers.FieryEyesPower;
 import relics.*;
 
 import java.nio.charset.StandardCharsets;
@@ -96,7 +91,7 @@ public class MonkeyKingMod implements  PostInitializeSubscriber,EditKeywordsSubs
         BaseMod.addCard(new FieryEyes());
         BaseMod.addCard(new FlamingFlash());
         BaseMod.addCard(new BloodThirsty());
-        BaseMod.addCard(new FakePunch());
+        BaseMod.addCard(new Dodge());
         BaseMod.addCard(new StepFloor());
         BaseMod.addCard(new HelpfulHairs());
         BaseMod.addCard(new SeventyTwoSlashes());
@@ -127,7 +122,23 @@ public class MonkeyKingMod implements  PostInitializeSubscriber,EditKeywordsSubs
         BaseMod.addCard(new FlamingStormBlood());
         BaseMod.addCard(new FireMagicSlashBlood());
         BaseMod.addCard(new BurningBloodBoxing());
-        BaseMod.addCard(new ExtraLegalSemblance());
+        BaseMod.addCard(new ExtraPhantom());
+        BaseMod.addCard(new PhantomStab());
+        BaseMod.addCard(new PhantomSweep());
+        BaseMod.addCard(new PhantomSlash());
+        BaseMod.addCard(new PhantomAssault());
+        BaseMod.addCard(new ControlPhantom());
+        BaseMod.addCard(new PhantomDestruction());
+        BaseMod.addCard(new PhantomShield());
+        BaseMod.addCard(new PhantomProtection());
+        BaseMod.addCard(new Phantom());
+        BaseMod.addCard(new PhantomKindle());
+        BaseMod.addCard(new Vellus());
+        BaseMod.addCard(new Overawe());
+        BaseMod.addCard(new PhantomBoxing());
+        BaseMod.addCard(new ExtraPhantomBoxing());
+        BaseMod.addCard(new Agglomerate());
+
     }
 
 
@@ -163,6 +174,7 @@ public class MonkeyKingMod implements  PostInitializeSubscriber,EditKeywordsSubs
         BaseMod.addRelic(new FuriousRing(), RelicType.SHARED);
         BaseMod.addRelic(new GreedRing(), RelicType.SHARED);
         BaseMod.addRelic(new ObsessionRing(), RelicType.SHARED);
+        BaseMod.addRelicToCustomPool(new EmergingBoxingGloves(), AbstractCardEnum.MonkeyKing_RED);
     }
 
 
@@ -201,7 +213,10 @@ public class MonkeyKingMod implements  PostInitializeSubscriber,EditKeywordsSubs
     }
     private void initializeMonsters() {
         BaseMod.addMonster("dreaming_journey_to_the_west:KingYurong",KingYurong.NAME,() -> new MonsterGroup(new AbstractMonster[] { new KingYurong() }));
-        BaseMod.addEliteEncounter("Exordium", new MonsterInfo(KingYurong.ID, 0.9F));
+        BaseMod.addEliteEncounter("Exordium", new MonsterInfo(KingYurong.ID, 0.2F));
+        BaseMod.addMonster("dreaming_journey_to_the_west:KingMonkey", KingMonkey.NAME,() -> new MonsterGroup(new AbstractMonster[] { new KingMonkey() }));
+        BaseMod.addEliteEncounter("Exordium", new MonsterInfo(KingMonkey.ID, 0.2F));
+        BaseMod.addMonster("dreaming_journey_to_the_west:MonkeyKingPhantom", MonkeyKingPhantom.NAME,() -> new MonsterGroup(new AbstractMonster[] { new MonkeyKingPhantom() }));
     }
     @SpireEnum
     public static AbstractCard.CardTags BOXING;

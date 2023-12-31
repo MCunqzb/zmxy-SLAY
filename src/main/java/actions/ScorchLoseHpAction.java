@@ -8,6 +8,8 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import com.megacrit.cardcrawl.powers.VulnerablePower;
+import com.megacrit.cardcrawl.powers.WeakPower;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
 import com.megacrit.cardcrawl.vfx.combat.FlashAtkImgEffect;
@@ -36,27 +38,30 @@ public class ScorchLoseHpAction extends AbstractGameAction {
                     this.target.tint.color = Color.CHARTREUSE.cpy();
                     this.target.tint.changeColor(Color.WHITE.cpy());
                     this.target.damage(new DamageInfo(this.source, this.amount, DamageInfo.DamageType.HP_LOSS));
-
                 }
-
                 AbstractPower p = this.target.getPower("dreaming_journey_to_the_west:ScorchPower");
-                if (p != null && this.target.currentHealth > 0 ) {
+                if (p != null && this.target.currentHealth > 0 && this.target.hasPower(VulnerablePower.POWER_ID)) {
+                    this.target.damage(new DamageInfo(this.source, this.amount, DamageInfo.DamageType.HP_LOSS));
                     AbstractPower abstractPower = p;
-                    abstractPower.amount=abstractPower.amount-1;
-                    if (p.amount == 0) {
+                    this.target.powers.remove(p);
+                    p.updateDescription();
+                }
+                else{
+                    if (p != null && this.target.currentHealth > 0 && !this.target.hasPower(WeakPower.POWER_ID)) {
+                        AbstractPower abstractPower = p;
                         this.target.powers.remove(p);
-                    } else {
                         p.updateDescription();
+
                     }
                 }
-
+            }
                 if (AbstractDungeon.getCurrRoom().monsters.areMonstersBasicallyDead()) {
                     AbstractDungeon.actionManager.clearPostCombatActions();
                 }
 
-                AbstractDungeon.actionManager.addToTop(new WaitAction(0.1F));
             }
+
 
         }
     }
-}
+

@@ -88,14 +88,12 @@ public class KingYurong extends AbstractMonster {
         switch(this.nextMove) {
             case 1:
                 this.addToBot(new DamageAction(AbstractDungeon.player, (DamageInfo)this.damage.get(0), AbstractGameAction.AttackEffect.NONE));
-                this.addToBot(new ApplyPowerAction(AbstractDungeon.player, this, new WeakPower(AbstractDungeon.player, 2, true), 2));
+                this.addToBot(new ApplyPowerAction(AbstractDungeon.player, this, new WeakPower(AbstractDungeon.player, 1, true), 1));
                 this.addToBot(new WaitAction(0.25F));
                 this.addToBot(new VFXAction(new ColourfulLightingEffect(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY,Color.PURPLE), 0.05F));
                 if (turn_count==1){
-                    this.addToBot((new TalkAction(this,DIALOG[0], 0.3F, 2.5F)));
+                    this.addToBot((new TalkAction(this,DIALOG[0], 2.5F, 2.5F)));
                 }
-
-                
                 break;
             case 2:
                 this.addToBot(new WaitAction(0.25F));
@@ -103,14 +101,15 @@ public class KingYurong extends AbstractMonster {
                 break;
             case 3:
                 this.addToBot(new GainBlockAction(this,BLOCK_AMOUNT));
+                this.addToBot(new WaitAction(0.15F));
                 int i = 0;
                 while(true) {
                     if (i >= t_t_Hit) {
                         break label;
                     }
                     this.addToBot(new DamageAction(p, (DamageInfo)this.damage.get(1), AbstractGameAction.AttackEffect.NONE, true));
-                    this.addToBot(new WaitAction(0.15F));
-                    this.addToBot(new VFXAction(new ColourfulLightingEffect(AbstractDungeon.player.hb.cX + MathUtils.random(-50.0F, 50.0F) * Settings.scale, AbstractDungeon.player.hb.cY + MathUtils.random(-50.0F, 50.0F) * Settings.scale,Color.PURPLE), 0.2F));
+
+                    this.addToBot(new VFXAction(new ColourfulLightingEffect(AbstractDungeon.player.hb.cX + MathUtils.random(-50.0F, 50.0F) * Settings.scale, AbstractDungeon.player.hb.cY + MathUtils.random(-50.0F, 50.0F) * Settings.scale,Color.PURPLE), 0.05F));
                     ++i;
                 }
 
