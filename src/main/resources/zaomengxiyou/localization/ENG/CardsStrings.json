@@ -5,7 +5,7 @@
   },
   "dreaming_journey_to_the_west:Defend_MonkeyKing": {
     "NAME": "Defend",
-    "DESCRIPTION": "Gain !B! block."
+    "DESCRIPTION": "Gain !B! Block."
   },
   "dreaming_journey_to_the_west:Flaming_Storm": {
     "NAME": "Flaming_Storm",
@@ -13,7 +13,7 @@
   },
   "dreaming_journey_to_the_west:Anger": {
     "NAME": "Anger",
-    "DESCRIPTION": "Gain a !M! temporary Strength."
+    "DESCRIPTION": "Gain  !M! Vigor . NL Gain !M! dreaming_journey_to_the_west:Tenacity ."
   },
   "dreaming_journey_to_the_west:FireBlitz": {
   "NAME": "FireBlitz",
@@ -21,7 +21,8 @@
 },
   "dreaming_journey_to_the_west:FireTouch": {
     "NAME": "FireTouch",
-    "DESCRIPTION": "Whenever an Attack deals unblocked damage, apply !M! dreaming_journey_to_the_west:scorch ."
+    "DESCRIPTION": "Whenever an Attack deals unblocked damage, apply !M! dreaming_journey_to_the_west:scorch .",
+    "UPGRADE_DESCRIPTION":" Innate NL Whenever an Attack deals unblocked damage, apply !M! dreaming_journey_to_the_west:scorch ."
   },
   "dreaming_journey_to_the_west:BoxingCard": {
     "NAME": "Boxing",
@@ -33,7 +34,7 @@
   },
   "dreaming_journey_to_the_west:HeavySlash": {
     "NAME": "Heavy Slash",
-    "DESCRIPTION": "Deal !D! damage. NL Can be Upgraded any number of times. "
+    "DESCRIPTION": "Retain. NL Deal !D! damage. NL When Retained, increase its damage by !M! this use."
   },
   "dreaming_journey_to_the_west:FireMagicSlash": {
     "NAME": "Fire Magic Slash",
@@ -57,7 +58,7 @@
   },
   "dreaming_journey_to_the_west:CrackingFist": {
     "NAME": "Cracking Fist",
-    "DESCRIPTION": "Deal !D! damage. NL If the enemy intends is not to attack ,stun an enemy. NL Decrease this card's damage by !M! this combat. NL dreaming_journey_to_the_west:boxing . NL dreaming_journey_to_the_west:exhaustion ."
+    "DESCRIPTION": "Deal !D! damage. NL Stun an enemy. NL Exhaust ."
   },
   "dreaming_journey_to_the_west:FieryEyes": {
     "NAME": "Fiery Eyes",
@@ -74,15 +75,16 @@
   },
   "dreaming_journey_to_the_west:Dodge": {
     "NAME": "Dodge",
-    "DESCRIPTION":  "Gain !B! block. NL dreaming_journey_to_the_west:boxing ."
+    "DESCRIPTION":  "Gain !B! Block. NL dreaming_journey_to_the_west:boxing ."
   },
   "dreaming_journey_to_the_west:StepFloor": {
     "NAME": "Step Floor",
     "DESCRIPTION":  "Play the top card of your draw pile !M! time. NL dreaming_journey_to_the_west:boxing NL Exhaust "
   },
   "dreaming_journey_to_the_west:HelpfulHairs": {
-    "NAME": "Helpful Hairs",
-    "DESCRIPTION":  " Retain. NL Lose 1 HP. NL Draw !M! card. NL Exhaust "
+    "NAME": "Helpful Hairs Ⅰ",
+    "DESCRIPTION":  " Retain. NL Lose !M! HP. NL Draw 2 card. NL Increase this card's HP Lose by 2 this combat. ",
+    "UPGRADE_DESCRIPTION":" Retain. NL Lose !M! HP. NL Draw 2 card. NL Increase this card's HP Lose by 1 this combat. "
   },
   "dreaming_journey_to_the_west:SeventyTwoSlashes": {
     "NAME": "SeventyTwoSlashes",
@@ -98,8 +100,8 @@
   },
   "dreaming_journey_to_the_west:FlameExtraction": {
     "NAME": "Flame Extraction",
-    "DESCRIPTION":  "Remove all dreaming_journey_to_the_west:scorch ， NL Gain !M! times block .",
-    "UPGRADE_DESCRIPTION":  "Update dreaming_journey_to_the_west:scorch  , NL Remove all dreaming_journey_to_the_west:scorch ， NL Gain !M! times block ."
+    "DESCRIPTION":  "Remove all dreaming_journey_to_the_west:scorch ， NL Gain !M! times Block .",
+    "UPGRADE_DESCRIPTION":  "Update dreaming_journey_to_the_west:scorch  , NL Remove all dreaming_journey_to_the_west:scorch ， NL Gain !M! times Block ."
   },
   "dreaming_journey_to_the_west:FlameCyclone": {
     "NAME": "Flame Cyclone",
@@ -202,7 +204,7 @@
   },
   "dreaming_journey_to_the_west:BurningBloodBoxing": {
     "NAME": "Burn Blood Boxing",
-    "DESCRIPTION": "Lose !M! HP. NL Gain !B! Block. NL Deals !D! damage. NL dreaming_journey_to_the_west:boxing "
+    "DESCRIPTION": "Lose !M! HP. NL Deals !B! Damage . NL Draw !M! cards. NL dreaming_journey_to_the_west:boxing "
   },
   "dreaming_journey_to_the_west:ExtraPhantom": {
     "NAME": "Extra Phantom",
@@ -228,12 +230,12 @@
   },
   "dreaming_journey_to_the_west:ControlPhantom": {
     "NAME": "Control Phantom",
-    "DESCRIPTION": "At the start of your turn, play  your (1+ expansioncontent:Temp_HP /3)cards from left to right.",
-    "UPGRADE_DESCRIPTION":"At the start of your turn, play  your (1+ expansioncontent:Temp_HP /3)cards from left to right."
+    "DESCRIPTION": "At the start of your turn, play  your (1+ expansioncontent:Temp_HP)cards from left to right.",
+    "UPGRADE_DESCRIPTION":"At the start of your turn, play  your (1+ expansioncontent:Temp_HP)cards from left to right."
   },
   "dreaming_journey_to_the_west:PhantomDestruction": {
     "NAME": "Phantom Destruction",
-    "DESCRIPTION": "Exhaust your Special , Status , Curse . NL Deal !D! damage for each card Exhausted. ",
+    "DESCRIPTION": "Exhaust your Special , Status , Curse and NL dreaming_journey_to_the_west:boxing  cards in your hand. NL Deal !D! damage for each card Exhausted.  NL Exhaust .",
     "EXTENDED_DESCRIPTION": [
       "( Exhaust !M! Cards .)"
     ]
@@ -250,9 +252,9 @@
     "NAME": "Phantom",
     "DESCRIPTION": "Gain !M! expansioncontent:Temp_HP. NL Exhaust."
   },
-  "dreaming_journey_to_the_west:PhantomKindle": {
-    "NAME": "PhantomKindle",
-    "DESCRIPTION": " When the player has temporary life, use the attack card ,the enemy apply !M! dreaming_journey_to_the_west:scorch ."
+  "dreaming_journey_to_the_west:ConcentrateEnergy": {
+    "NAME": "Concentrate Energy",
+    "DESCRIPTION": "At end of turn, lose !M! Vigor gain !M! Strength ."
   },
   "dreaming_journey_to_the_west:Vellus": {
     "NAME": "Vellus",
@@ -264,15 +266,71 @@
   },
   "dreaming_journey_to_the_west:PhantomBoxing": {
     "NAME": "Phantom Boxing",
-    "DESCRIPTION": "Deals !D! damage. NL dreaming_journey_to_the_west:boxing . NL Exhaust."
+    "DESCRIPTION": "Deals !D! damage. NL dreaming_journey_to_the_west:boxing . NL Exhaust ."
   },
   "dreaming_journey_to_the_west:ExtraPhantomBoxing": {
     "NAME": "Extra Phantom Boxing",
-    "DESCRIPTION": "Add !M! *PhantomBoxing into your hand."
+    "DESCRIPTION": "Add !M! *PhantomBoxing into your hand. NL dreaming_journey_to_the_west:boxing ."
   },
   "dreaming_journey_to_the_west:Agglomerate": {
     "NAME": "Agglomerate",
     "DESCRIPTION": " Exhaust 3 cards ,gain  [E]   ."
+  },
+  "dreaming_journey_to_the_west:BloodApeBoxing": {
+    "NAME": "Blood Ape Boxing",
+    "DESCRIPTION": " Put all dreaming_journey_to_the_west:boxing cards from your discard pile into your hand. NL Lose !M! HP . NL Deal !D! damage. "
+  },
+  "dreaming_journey_to_the_west:SpiralStrike": {
+  "NAME": "Spiral Strike",
+  "DESCRIPTION": "Deal !D! damage. NL Increase this card's cost by !M! this combat."
+},
+  "dreaming_journey_to_the_west:DodgeTraining": {
+    "NAME": "Dodge Training",
+    "DESCRIPTION": "Gain !B! Block. NL If the last card played this combat was a dreaming_journey_to_the_west:boxing cost, NL return this card to your hand."
+  },
+  "dreaming_journey_to_the_west:FullOfEnergy": {
+    "NAME": "Full Of Energy",
+    "DESCRIPTION": "Deal !D! damage. NL If you have Vigor ,draw !M! card."
+  },
+  "dreaming_journey_to_the_west:BothOffensiveAndDefensive": {
+    "NAME": "Both Offensive And Defensive",
+    "DESCRIPTION": "Gain !M! Strength . NL Gain !M! Dexterity ."
+  },
+  "dreaming_journey_to_the_west:RampantBlood": {
+    "NAME": "Rampant Blood",
+    "DESCRIPTION": "Whenever you lose HP, gain !M!  Vigor ."
+  },
+  "dreaming_journey_to_the_west:FaceTheDifficulty": {
+    "NAME": "Face The Difficulty",
+    "DESCRIPTION": "Gain the Max amount of Vigor of all enemy powers. NL Exhaust .",
+    "UPGRADE_DESCRIPTION": " Gain the Summative amount of Vigor of all enemy powers. NL Exhaust ."
+  },
+  "dreaming_journey_to_the_west:Thump": {
+    "NAME": "Thump",
+    "DESCRIPTION": "Deal !D! damage. NL Enemy itself can not gain Power this turn."
+  },
+  "dreaming_journey_to_the_west:BloodDemonRoar": {
+    "NAME": "Blood Demon Roar",
+    "DESCRIPTION": "Lose !M! HP. NL Exhaust non- dreaming_journey_to_the_west:boxing cards in hand. NL Gain !B! Block ."
+  },
+  "dreaming_journey_to_the_west:BlownSand": {
+    "NAME": "Blown Sand",
+    "DESCRIPTION": "Lose !M! HP. NL Exhaust ."
+  },
+  "dreaming_journey_to_the_west:HelpfulHairsBamboo": {
+    "NAME": "HelpfulHairsⅡ",
+    "DESCRIPTION":  " Retain. NL Lose !M! HP. NL Gain !B! Block ,End your turn. NL Retain up to 2 card. NL Increase this card's HP lose by 2 this combat. ",
+    "UPGRADE_DESCRIPTION":" Retain. NL Lose !M! HP. NL Gain !B! Block ,End your turn. NL Retain up to 2 card. NL Increase this card's HP lose by 1 this combat. "
+  },
+  "dreaming_journey_to_the_west:HelpfulHairsDrill": {
+    "NAME": "HelpfulHairsⅢ",
+    "DESCRIPTION":  "  Retain. NL Lose !M! HP. NL Remove all Block from the enemy. NL Apple 2 Vulnerable .  NL Increase this card's HP lose by 2 this combat.",
+    "UPGRADE_DESCRIPTION":"  Retain. NL Lose !M! HP. NL Remove all Block from the enemy. NL Apple 2 Vulnerable .  NL Increase this card's HP lose by 1 this combat."
+  },
+  "dreaming_journey_to_the_west:FightingBuddhaForm": {
+    "NAME": "Fighting Buddha Form",
+    "DESCRIPTION":  "Every defeated Elite reduces cost by 2. NL Whenever this card is retained, its energy cost in this battle is reduced by 1. Gain 9 Strength, 9 Dexterity,  8 Regeneration, 1 Artifact. NL Retain .",
+    "UPGRADE_DESCRIPTION":  " Innate NL Every defeated Elite reduces cost by 2. NL Whenever this card is retained, its energy cost in this battle is reduced by 1. Gain 9 Strength, 9 Dexterity,  8 Regeneration, 1 Artifact. NL Retain ."
   }
 
 

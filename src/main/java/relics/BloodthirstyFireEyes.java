@@ -31,7 +31,7 @@ public class BloodthirstyFireEyes extends CustomRelic {
 
         if (card.type == AbstractCard.CardType.ATTACK) {
             this.counter++;
-            if (this.counter % 2 == 0) {
+            if (this.counter % 3 == 0) {
 
                 this.counter = 0;
                 flash();

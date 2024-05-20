@@ -60,7 +60,7 @@ public class GreedRing extends CustomRelic implements OnReceivePowerRelic {
 
     @Override
     public void onEquip() {
-        AbstractDungeon.player.decreaseMaxHealth((int)(AbstractDungeon.player.maxHealth*0.1));
+        AbstractDungeon.player.decreaseMaxHealth((int)(AbstractDungeon.player.maxHealth*0.3));
     }
 
     @Override

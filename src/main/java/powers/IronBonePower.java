@@ -52,7 +52,7 @@ public class IronBonePower extends AbstractPower {
 
     public float atDamageFinalReceive(float damage, DamageInfo.DamageType type) {
         if(!type.equals(HP_LOSS)) {
-            damage = (float) Math.max((1 - 0.1 * this.amount) * damage, 0);
+            damage = (float) Math.max((1 - 0.1 * this.amount) * damage, 0.2*damage);
         }
         return damage;
     }

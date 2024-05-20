@@ -20,32 +20,46 @@ public class HeavySlash extends CustomCard {
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "img/cards/heavy_slash.png";
     private static final int COST = 2;
-    private static final int ATTACK_DMG = 12;
-    private static final int UPGRADE_NUM = 4;
+    private static final int ATTACK_DMG = 11;
+    private static final int MAGIC_AMT = 5;
+    private static final int UPGRADE_NUM = 1;
     public static final String ID = "HeavySlash";
+    private int TURN = 0;
 
     public HeavySlash(int upgrades){
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.ATTACK, AbstractCardEnum.MonkeyKing_RED, CardRarity.UNCOMMON, CardTarget.ENEMY);
         this.baseDamage = ATTACK_DMG;
+        this.damage = this.baseDamage;
+        this.baseMagicNumber = MAGIC_AMT;
+        this.magicNumber = this.baseMagicNumber;
+        this.selfRetain = true;
         this.timesUpgraded = upgrades;
+    }
+
+    public void onRetained() {
+        this.upgradeDamage(this.magicNumber);
+        TURN = TURN+1;
+        this.name = cardStrings.NAME + "+" + (this.timesUpgraded+TURN);
     }
 
     @Override
     public void upgrade() {
-        this.upgradeDamage(UPGRADE_NUM + this.timesUpgraded);
-        ++this.timesUpgraded;
-        this.upgraded = true;
-        this.name = cardStrings.NAME + "+" + this.timesUpgraded;
-        this.initializeTitle();
+        if (!this.upgraded) {
+            this.upgradeDamage(UPGRADE_NUM + this.timesUpgraded);
+            this.upgradeMagicNumber(UPGRADE_NUM);
+            ++this.timesUpgraded;
+            this.upgraded = true;
+            this.name = cardStrings.NAME + "+" + (this.timesUpgraded+TURN);
+            this.initializeTitle();
+        }
     }
 
-    public boolean canUpgrade() {
-        return true;
-    }
+
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
         AbstractDungeon.actionManager.addToBottom((AbstractGameAction)new DamageAction((AbstractCreature)m, new DamageInfo((AbstractCreature)p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-
+        this.upgradeDamage(-this.magicNumber*TURN);
+        TURN = 0;
     }
 
     @Override

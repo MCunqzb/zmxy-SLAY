@@ -46,7 +46,7 @@ public class BloodThirstyPower extends AbstractPower implements HealthBarRenderP
             this.flash();
 
             //BaseMod.logger.info("AMT"+this.amount/3*damageAmount);
-            this.addToTop(new HealAction(this.owner, this.owner, (int)(heal_amount*this.amount*0.3334) ));
+            this.addToTop(new HealAction(this.owner, this.owner, (int)(heal_amount*this.amount*0.334) ));
         }
 
     }

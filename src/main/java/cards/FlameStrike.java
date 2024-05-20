@@ -28,6 +28,8 @@ public class FlameStrike extends CustomCard {
     public FlameStrike() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.ATTACK, AbstractCardEnum.MonkeyKing_RED, CardRarity.COMMON, CardTarget.ENEMY);
         this.baseDamage = ATTACK_DMG;
+        this.damage=this.baseDamage;
+        this.tags.add(CardTags.STRIKE);
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {

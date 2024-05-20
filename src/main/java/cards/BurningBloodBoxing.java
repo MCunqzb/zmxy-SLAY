@@ -5,6 +5,7 @@ import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
+import com.megacrit.cardcrawl.actions.common.DrawCardAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -24,7 +25,7 @@ public class BurningBloodBoxing extends CustomCard {
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     private static final int COST = 2;
-    private static final int ATTACK_AMT = 13;
+    private static final int ATTACK_AMT = 10;
     private static final int UPGRADE_PLUS_ATTACK = 3;
     private static final int BLOCK_AMT = 13;
     private static final int UPGRADE_PLUS_BLOCK = 3;
@@ -45,12 +46,11 @@ public class BurningBloodBoxing extends CustomCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (m != null) {
-            this.addToBot(new VFXAction(new HemokinesisEffect(p.hb.cX, p.hb.cY, p.hb.cX, p.hb.cY+10F), 0.5F));
+            this.addToBot(new VFXAction(new HemokinesisEffect(p.hb.cX, p.hb.cY, p.hb.cX, p.hb.cY+10F), 0.1F));
         }
         this.addToBot(new LoseHPAction(p,p,this.magicNumber));
-        this.addToBot(new  GainBlockAction(p,this.block));
         this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-
+        this.addToBot(new DrawCardAction(this.magicNumber));
     }
 
     @Override
@@ -65,7 +65,7 @@ public class BurningBloodBoxing extends CustomCard {
             upgradeName();
             upgradeDamage(UPGRADE_PLUS_ATTACK);
             upgradeMagicNumber(UPGRADE_PLUS_MAGIC_AMT);
-            upgradeBlock(UPGRADE_PLUS_BLOCK);
+
 
         }
     }

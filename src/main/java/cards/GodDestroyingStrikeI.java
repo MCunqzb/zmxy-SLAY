@@ -33,6 +33,7 @@ public class GodDestroyingStrikeI extends CustomCard {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.ATTACK, AbstractCardEnum.MonkeyKing_RED, CardRarity.RARE, CardTarget.ENEMY);
         this.baseDamage=ATTACK_AMT;
         this.tags.add(MonkeyKingMod.BOXING);
+        this.tags.add(CardTags.STRIKE);
         this.cardsToPreview = new GodDestroyingStrikeII();
         this.damage=this.baseDamage;
 

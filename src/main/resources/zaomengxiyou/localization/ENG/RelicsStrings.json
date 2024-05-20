@@ -3,7 +3,7 @@
     "NAME": "Bloodthirsty Fire Eyes",
     "FLAVOR": "Bloodthirsty.",
     "DESCRIPTIONS": [
-      "For every two attack cards played, restore 2 life points."
+      "For every 3 attack cards played, restore 2 life points."
     ]
   },
   "dreaming_journey_to_the_west:Bracelets": {
@@ -17,14 +17,14 @@
     "NAME": "Furious Ring",
     "FLAVOR": "Humiliated and indignant, unhappy or angry.",
     "DESCRIPTIONS": [
-      "Start each combat with #b2 #yStrength .While your HP is at or below #b50%,gain #yIndignation."
+      "Start each combat with #b2 #yStrength .While your HP is at or below #b50%,gain #yIndignation. Resting at Rest Sites costs #r4 Max HP."
     ]
   },
   "dreaming_journey_to_the_west:GreedRing": {
     "NAME": "Greed Ring",
     "FLAVOR": "The greed for money, sex, fame, food and sleep.",
     "DESCRIPTIONS": [
-      "Upon pickup, decline your Max HP by #r10% ,gain an extra level when you gain #yVulnerable, #yFragile, #yWeak，At the end of combat,gain  #y20 #yGold，double the chance of finding #yRare cards from combat rewards，triple the chance of finding #bUcommon cards from combat rewards."
+      "Upon pickup, decline your Max HP by #r30% ,gain an extra level when you gain #yVulnerable, #yFragile, #yWeak，At the end of combat,gain  #y20 #yGold，double the chance of finding #yRare cards from combat rewards，triple the chance of finding #bUcommon cards from combat rewards."
     ]
   },
   "dreaming_journey_to_the_west:ObsessionRing": {

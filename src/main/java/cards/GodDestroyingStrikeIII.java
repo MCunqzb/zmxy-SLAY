@@ -23,7 +23,7 @@ public class GodDestroyingStrikeIII extends CustomCard {
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
     private static final int COST =3;
     private static final int ATTACK_AMT = 50;
-    private static final int UPGRADE_PLUS_ATTACK = 20;
+    private static final int UPGRADE_PLUS_ATTACK = 10;
     private static final int BLOCK_AMT = 0;
     private static final int UPGRADE_PLUS_BLOCK = 3;
     private static final int MAGIC_AMT = 2;
@@ -33,6 +33,7 @@ public class GodDestroyingStrikeIII extends CustomCard {
     public GodDestroyingStrikeIII() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.ATTACK, CardColor.COLORLESS, CardRarity.SPECIAL, CardTarget.ENEMY);
         this.tags.add(MonkeyKingMod.BOXING);
+        this.tags.add(CardTags.STRIKE);
         this.baseDamage=ATTACK_AMT;
         this.damage=this.baseDamage;
         this.exhaust = true;

@@ -33,10 +33,9 @@ public class InHighSpirits extends CustomCard {
 
     public InHighSpirits() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, AbstractCardEnum.MonkeyKing_RED, CardRarity.UNCOMMON, CardTarget.SELF);
-        this.baseDamage=ATTACK_AMT;
-        this.damage=this.baseDamage;
+        this.baseMagicNumber=MAGIC_AMT;
+        this.magicNumber=this.baseMagicNumber;
         this.exhaust = true;
-        this.tags.add(MonkeyKingMod.BOXING);
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

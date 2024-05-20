@@ -3,7 +3,7 @@
     "NAME": "Scorch",
     "DESCRIPTIONS": [
       "Receive #b",
-      "% (MAX #b50 %)more damage from #yAttacks .",
+      "% (MAX #b50 %%)more damage from #yAttacks .",
       "Loses #b ",
       " HP at the end of each turn.When there is #bWeak , the number of layers does not decrease. When there is #bVulnerable , the end of the turn deals double damage and disappears."
     ]
@@ -71,7 +71,7 @@
   "dreaming_journey_to_the_west:IronBonePower": {
     "NAME": "Iron Bone",
     "DESCRIPTIONS": [
-      "All attack damage receive is decreased by #b%d %% (MAX #b80% ) ,lose Half at the end of each round. "
+      "All attack damage receive is decreased by #b%d %% (MAX #b80%% ) ,lose Half at the end of each round. "
     ]
   },
   "dreaming_journey_to_the_west:BurnBloodPower": {
@@ -89,13 +89,13 @@
   "dreaming_journey_to_the_west:ControlPhantomPower": {
     "NAME": "Control Phantom",
     "DESCRIPTIONS": [
-      "At the start of your turn, play  your #b%d (1+ expansioncontent:Temp_HP /3)cards from left to right. "
+      "At the start of your turn, play  your #b%d (1+ expansioncontent:Temp_HP)cards from left to right. "
     ]
   },
-  "dreaming_journey_to_the_west:PhantomKindlePower": {
-    "NAME": "PhantomKindle",
+  "dreaming_journey_to_the_west:ConcentrateEnergy": {
+    "NAME": "Concentrate Energy",
     "DESCRIPTIONS": [
-      "When the player has #ytemporary life, use the attack card when the enemy apply #b%d #yScorch ."
+      "At end of turn, lose #b%d #yVigor gain #b%d #yStrength"
     ]
   },
   "dreaming_journey_to_the_west:VellusPower": {
@@ -107,13 +107,55 @@
   "dreaming_journey_to_the_west:TenacityPower": {
     "NAME": "Tenacity",
     "DESCRIPTIONS": [
-      "This turn, your next #bBlock add #b%d  ."
+      "Your next #bBlock add #b%d  ."
     ]
   },
   "dreaming_journey_to_the_west:AgglomeratePower": {
     "NAME": "Agglomerate",
     "DESCRIPTIONS": [
       " #rExhaust #b%d cards，gain #b%d  [E] ."
+    ]
+  },
+  "dreaming_journey_to_the_west:RampantBloodPower": {
+    "NAME": "Rampant Blood ",
+    "DESCRIPTIONS": [
+      "Whenever you lose HP, gain #b%d #yVigor."
+    ]
+  },
+  "dreaming_journey_to_the_west:ThumpPower": {
+    "NAME": "Thump Power",
+    "DESCRIPTIONS": [
+      "Can not get #yPower from self ,last #b%d turns ."
+    ]
+  },
+  "dreaming_journey_to_the_west:BlownSandPower": {
+    "NAME": "Blown Sand",
+    "DESCRIPTIONS": [
+      "Whenever you play a #yBlownSand , gains #b%d #yStrength. "
+    ]
+  },
+  "dreaming_journey_to_the_west:CursePower": {
+    "NAME": "Curse",
+    "DESCRIPTIONS": [
+      "Every #b5 amount, lose #r5 HP,halve at the end of each turn. Current amount: #b%d."
+    ]
+  },
+  "dreaming_journey_to_the_west:DeathCursePower": {
+    "NAME": "Death Curse",
+    "DESCRIPTIONS": [
+      "Whenever you receive attack damage from this enemy, applies #b%d #yCurse ."
+    ]
+  },
+  "dreaming_journey_to_the_west:PoisonousPillPower": {
+    "NAME": "Poisonous Pill",
+    "DESCRIPTIONS": [
+      "Whenever you receive attack damage from this enemy,it lose #b%d HP 。"
+    ]
+  },
+  "dreaming_journey_to_the_west:ReboundDamagePower": {
+    "NAME": "Rebound",
+    "DESCRIPTIONS": [
+      "In #b%d turns, whenever you completely block damage, deal that much damage to the attacker."
     ]
   }
 }

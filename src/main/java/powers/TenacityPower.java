@@ -6,6 +6,7 @@ import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.mod.stslib.actions.tempHp.AddTemporaryHPAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
+import com.megacrit.cardcrawl.actions.utility.UseCardAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -38,20 +39,19 @@ public class TenacityPower extends AbstractPower {
         return (blockAmount += (float)this.amount) < 0.0F ? 0.0F : blockAmount;
     }
 
-    public void onGainedBlock(float blockAmount) {
-        this.flash();
-        this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
-    }
 
-    public int onPlayerGainedBlock(float blockAmount) {
-        return (int) ((blockAmount += (float)this.amount) < 0.0F ? 0.0F : blockAmount);
-    }
-
-    public void atEndOfTurn(boolean isPlayer) {
-        if (isPlayer) {
+    public void onUseCard(AbstractCard card, UseCardAction action) {
+        if ( card.baseBlock > 0) {
+            this.flash();
             this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
         }
+
     }
+   //public void atEndOfTurn(boolean isPlayer) {
+   //    if (isPlayer) {
+   //        this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, POWER_ID));
+   //    }
+   //}
 
     public void stackPower(int stackAmount) {
         this.fontScale = 8.0F;

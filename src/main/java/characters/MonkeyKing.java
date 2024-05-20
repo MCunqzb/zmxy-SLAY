@@ -5,9 +5,11 @@ import basemod.BaseMod;
 import basemod.abstracts.CustomPlayer;
 import cards.FireBlitz;
 import cards.FireMagicSlash;
+import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.g2d.BitmapFont;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+import com.badlogic.gdx.math.MathUtils;
 import com.evacipated.cardcrawl.mod.stslib.patches.core.AbstractCreature.TempHPField;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
@@ -26,21 +28,25 @@ import com.megacrit.cardcrawl.localization.CharacterStrings;
 import com.megacrit.cardcrawl.rooms.AbstractRoom;
 import com.megacrit.cardcrawl.screens.CharSelectInfo;
 import com.megacrit.cardcrawl.unlock.UnlockTracker;
+import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
+import com.megacrit.cardcrawl.vfx.scene.IroncladVictoryFlameEffect;
+import com.megacrit.cardcrawl.vfx.scene.SlowFireParticleEffect;
 import pathes.AbstractCardEnum;
 import pathes.ThmodClassEnum;
 import relics.BloodthirstyFireEyes;
 import relics.Bracelets;
 import util.RenderOnlyMonkeyKingPhantom;
+import vfx.ColorfulLaserBeamEffect;
+import vfx.ColorfulSlowFireParticleEffect;
+import vfx.ColorfulVictoryFlameEffect;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class MonkeyKing extends CustomPlayer {
-
-
     private static final CharacterStrings characterStrings = CardCrawlGame.languagePack.getCharacterString("dreaming_journey_to_the_west:MonkeyKing");
     private static final int ENERGY_PER_TURN = 3;
-
+    private float effectTimer = 0.0F;
     private static final String MonkeyKing_SHOULDER_2 = "img/chars/shoulderR.png";
     private static final String MonkeyKing_SHOULDER_1 = "img/chars/shoulder.png";
     private static final String MonkeyKing_CORPSE = "img/chars/corpse.png";
@@ -180,16 +186,33 @@ public class MonkeyKing extends CustomPlayer {
     }
 
     @Override
+    public void updateVictoryVfx(ArrayList<AbstractGameEffect> effects) {
+        this.effectTimer -= Gdx.graphics.getDeltaTime();
+        if (this.effectTimer < 0.0F) {
+            effects.add(new ColorfulSlowFireParticleEffect(new Color(MathUtils.random(0.7F, 0.9F), MathUtils.random(0.1F, 0.4F), MathUtils.random(0.05F, 0.2F), 0.8F),1.0f,3.0f));
+            effects.add(new ColorfulSlowFireParticleEffect(new Color(MathUtils.random(0.9F, 1.0F), MathUtils.random(0.4F, 0.7F), MathUtils.random(0.05F, 0.2F), 0.8F),1.0f,3.0f));
+            effects.add(new ColorfulVictoryFlameEffect(new Color(MathUtils.random(0.9F, 1.0F), MathUtils.random(0.1F, 0.4F), MathUtils.random(0.05F, 0.2F), 0.8F),4.0f,6.0f));
+            effects.add(new ColorfulVictoryFlameEffect(new Color(MathUtils.random(0.9F, 1.0F), MathUtils.random(0.4F, 0.7F), MathUtils.random(0.05F, 0.2F), 0.8F),1.0f,3.0f));
+            effects.add(new ColorfulVictoryFlameEffect(new Color(MathUtils.random(0.01F, 0.1f), MathUtils.random(0.3F, 0.6F), MathUtils.random(0.8F, 1.0F), 0.7F),0.5f,1f));
+            this.effectTimer = 0.1F;
+        }
+    }
+
+    @Override
     public List<CutscenePanel> getCutscenePanels() {
         List<CutscenePanel> panels = new ArrayList();
-        panels.add(new CutscenePanel("img/chars/monkeyking1.png", "ATTACK_HEAVY"));
-        panels.add(new CutscenePanel("img/chars/monkeyking2.png"));
-        panels.add(new CutscenePanel("img/chars/monkeyking3.png"));
+        panels.add(new CutscenePanel("img/chars/victory1.png"));
+        panels.add(new CutscenePanel("img/chars/victory2.png","ATTACK_MAGIC_BEAM_SHORT"));
+        panels.add(new CutscenePanel("img/chars/victory3.png"));
+        panels.add(new CutscenePanel("img/chars/victory4.png", "ATTACK_HEAVY"));
+        panels.add(new CutscenePanel("img/chars/victory5.png","MONSTER_AUTOMATON_SUMMON"));
+        panels.add(new CutscenePanel("img/chars/victory6.png","MONSTER_GUARDIAN_DESTROY"));
+        panels.add(new CutscenePanel("img/chars/victory7.png","ATTACK_MAGIC_BEAM"));
         return panels;
     }
     @Override
     public String getVampireText() {
-        return characterStrings.TEXT[1];
+        return characterStrings.TEXT[2];
     }
     public void applyEndOfTurnTriggers() {
         super.applyEndOfTurnTriggers();

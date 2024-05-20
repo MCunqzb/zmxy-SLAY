@@ -33,6 +33,7 @@ public class ControlPhantom extends CustomCard {
         this.baseMagicNumber=MAGIC_AMT;
         this.magicNumber=this.baseMagicNumber;
         this.isInnate = false;
+
     }
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new ApplyPowerAction(p, p, new ControlPhantomPower(p)));

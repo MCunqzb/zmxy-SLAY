@@ -48,7 +48,7 @@ public class FireApeStrikesPower extends AbstractPower {
     public void onUseCard(AbstractCard card, UseCardAction action) {
         if (card.type == AbstractCard.CardType.ATTACK && card.hasTag(MonkeyKingMod.BOXING) ) {
             this.flash();
-            this.addToTop((AbstractGameAction)new DamageRandomEnemyAction(new DamageInfo(this.owner, this.amount*6, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
+            this.addToTop((AbstractGameAction)new DamageRandomEnemyAction(new DamageInfo(this.owner, this.amount*7, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.FIRE));
         }
         else if (card.type == AbstractCard.CardType.SKILL && card.hasTag(MonkeyKingMod.BOXING)){
             this.flash();

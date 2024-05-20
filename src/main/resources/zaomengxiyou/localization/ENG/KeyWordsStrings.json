@@ -18,7 +18,7 @@
       "BloodThirsty",
       "bloodthirsty"
     ],
-    "DESCRIPTION": "Heal HP equal to unblocked damage."
+    "DESCRIPTION": "Heal HP equal to unblocked damage*0.33 ."
   },
   {
     "NAMES": [
@@ -51,6 +51,6 @@
     "NAMES": [
       "Tenacity"
     ],
-    "DESCRIPTION": " This turn , improves Block gained from cards."
+    "DESCRIPTION": "Improves Block gained from cards."
   }
 ]

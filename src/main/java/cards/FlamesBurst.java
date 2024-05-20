@@ -43,7 +43,6 @@ public class FlamesBurst extends CustomCard {
 
     public void use(AbstractPlayer p, AbstractMonster m) {
         if (!AbstractDungeon.getMonsters().areMonstersBasicallyDead()) {
-            this.flash();
             Iterator var3 = AbstractDungeon.getMonsters().monsters.iterator();
 
             while(var3.hasNext()) {

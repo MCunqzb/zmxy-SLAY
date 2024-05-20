@@ -5,7 +5,7 @@
       "Thunder Power",
       "Thunder and thunder"
     ],
-    "NAME": "KingYurong",
+    "NAME": "Feathered King Yu",
     "DIALOG": [
       "Can't let you get in the way of big brother."
     ]
@@ -14,11 +14,129 @@
     "MOVES": [
       "Clubbing",
       "Gale",
-      "Whirlwind Chop"
+      "Whirlwind Chop",
+      "The power of wind and sand"
     ],
-    "NAME": "KingMonkey",
+    "NAME": "King Monkey",
     "DIALOG": [
       "Big Brother is going to lead us to unify the three worlds!"
+    ]
+  },
+  "dreaming_journey_to_the_west:MonkeyKingPhantom": {
+    "MOVES": [
+      "棍击",
+      "狂风",
+      "旋风斩"
+    ],
+    "NAME": "Monkey King Phantom",
+    "DIALOG": [
+      "Your grandpa is here!!"
+    ]
+  },
+  "dreaming_journey_to_the_west:KingLionCamel": {
+    "MOVES": [
+      "Broadsword Strike",
+      "Rock Wall",
+      "Toxic Fog",
+      "Star Rock Blast"
+    ],
+    "NAME": "King Lion Camel",
+    "DIALOG": [
+      "My two younger brothers couldn't stop you, NL I can't let big brother down!"
+    ]
+  },
+  "dreaming_journey_to_the_west:ExterminateImmortalSword": {
+    "MOVES": [
+      "Divine Slayer Combo",
+      "Sky-Punishing, Earth-Destroying"
+    ],
+    "NAME": "Exterminate Immortal Sword",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "dreaming_journey_to_the_west:AnnihilateImmortalSword": {
+    "MOVES": [
+      "Evade and Conceal.",
+      "Survive Against All Odds."
+    ],
+    "NAME": "Annihilate Immortal Sword",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "dreaming_journey_to_the_west:TrapImmortalSword": {
+    "MOVES": [
+      "Skyward Strike",
+      "Unity of Myriad Formations"
+    ],
+    "NAME": "Trap Immortal Sword",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "dreaming_journey_to_the_west:SlayingImmortalSword": {
+    "MOVES": [
+      "Slaughter of the Four Directions",
+      "Curse of Death"
+    ],
+    "NAME": "Slaying Immortal Sword",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "dreaming_journey_to_the_west:TheSovereignofTheTongtianSect": {
+    "MOVES": [
+      "Four swords unsheathed",
+      "Soul fly bomb",
+      "Deadly light waves",
+      "The power of the four swords",
+      "Dark soul capture",
+      "Ancestral witch soul",
+      "Green Duckweed Sword Array"
+
+    ],
+    "NAME": "The Sovereign of The Tongtian Sect",
+    "DIALOG": [
+      "Your Excellency, NL  please be patient.",
+      "I wonder if Your Excellency can break through NL my Four Swords of Extermination.",
+      "Though I may have taken the poison pill... NL I can still lead you to your doom.",
+      "The absorption of the twelve ancestral NL witch souls is complete. Now the real show begins."
+    ]
+  },
+  "dreaming_journey_to_the_west:DrakeDemonKing": {
+    "MOVES": [
+      "Trishula Strike",
+      "Adamantine Form" ,
+      "Surging Waves",
+      "Oversea Dragon"
+    ],
+    "NAME": "Drake Demon King",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "dreaming_journey_to_the_west:RocDemonKing": {
+    "MOVES": [
+      "Flight",
+      "Heavenly Moon Halberd",
+      "Whirling Sky Feathers",
+      "Phoenix Dance of Flames",
+      "Rebirth",
+      "Phoenix Nirvana"
+    ],
+    "NAME": "Roc Demon King",
+    "DIALOG": [
+      "~Gu...~"
+    ]
+  },
+  "dreaming_journey_to_the_west:BullDemonKingHand": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "Bull Demon King Hand",
+    "DIALOG": [
+      ""
     ]
   }
 }

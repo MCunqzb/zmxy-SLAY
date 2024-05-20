@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
+import demoMod.MonkeyKingMod;
 import pathes.AbstractCardEnum;
 
 public class ExtraPhantomBoxing extends CustomCard {
@@ -32,6 +33,7 @@ public class ExtraPhantomBoxing extends CustomCard {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, AbstractCardEnum.MonkeyKing_RED, CardRarity.COMMON, CardTarget.SELF);
         this.baseMagicNumber=MAGIC_AMT;
         this.magicNumber=this.baseMagicNumber;
+        this.tags.add(MonkeyKingMod.BOXING);
     }
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new MakeTempCardInHandAction(new PhantomBoxing(), this.magicNumber));

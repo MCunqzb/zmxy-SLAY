@@ -14,12 +14,152 @@
     "MOVES": [
       "棍击",
       "狂风",
-      "旋风斩"
+      "旋风斩",
+      "风沙之力"
     ],
     "NAME": "弥猴王",
     "DIALOG": [
       "大哥将要带我们一统三界！"
     ]
+  },
+  "dreaming_journey_to_the_west:MonkeyKingPhantom": {
+    "MOVES": [
+      "棍击",
+      "狂风",
+      "旋风斩"
+    ],
+    "NAME": "美猴王",
+    "DIALOG": [
+      "你爷爷在此！！"
+    ]
+  },
+  "dreaming_journey_to_the_west:KingLionCamel": {
+    "MOVES": [
+      "斩仙大刀",
+      "流岩土壁",
+      "毒雾",
+      "星岩震爆"
+    ],
+    "NAME": "狮驼王",
+    "DIALOG": [
+      "我那俩二弟竟没能拦住你，NL 我可不能让大哥失望！"
+    ]
+  },
+  "dreaming_journey_to_the_west:ExterminateImmortalSword": {
+    "MOVES": [
+      "诛仙连斩",
+      "天诛地灭"
+    ],
+    "NAME": "诛仙剑",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "dreaming_journey_to_the_west:AnnihilateImmortalSword": {
+    "MOVES": [
+      "绝地逢生",
+      "遁迹潜形"
+    ],
+    "NAME": "绝仙剑",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "dreaming_journey_to_the_west:TrapImmortalSword": {
+    "MOVES": [
+      "凌空一击",
+      "万阵归一"
+    ],
+    "NAME": "陷仙剑",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "dreaming_journey_to_the_west:SlayingImmortalSword": {
+    "MOVES": [
+      "屠戮四方",
+      "死亡诅咒"
+    ],
+    "NAME": "戮仙剑",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "dreaming_journey_to_the_west:TheSovereignofTheTongtianSect": {
+    "MOVES": [
+      "四剑出鞘",
+      "灵魂飞弹",
+      "致命光波",
+      "四剑之力",
+      "黑暗摄魂",
+      "祖巫精魄",
+      "青萍剑阵"
+
+    ],
+    "NAME": "通天教主",
+    "DIALOG": [
+      "~阁下稍安勿躁~",
+      "不知阁下能否 NL 攻破我这诛仙四剑",
+      "吾虽身服毒丹…… NL #r@却也能置你与死地@ ",
+      "~十二祖巫精魄已经吸收完毕~ NL #r@好戏现在才开始@ "
+    ]
+  },
+  "dreaming_journey_to_the_west:DrakeDemonKing": {
+    "MOVES": [
+      "三叉刺击",
+      "金刚身",
+      "惊涛巨浪",
+      "覆海蛟龙"
+    ],
+    "NAME": "蛟魔王",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "dreaming_journey_to_the_west:RocDemonKing": {
+    "MOVES": [
+      "飞行",
+      "天煞月戟",
+      "浑天千羽",
+      "火凤乱舞",
+      "重生",
+      "凤凰涅槃",
+      "灼烧"
+    ],
+    "NAME": "鹏魔王",
+    "DIALOG": [
+      "~咕。。。~"
+    ]
+  },
+  "dreaming_journey_to_the_west:BullDemonKingHand": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "牛魔之手",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "dreaming_journey_to_the_west:BullDemonKing": {
+    "MOVES": [
+      "",
+      "蛮牛冲撞",
+      "开天辟地",
+      "万魂煞",
+      "隐秘心脏",
+      "烈焰冲击",
+      "熔岩之怒",
+      "???",
+      "现真身",
+      "法相天地·魔"
+    ],
+    "NAME": "牛魔王",
+    "DIALOG": [
+      "老牛我被关在八卦炉中 @这么多年@ NL #r@是时候用我的愤怒毁灭三界了！@ ",
+      "@还没完呢！@",
+      "看来只能用 NL 黑衣人给我的力量了"
+    ]
   }
+
 
 }

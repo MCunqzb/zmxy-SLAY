@@ -35,6 +35,7 @@ public class CrackingFist extends CustomCard {
         this.baseMagicNumber = MAGIC_NUM;
         this.magicNumber=this.baseMagicNumber;
         this.tags.add(MonkeyKingMod.BOXING);
+        this.exhaust = true;
     }
     @Override
     public void upgrade() {
@@ -47,18 +48,14 @@ public class CrackingFist extends CustomCard {
 
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom((AbstractGameAction)new DamageAction((AbstractCreature)m, new DamageInfo((AbstractCreature)p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
-        if (m != null && m.getIntentBaseDmg() <= 0 && this.damage > 0  ) {
-            AbstractDungeon.actionManager.addToBottom((AbstractGameAction)new StunMonsterAction(m, (AbstractCreature)AbstractDungeon.player));
-        }
-        else if (this.damage <= 0){
-            this.exhaust = true;
-        }
-        AbstractDungeon.actionManager.addToBottom(new ModifyDamageAction(this.uuid, -this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_LIGHT));
+        AbstractDungeon.actionManager.addToBottom(new StunMonsterAction(m, AbstractDungeon.player));
+
+
     }
 
     @Override
     public AbstractCard makeCopy() {
-        return (AbstractCard)new CrackingFist();
+        return new CrackingFist();
     }
 }

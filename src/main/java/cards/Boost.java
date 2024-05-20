@@ -30,7 +30,7 @@ public class Boost extends CustomCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    private static final int COST = 0;
+    private static final int COST = 1;
     private static final int ATTACK_AMT = 12;
     private static final int UPGRADE_PLUS_ATTACK = 4;
     private static final int BLOCK_AMT = 0;

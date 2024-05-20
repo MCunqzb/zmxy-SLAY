@@ -65,7 +65,7 @@ public class ScorchPower extends AbstractPower implements HealthBarRenderPower, 
             if (this.owner.isPlayer && AbstractDungeon.player.hasRelic("Odd Mushroom")) {
                 return damage *(0.025F * this.amount+1);
             } else {
-                return this.owner != null && !this.owner.isPlayer && AbstractDungeon.player.hasRelic("Paper Frog") ? damage * Math.min((0.0375F * this.amount+1),0.75f) : damage * Math.min((0.025F * this.amount+1),0.5f);
+                return this.owner != null && !this.owner.isPlayer && AbstractDungeon.player.hasRelic("Paper Frog") ? damage * Math.min((0.0375F * this.amount+1),1.75f) : damage * Math.min((0.025F * this.amount+1),1.5f);
             }
         } else {
             return damage;

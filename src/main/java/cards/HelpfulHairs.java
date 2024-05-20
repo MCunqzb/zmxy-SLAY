@@ -20,21 +20,23 @@ public class HelpfulHairs extends CustomCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     private static final int COST = 1;
-    private static final int MAGIC_AMT = 2;
+    private static final int MAGIC_AMT = 3;
     public static final String IMG_PATH = "img/cards/helpful_hairs.png";
+    private int hp_lose  =1 ;
+
 
     public HelpfulHairs() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.SKILL, AbstractCardEnum.MonkeyKing_RED, CardRarity.UNCOMMON, CardTarget.SELF);
         this.baseMagicNumber = MAGIC_AMT;
         this.magicNumber = this.baseMagicNumber;
-        this.exhaust = true;
         this.selfRetain = true;
+
     }
     @Override
     public void use(AbstractPlayer p, AbstractMonster m) {
-        AbstractDungeon.actionManager.addToBottom(new LoseHPAction(p, p, 1));
-        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, this.magicNumber));
-
+        AbstractDungeon.actionManager.addToBottom(new LoseHPAction(p, p, this.magicNumber));
+        AbstractDungeon.actionManager.addToBottom(new DrawCardAction(p, 2));
+        this.upgradeMagicNumber(this.baseMagicNumber);
     }
 
     @Override
@@ -46,7 +48,9 @@ public class HelpfulHairs extends CustomCard {
     public void upgrade() {
         if (!this.upgraded) {
             upgradeName();
-            this.upgradeMagicNumber(1);
+            this.upgradeMagicNumber(-1);
+            this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
+            this.initializeDescription();
         }
     }
 }

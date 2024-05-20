@@ -3,6 +3,7 @@ package powers;
 import Helpers.ModHelper;
 import actions.ControlPhantomAction;
 import cards.PhantomStab;
+import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.evacipated.cardcrawl.mod.stslib.patches.core.AbstractCreature.TempHPField;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -15,12 +16,15 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.AbstractPower;
+import pathes.ThmodClassEnum;
 
 public class ControlPhantomPower extends AbstractPower {
     public static final String POWER_ID = ModHelper.MakePath("ControlPhantomPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     private static final String NAME = powerStrings.NAME;
     private static final String[] DESCRIPTIONS = powerStrings.DESCRIPTIONS;
+    private int AM;
+
 
     public ControlPhantomPower(AbstractCreature owner) {
         this.name = NAME;
@@ -33,9 +37,17 @@ public class ControlPhantomPower extends AbstractPower {
         this.region48 = new TextureAtlas.AtlasRegion(ImageMaster.loadImage(path48), 0, 0, 32, 32);
         this.updateDescription();
         this.isTurnBased = true;
+        this.AM = (TempHPField.tempHp.get(this.owner))+1;
+        if (AbstractDungeon.player.chosenClass.equals(ThmodClassEnum.MonkeyKing_CLASS)) {
+            if (AbstractDungeon.player.hasPower(this.ID)) {
+                AbstractDungeon.player.img = new Texture("img/chars/MonkeyKingPhantom.png");
+            }else {
+                AbstractDungeon.player.img = new Texture("img/chars/MonkeyKing.png");
+            }
+        }
     }
 
-    public void atStartOfTurn() {
+    public void atStartOfTurnPostDraw() {
         this.flash();
         //for(int i = 0; i < (int)(TempHPField.tempHp.get(this.owner)/3)+1; ++i) {
         //    this.addToBot(new AbstractGameAction() {
@@ -45,11 +57,10 @@ public class ControlPhantomPower extends AbstractPower {
         //        }
         //    });
         //}
-        this.addToBot(new ControlPhantomAction((int)(TempHPField.tempHp.get(this.owner)/3)+1));
-
+        this.addToBot(new ControlPhantomAction((int)(TempHPField.tempHp.get(this.owner))+1));
     }
 
     public void updateDescription() {
-        this.description = String.format(DESCRIPTIONS[0],(TempHPField.tempHp.get(this.owner)/3)+1);
+        this.description = String.format(DESCRIPTIONS[0],AM);
     }
 }

@@ -12,8 +12,7 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.CardStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import pathes.AbstractCardEnum;
-public class Defend_MonkeyKing extends CustomCard
-{
+public class Defend_MonkeyKing extends CustomCard {
 
     private static final CardStrings cardStrings = CardCrawlGame.languagePack.getCardStrings("dreaming_journey_to_the_west:Defend_MonkeyKing");
     public static final String NAME = cardStrings.NAME;

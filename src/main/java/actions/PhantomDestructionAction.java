@@ -11,6 +11,7 @@ import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import demoMod.MonkeyKingMod;
 
 import java.util.ArrayList;
 import java.util.Iterator;
@@ -20,7 +21,7 @@ public class PhantomDestructionAction extends AbstractGameAction {
     private DamageInfo info;
     private float startingDuration;
 
-    public PhantomDestructionAction(AbstractCreature target, DamageInfo info ) {
+    public PhantomDestructionAction(AbstractCreature target, DamageInfo info) {
         this.setValues(AbstractDungeon.player, AbstractDungeon.player);
         this.info = info;
         this.setValues(target, info);
@@ -37,7 +38,10 @@ public class PhantomDestructionAction extends AbstractGameAction {
         AbstractCard c;
         while(var2.hasNext()) {
             c = (AbstractCard)var2.next();
-            if (c.rarity == AbstractCard.CardRarity.SPECIAL || c.type == AbstractCard.CardType.STATUS || c.type == AbstractCard.CardType.CURSE) {
+            if (c.rarity == AbstractCard.CardRarity.SPECIAL ||
+                    c.type == AbstractCard.CardType.STATUS ||
+                    c.type == AbstractCard.CardType.CURSE ||
+                    c.hasTag(MonkeyKingMod.BOXING)) {
                 cardsToExhaust.add(c);
                 count=count+1;
             }

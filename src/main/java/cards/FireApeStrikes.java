@@ -18,7 +18,7 @@ public class FireApeStrikes extends CustomCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    private static final int COST =3;
+    private static final int COST =2;
     private static final int ATTACK_AMT = 0;
     private static final int UPGRADE_PLUS_ATTACK = 0;
     private static final int BLOCK_AMT = 0;
@@ -31,6 +31,7 @@ public class FireApeStrikes extends CustomCard {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.POWER, AbstractCardEnum.MonkeyKing_RED, CardRarity.RARE, CardTarget.SELF);
         this.baseMagicNumber = MAGIC_AMT;
         this.magicNumber = this.baseMagicNumber;
+        this.isEthereal = true;
     }
 
     @Override
@@ -46,8 +47,8 @@ public class FireApeStrikes extends CustomCard {
     @Override
     public void upgrade() {
         if (!this.upgraded) {
+            this.isEthereal = false;
             upgradeName();
-            this.isInnate = true;
             this.rawDescription = cardStrings.UPGRADE_DESCRIPTION;
             this.initializeDescription();
         }

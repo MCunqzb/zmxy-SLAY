@@ -8,19 +8,28 @@ import cards.*;
 import characters.MonkeyKing;
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;
+import com.badlogic.gdx.graphics.Texture;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.Settings;
+import com.megacrit.cardcrawl.dungeons.Exordium;
 import com.megacrit.cardcrawl.helpers.CardHelper;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.monsters.MonsterGroup;
 import com.megacrit.cardcrawl.monsters.MonsterInfo;
-import monsters.KingMonkey;
-import monsters.KingYurong;
 import monsters.MonkeyKingPhantom;
+import monsters.act1.DrakeDemonKing;
+import monsters.act1.KingLionCamel;
+import monsters.act1.KingMonkey;
+import monsters.act1.KingYurong;
+import monsters.act1.boss.BullDemonKing;
+import monsters.act1.boss.BullDemonKingHand;
+import monsters.act1.boss.RocDemonKing;
+import monsters.act4.*;
 import pathes.AbstractCardEnum;
 import pathes.ThmodClassEnum;
 import relics.*;
@@ -49,6 +58,7 @@ public class MonkeyKingMod implements  PostInitializeSubscriber,EditKeywordsSubs
     private static final String MY_CHARACTER_BUTTON = "img/charSelect/MonkeyKingButton.png";
     private static final String MARISA_PORTRAIT = "img/charSelect/MonkeyKingBG.png";
     public static final Color OrangeRed = CardHelper.getColor(212, 126, 107);
+    public static Texture zmxy1bg;
     private ArrayList<AbstractCard> cardsToAdd = new ArrayList<>();
     public static ArrayList<AbstractCard> recyclecards = new ArrayList<>();
 
@@ -68,11 +78,11 @@ public class MonkeyKingMod implements  PostInitializeSubscriber,EditKeywordsSubs
 
     public static void initialize() {
         new MonkeyKingMod();
+        zmxy1bg = ImageMaster.loadImage("img/scene/zmxy1.png");
     }
 
     @Override
     public void receiveEditCards() {
-
         BaseMod.addCard(new Attack_MonkeyKing());
         BaseMod.addCard(new Defend_MonkeyKing());
         BaseMod.addCard(new Flaming_Storm());
@@ -132,13 +142,25 @@ public class MonkeyKingMod implements  PostInitializeSubscriber,EditKeywordsSubs
         BaseMod.addCard(new PhantomShield());
         BaseMod.addCard(new PhantomProtection());
         BaseMod.addCard(new Phantom());
-        BaseMod.addCard(new PhantomKindle());
+        BaseMod.addCard(new ConcentrateEnergy());
         BaseMod.addCard(new Vellus());
         BaseMod.addCard(new Overawe());
         BaseMod.addCard(new PhantomBoxing());
         BaseMod.addCard(new ExtraPhantomBoxing());
         BaseMod.addCard(new Agglomerate());
-
+        BaseMod.addCard(new BloodApeBoxing());
+        BaseMod.addCard(new SpiralStrike());
+        BaseMod.addCard(new DodgeTraining());
+        BaseMod.addCard(new FullOfEnergy());
+        BaseMod.addCard(new BothOffensiveAndDefensive());
+        BaseMod.addCard(new RampantBlood());
+        BaseMod.addCard(new FaceTheDifficulty());
+        BaseMod.addCard(new Thump());
+        BaseMod.addCard(new BloodDemonRoar());
+        BaseMod.addCard(new BlownSand());
+        BaseMod.addCard(new HelpfulHairsBamboo());
+        BaseMod.addCard(new HelpfulHairsDrill());
+        BaseMod.addCard(new FightingBuddhaForm());
     }
 
 
@@ -162,7 +184,7 @@ public class MonkeyKingMod implements  PostInitializeSubscriber,EditKeywordsSubs
         BaseMod.loadCustomStringsFile(MonsterStrings.class, "zaomengxiyou/localization/" + lang + "/MonsterStrings.json");
         //BaseMod.loadCustomStringsFile(Keyword.class, "zaomengxiyou/localization/" +lang +"/KeyWordsStrings.json");
         //BaseMod.loadCustomStringsFile(PotionStrings.class, "zaomengxiyou/localization/" + lang + "/potions.json");
-        //BaseMod.loadCustomStringsFile(UIStrings.class, "zaomengxiyou/localization/" + lang + "/uiString.json");
+        BaseMod.loadCustomStringsFile(UIStrings.class, "zaomengxiyou/localization/" + lang + "/UIStrings.json");
     }
 
 
@@ -210,13 +232,38 @@ public class MonkeyKingMod implements  PostInitializeSubscriber,EditKeywordsSubs
     }
     public void receivePostInitialize() {//Register for monsters, events
         initializeMonsters();
+        //ZMXY1 zmxy1 = new ZMXY1();
+        //zmxy1.addAct("Exordium");
     }
     private void initializeMonsters() {
-        BaseMod.addMonster("dreaming_journey_to_the_west:KingYurong",KingYurong.NAME,() -> new MonsterGroup(new AbstractMonster[] { new KingYurong() }));
-        BaseMod.addEliteEncounter("Exordium", new MonsterInfo(KingYurong.ID, 0.2F));
+        BaseMod.addMonster("dreaming_journey_to_the_west:KingYurong", KingYurong.NAME,() -> new MonsterGroup(new AbstractMonster[] { new KingYurong() }));
+        BaseMod.addEliteEncounter(Exordium.ID, new MonsterInfo(KingYurong.ID, 1F));
+
         BaseMod.addMonster("dreaming_journey_to_the_west:KingMonkey", KingMonkey.NAME,() -> new MonsterGroup(new AbstractMonster[] { new KingMonkey() }));
-        BaseMod.addEliteEncounter("Exordium", new MonsterInfo(KingMonkey.ID, 0.2F));
+        BaseMod.addEliteEncounter(Exordium.ID, new MonsterInfo(KingMonkey.ID, 1F));
+
+        BaseMod.addMonster("dreaming_journey_to_the_west:KingLionCamel", KingLionCamel.NAME,() -> new MonsterGroup(new AbstractMonster[] { new KingLionCamel() }));
+        BaseMod.addEliteEncounter(Exordium.ID, new MonsterInfo(KingLionCamel.ID, 1F));
+
         BaseMod.addMonster("dreaming_journey_to_the_west:MonkeyKingPhantom", MonkeyKingPhantom.NAME,() -> new MonsterGroup(new AbstractMonster[] { new MonkeyKingPhantom() }));
+        BaseMod.addMonster(ExterminateImmortalSword.ID, ExterminateImmortalSword.NAME,() -> new MonsterGroup(new AbstractMonster[] { new ExterminateImmortalSword() }));
+        BaseMod.addMonster(AnnihilateImmortalSword.ID,AnnihilateImmortalSword.NAME,() -> new MonsterGroup(new AbstractMonster[] { new AnnihilateImmortalSword() }));
+        BaseMod.addMonster(TrapImmortalSword.ID,TrapImmortalSword.NAME,() -> new MonsterGroup(new AbstractMonster[] { new TrapImmortalSword() }));
+        BaseMod.addMonster(SlayingImmortalSword.ID,SlayingImmortalSword.NAME,() -> new MonsterGroup(new AbstractMonster[] { new SlayingImmortalSword() }));
+
+        BaseMod.addMonster(TheSovereignofTheTongtianSect.ID,() -> new MonsterGroup(new AbstractMonster[] { new TheSovereignofTheTongtianSect() }));
+        BaseMod.addBoss("TheEnding",TheSovereignofTheTongtianSect.ID,"img/monsters/boss/tongtian.png","img/monsters/boss/tongtian_outline.png");
+
+        BaseMod.addMonster("dreaming_journey_to_the_west:DrakeDemonKing", DrakeDemonKing.NAME,() -> new MonsterGroup(new AbstractMonster[] { new DrakeDemonKing() }));
+        BaseMod.addEliteEncounter(Exordium.ID, new MonsterInfo(DrakeDemonKing.ID, 1F));
+
+        BaseMod.addMonster(RocDemonKing.ID,() -> new MonsterGroup(new AbstractMonster[] { new RocDemonKing() }));
+        BaseMod.addBoss(Exordium.ID, RocDemonKing.ID,"img/monsters/boss/roc_boss.png","img/monsters/boss/roc_boss_outline.png");
+
+        BaseMod.addMonster(BullDemonKingHand.ID,BullDemonKingHand.NAME,() -> new MonsterGroup(new AbstractMonster[] { new BullDemonKingHand() }));
+
+        BaseMod.addMonster(BullDemonKing.ID,() -> new MonsterGroup(new AbstractMonster[] { new BullDemonKing() }));
+        BaseMod.addBoss(Exordium.ID, BullDemonKing.ID,"img/monsters/boss/roc_boss.png","img/monsters/boss/roc_boss_outline.png");
     }
     @SpireEnum
     public static AbstractCard.CardTags BOXING;

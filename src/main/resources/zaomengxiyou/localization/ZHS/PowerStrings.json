@@ -3,7 +3,7 @@
     "NAME": "灼烧",
     "DESCRIPTIONS": [
       "从 #y攻击 受到的伤害增加",
-      "% (最高#b50 %) ",
+      "% (最高 #b50 %%) ",
       ",每回合结束失去 #b",
       " 点生命。当有 #b虚弱 状态时 ，层数不会减少，当有 #b易伤 时回合结束造成双倍伤害并消失。"
     ]
@@ -23,7 +23,7 @@
   "dreaming_journey_to_the_west:BloodThirstyPower": {
     "NAME": "嗜血",
     "DESCRIPTIONS": [
-      "回复未被 格挡 的伤害 #b%d x0.33 点生命。每回合开始失去 #b%d 生命"
+      "回复未被 格挡 的伤害 #b%d /3 点生命。每回合开始失去 #b%d 生命"
     ]
   },
   "dreaming_journey_to_the_west:SeventyTwoSlashesPower": {
@@ -71,7 +71,7 @@
   "dreaming_journey_to_the_west:IronBonePower": {
     "NAME": "铁骨",
     "DESCRIPTIONS": [
-      "受到伤害减少 #b%d %% （最高 #b80% ），每回合结束失去 一半 层数。"
+      "受到伤害减少 #b%d %%(最高 80%% )，每回合结束失去 一半 层数。"
     ]
   },
   "dreaming_journey_to_the_west:BurnBloodPower": {
@@ -87,15 +87,15 @@
     ]
   },
   "dreaming_journey_to_the_west:ControlPhantomPower": {
-    "NAME": "法外分身",
+    "NAME": "控制分身",
     "DESCRIPTIONS": [
-      "在你的回合开始时，从左至右打出 #b%d 张牌(1+临时生命/3)"
+      "在你的回合开始时，从左至右打出 #b%d 张牌(1+临时生命)"
     ]
   },
-  "dreaming_journey_to_the_west:PhantomKindlePower": {
-    "NAME": "分身引火",
+  "dreaming_journey_to_the_west:ConcentrateEnergy": {
+    "NAME": "聚能",
     "DESCRIPTIONS": [
-      "当玩家有 #y临时生命 时，使用攻击牌，时敌人获得 #b%d 点 灼烧 。"
+      "每回合结束将 #b%d #y活力 转变为 #b%d #y力量 。"
     ]
   },
   "dreaming_journey_to_the_west:VellusPower": {
@@ -107,13 +107,55 @@
   "dreaming_journey_to_the_west:TenacityPower": {
     "NAME": "坚韧",
     "DESCRIPTIONS": [
-      "在这个回合，你的下一次格挡增加 #b%d 点 。"
+      "你的下一次格挡增加 #b%d 点 。"
     ]
   },
   "dreaming_journey_to_the_west:AgglomeratePower": {
     "NAME": "凝聚元神",
     "DESCRIPTIONS": [
       "再消耗 #b%d 张牌，获得 #b%d 点 [E] 。"
+    ]
+  },
+  "dreaming_journey_to_the_west:RampantBloodPower": {
+    "NAME": "狂血",
+    "DESCRIPTIONS": [
+      "当你失去生命，获得 #b%d 点 #y活力 。"
+    ]
+  },
+  "dreaming_journey_to_the_west:ThumpPower": {
+    "NAME": "重击",
+    "DESCRIPTIONS": [
+      "自身无法获得 #y能力,持续 #b%d 回合 。"
+    ]
+  },
+  "dreaming_journey_to_the_west:BlownSandPower": {
+    "NAME": "风沙",
+    "DESCRIPTIONS": [
+      "你每打出一张 #y风沙，获得 #b%d 点 #y力量 。"
+    ]
+  },
+  "dreaming_journey_to_the_west:CursePower": {
+    "NAME": "诅咒",
+    "DESCRIPTIONS": [
+      "每有 #b5 层，失去 #r5 点生命，每回合结束减半。当前层数： #b%d 。"
+    ]
+  },
+  "dreaming_journey_to_the_west:DeathCursePower": {
+    "NAME": "死亡诅咒",
+    "DESCRIPTIONS": [
+      "每当这个敌人对你造成伤害时，给予你 #b%d #r诅咒 。"
+    ]
+  },
+  "dreaming_journey_to_the_west:PoisonousPillPower": {
+    "NAME": "毒丹",
+    "DESCRIPTIONS": [
+      "每当这个敌人对你造成伤害时，其失去 #b%d 生命 。"
+    ]
+  },
+  "dreaming_journey_to_the_west:ReboundDamagePower": {
+    "NAME": "反伤",
+    "DESCRIPTIONS": [
+      "将未击穿格挡的攻击， #y全部 返回给攻击者。持续 #b%d 回合。 "
     ]
   }
 }
