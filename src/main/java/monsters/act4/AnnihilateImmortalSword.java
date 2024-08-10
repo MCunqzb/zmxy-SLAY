@@ -23,21 +23,21 @@ public class AnnihilateImmortalSword extends AbstractMonster {
 
     public int turn_count = 0;
     private static final float IDLE_TIMESCALE = 0.8F;
-    private static final int HP_MIN = 35;
-    private static final int HP_MAX = 39;
-    private static final int A_2_HP_MIN = 39;
-    private static final int A_2_HP_MAX = 45;
+    private static final int HP_MIN = 55;
+    private static final int HP_MAX = 59;
+    private static final int A_2_HP_MIN = 59;
+    private static final int A_2_HP_MAX = 65;
     private static final int DMG1 = 4;
     private static final int DMG2 = 3;
-    private static final int HITS = 3;
+    private static final int HITS = 4;
     private static final int A_2_DMG1 = 6;
     private static final int A_2_DMG2  = 4;
     private static final int BLOCK1 = 0;
     private static final int BLOCK2 = 0;
     private static final int MGC1 = 1;
     private static final int A_18_MGC1 = 2;
-    private static final int MGC2 = 2;
-    private static final int A_18_MGC2 = 3;
+    private static final int MGC2 = 6;
+    private static final int A_18_MGC2 = 8;
     private int Dmg1;
     private int Dmg2;
     private int HitTime;
@@ -52,9 +52,9 @@ public class AnnihilateImmortalSword extends AbstractMonster {
     public AnnihilateImmortalSword(float x, float y) {//Elite
         super(NAME, ID, AbstractDungeon.monsterHpRng.random(HP_MIN, HP_MAX), 0.0F, 0.0F, 160F, 160.0F, IMG,x,y);
         if (AbstractDungeon.ascensionLevel >= 8) {
-            setHp(HP_MIN, HP_MAX);
-        } else {
             setHp(A_2_HP_MIN, A_2_HP_MAX);
+        } else {
+            setHp(HP_MIN, HP_MAX);
         }
         if (AbstractDungeon.ascensionLevel >= 3) {
             this.Dmg1 = A_2_DMG1;
@@ -89,7 +89,7 @@ public class AnnihilateImmortalSword extends AbstractMonster {
                     }
                     AbstractMonster m = (AbstractMonster)var1.next();
                     if (m instanceof AnnihilateImmortalSword) {
-                        this.addToBot(new HealAction(this, this,0));
+                        this.addToBot(new HealAction(this, this,5));
                     } else if (!m.isDying) {
                         this.addToBot(new HealAction(m, this,this.magicAmt2));
                     }
@@ -105,7 +105,7 @@ public class AnnihilateImmortalSword extends AbstractMonster {
             case 3:
                 this.addToBot(new HealAction(this, this,6));
                 if (!this.hasPower("Flight")) {
-                    this.addToBot(new ApplyPowerAction(this, this, new FlightPower(this, 3), 3));
+                    this.addToBot(new ApplyPowerAction(this, this, new FlightPower(this, 2), 2));
                 }
                 break;
         }
@@ -115,7 +115,7 @@ public class AnnihilateImmortalSword extends AbstractMonster {
     @Override
     protected void getMove(int i) {
         ++turn_count;
-        if (AbstractDungeon.ascensionLevel >= 18) {
+        if (AbstractDungeon.ascensionLevel >= 18 && this.turn_count<=1) {
             this.setMove(MOVES[1], (byte) 2,Intent.BUFF);
         }else {
             if (this.lastMove((byte)1)){

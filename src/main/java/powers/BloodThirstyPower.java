@@ -8,6 +8,7 @@ import com.evacipated.cardcrawl.mod.stslib.powers.interfaces.HealthBarRenderPowe
 import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.actions.common.LoseHPAction;
 import com.megacrit.cardcrawl.actions.common.ReducePowerAction;
+import com.megacrit.cardcrawl.actions.common.RemoveSpecificPowerAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
@@ -15,7 +16,7 @@ import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.PowerStrings;
 import com.megacrit.cardcrawl.powers.AbstractPower;
 
-public class BloodThirstyPower extends AbstractPower implements HealthBarRenderPower {
+public class BloodThirstyPower extends AbstractPower  {
     public static final String POWER_ID = ModHelper.MakePath("BloodThirstyPower");
     private static final PowerStrings powerStrings = CardCrawlGame.languagePack.getPowerStrings(POWER_ID);
     private static final String NAME = powerStrings.NAME;
@@ -26,10 +27,6 @@ public class BloodThirstyPower extends AbstractPower implements HealthBarRenderP
         this.ID = POWER_ID;
         this.owner = owner;
         this.amount = Amount;
-
-        if (this.amount >= 9) {
-            this.amount = 9;
-        }
 
         String path128 = "img/powers/blood_thirsty84.png";
         String path48 = "img/powers/blood_thirsty32.png";
@@ -44,29 +41,26 @@ public class BloodThirstyPower extends AbstractPower implements HealthBarRenderP
         int heal_amount =Math.min(damageAmount, target.currentHealth);
         if (heal_amount/3.0 >= 1 && target != this.owner && info.type == DamageInfo.DamageType.NORMAL) {
             this.flash();
-
             //BaseMod.logger.info("AMT"+this.amount/3*damageAmount);
-            this.addToTop(new HealAction(this.owner, this.owner, (int)(heal_amount*this.amount*0.334) ));
+            this.addToTop(new HealAction(this.owner, this.owner, (int)(heal_amount*0.334) ));
         }
 
     }
 
-    public void atStartOfTurn() {
-        this.addToTop(new LoseHPAction(this.owner, this.owner, 3*this.amount));
+    public void atEndOfRound() {
+        if (this.amount == 0) {
+            this.addToBot(new RemoveSpecificPowerAction(this.owner, this.owner, this.ID ));
+        } else {
+            this.addToBot(new ReducePowerAction(this.owner, this.owner, this.ID, 1));
+        }
     }
+
+
 
 
     public void updateDescription() {
-        this.description = String.format(DESCRIPTIONS[0], this.amount,3*this.amount);
+        this.description = String.format(DESCRIPTIONS[0], this.amount);
     }
 
-    @Override
-    public int getHealthBarAmount() {
-        return 3*this.amount;
-    }
 
-    @Override
-    public Color getColor() {
-         return Color.ORANGE;
-    }
 }

@@ -2,20 +2,29 @@ package demoMod;
 
 import Helpers.ModHelper;
 import basemod.BaseMod;
+import basemod.IUIElement;
+import basemod.ModLabeledToggleButton;
+import basemod.ModPanel;
 import basemod.helpers.RelicType;
 import basemod.interfaces.*;
 import cards.*;
 import characters.MonkeyKing;
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.assets.loaders.TextureLoader;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.graphics.Texture;
+import com.evacipated.cardcrawl.modthespire.lib.SpireConfig;
 import com.evacipated.cardcrawl.modthespire.lib.SpireEnum;
 import com.evacipated.cardcrawl.modthespire.lib.SpireInitializer;
 import com.google.gson.Gson;
 import com.megacrit.cardcrawl.cards.AbstractCard;
+import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.Exordium;
+import com.megacrit.cardcrawl.dungeons.TheBeyond;
+import com.megacrit.cardcrawl.dungeons.TheCity;
 import com.megacrit.cardcrawl.helpers.CardHelper;
+import com.megacrit.cardcrawl.helpers.FontHelper;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.*;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
@@ -29,13 +38,19 @@ import monsters.act1.KingYurong;
 import monsters.act1.boss.BullDemonKing;
 import monsters.act1.boss.BullDemonKingHand;
 import monsters.act1.boss.RocDemonKing;
+import monsters.act2.Gear;
+import monsters.act2.WheelTurningKing;
+import monsters.act3.TheDeifiedDog;
+import monsters.act3.YangJian;
 import monsters.act4.*;
 import pathes.AbstractCardEnum;
 import pathes.ThmodClassEnum;
 import relics.*;
 
+import java.io.IOException;
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Properties;
 
 import static com.megacrit.cardcrawl.core.Settings.language;
 
@@ -61,6 +76,16 @@ public class MonkeyKingMod implements  PostInitializeSubscriber,EditKeywordsSubs
     public static Texture zmxy1bg;
     private ArrayList<AbstractCard> cardsToAdd = new ArrayList<>();
     public static ArrayList<AbstractCard> recyclecards = new ArrayList<>();
+    public static boolean act1boss = true;
+    public static boolean act2boss = true;
+    public static boolean act3boss = true;
+    public static boolean act4boss = true;
+    public static SpireConfig MonkeyKingSpireConfig;
+    public static String modID = "dreaming_journey_to_the_west";
+    public static String FILE_NAME = "MonkeyKingModConfig";
+    public static ModPanel settingsPanel;
+    public static String[] CONFIG_TEXT;
+
 
     public MonkeyKingMod() {
 
@@ -69,6 +94,22 @@ public class MonkeyKingMod implements  PostInitializeSubscriber,EditKeywordsSubs
                 OrangeRed, OrangeRed, OrangeRed, OrangeRed, OrangeRed, OrangeRed, OrangeRed,
                 ATTACK_CC, SKILL_CC, POWER_CC, ENERGY_ORB_CC, ATTACK_CC_PORTRAIT,
                 SKILL_CC_PORTRAIT,POWER_CC_PORTRAIT, ENERGY_ORB_CC_PORTRAIT, CARD_ENERGY_ORB);
+        Properties MonkeyKingModDefaultConfig = new Properties();
+        MonkeyKingModDefaultConfig.setProperty("TheBottomBoss100%fromMod",Boolean.toString(act1boss));
+        MonkeyKingModDefaultConfig.setProperty("TheCityBoss100%fromMod"  ,Boolean.toString(act2boss));
+        MonkeyKingModDefaultConfig.setProperty("TheBeyondBoss100%fromMod",Boolean.toString(act3boss));
+        MonkeyKingModDefaultConfig.setProperty("TheEndingBoss100%fromMod",Boolean.toString(act4boss));
+        try {
+            MonkeyKingSpireConfig = new SpireConfig(modID,FILE_NAME,MonkeyKingModDefaultConfig);
+            act1boss = MonkeyKingSpireConfig.getBool("TheBottomBoss100%fromMod");
+            act2boss = MonkeyKingSpireConfig.getBool("TheCityBoss100%fromMod");
+            act3boss = MonkeyKingSpireConfig.getBool("TheBeyondBoss100%fromMod");
+            act4boss = MonkeyKingSpireConfig.getBool("TheEndingBoss100%fromMod");
+        } catch (IOException e) {
+            BaseMod.logger.info("Monkey King Mod SpireConfig initialization failed:");
+            e.printStackTrace();
+        }
+
     }
 
     @Override
@@ -79,6 +120,7 @@ public class MonkeyKingMod implements  PostInitializeSubscriber,EditKeywordsSubs
     public static void initialize() {
         new MonkeyKingMod();
         zmxy1bg = ImageMaster.loadImage("img/scene/zmxy1.png");
+
     }
 
     @Override
@@ -161,6 +203,8 @@ public class MonkeyKingMod implements  PostInitializeSubscriber,EditKeywordsSubs
         BaseMod.addCard(new HelpfulHairsBamboo());
         BaseMod.addCard(new HelpfulHairsDrill());
         BaseMod.addCard(new FightingBuddhaForm());
+        BaseMod.addCard(new GearCard());
+        BaseMod.addCard(new BleedCard());
     }
 
 
@@ -197,6 +241,7 @@ public class MonkeyKingMod implements  PostInitializeSubscriber,EditKeywordsSubs
         BaseMod.addRelic(new GreedRing(), RelicType.SHARED);
         BaseMod.addRelic(new ObsessionRing(), RelicType.SHARED);
         BaseMod.addRelicToCustomPool(new EmergingBoxingGloves(), AbstractCardEnum.MonkeyKing_RED);
+        BaseMod.addRelic(new BloodSirenShell(),RelicType.SHARED);
     }
 
 
@@ -230,20 +275,78 @@ public class MonkeyKingMod implements  PostInitializeSubscriber,EditKeywordsSubs
     public void receiveSetUnlocks() {
 
     }
+    public static void initModConfigMenu() {
+        float startingXPos = 350.0F;
+        float settingXPos = startingXPos;
+        float xSpacing = 250.0F;
+        float settingYPos = 750.0F;
+        float lineSpacing = 50.0F;
+        ModPanel settingsPanel = new ModPanel();
+        UIStrings uiStrings = CardCrawlGame.languagePack.getUIString("dreaming_journey_to_the_west:config");
+        CONFIG_TEXT = uiStrings.TEXT;
+
+
+        ModLabeledToggleButton act1bossButton = new ModLabeledToggleButton("The Act1 Boss 100% from Mod", 350.0F, settingYPos, Settings.CREAM_COLOR, FontHelper.charDescFont, act1boss, settingsPanel, label -> {},button -> {
+            act1boss = button.enabled;
+            try {
+                MonkeyKingSpireConfig.setBool("TheBottomBoss100%fromMod", act1boss);
+                MonkeyKingSpireConfig.save();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+        settingsPanel.addUIElement((IUIElement)act1bossButton);
+        settingYPos -= lineSpacing;
+        ModLabeledToggleButton act2bossButton = new ModLabeledToggleButton("The Act2 Boss 100% from Mod", 350.0F, settingYPos, Settings.CREAM_COLOR, FontHelper.charDescFont, act1boss, settingsPanel, label -> {},button -> {
+            act1boss = button.enabled;
+            try {
+                MonkeyKingSpireConfig.setBool("TheCityBoss100%fromMod", act2boss);
+                MonkeyKingSpireConfig.save();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+        settingsPanel.addUIElement((IUIElement)act2bossButton);
+        settingYPos -= lineSpacing;
+        ModLabeledToggleButton act3bossButton = new ModLabeledToggleButton("The Act3 Boss 100% from Mod", 350.0F, settingYPos, Settings.CREAM_COLOR, FontHelper.charDescFont, act1boss, settingsPanel, label -> {},button -> {
+            act1boss = button.enabled;
+            try {
+                MonkeyKingSpireConfig.setBool("TheBeyondBoss100%fromMod", act3boss);
+                MonkeyKingSpireConfig.save();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+        settingsPanel.addUIElement((IUIElement)act3bossButton);
+        settingYPos -= lineSpacing;
+        ModLabeledToggleButton act4bossButton = new ModLabeledToggleButton("The Act4 Boss 100% from Mod", 350.0F, settingYPos, Settings.CREAM_COLOR, FontHelper.charDescFont, act1boss, settingsPanel, label -> {},button -> {
+            act1boss = button.enabled;
+            try {
+                MonkeyKingSpireConfig.setBool("TheEndingBoss100%fromMod", act3boss);
+                MonkeyKingSpireConfig.save();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }
+        });
+        settingsPanel.addUIElement((IUIElement)act4bossButton);
+        Texture config_texture = ImageMaster.loadImage("img/config/monkeyking_config.png");
+        BaseMod.registerModBadge(config_texture,"Monkey King Mod", "Sprinkle Pen", "BOSS Settings for each stage",settingsPanel);
+    }
     public void receivePostInitialize() {//Register for monsters, events
         initializeMonsters();
-        //ZMXY1 zmxy1 = new ZMXY1();
-        //zmxy1.addAct("Exordium");
+        //BaseMod.addPower(GearAttackPower.class,GearAttackPower.POWER_ID);
+        initModConfigMenu();
+
     }
     private void initializeMonsters() {
         BaseMod.addMonster("dreaming_journey_to_the_west:KingYurong", KingYurong.NAME,() -> new MonsterGroup(new AbstractMonster[] { new KingYurong() }));
-        BaseMod.addEliteEncounter(Exordium.ID, new MonsterInfo(KingYurong.ID, 1F));
+        BaseMod.addEliteEncounter(Exordium.ID, new MonsterInfo(KingYurong.ID, 9F));
 
         BaseMod.addMonster("dreaming_journey_to_the_west:KingMonkey", KingMonkey.NAME,() -> new MonsterGroup(new AbstractMonster[] { new KingMonkey() }));
-        BaseMod.addEliteEncounter(Exordium.ID, new MonsterInfo(KingMonkey.ID, 1F));
+        BaseMod.addEliteEncounter(Exordium.ID, new MonsterInfo(KingMonkey.ID, 9F));
 
         BaseMod.addMonster("dreaming_journey_to_the_west:KingLionCamel", KingLionCamel.NAME,() -> new MonsterGroup(new AbstractMonster[] { new KingLionCamel() }));
-        BaseMod.addEliteEncounter(Exordium.ID, new MonsterInfo(KingLionCamel.ID, 1F));
+        BaseMod.addEliteEncounter(Exordium.ID, new MonsterInfo(KingLionCamel.ID, 9F));
 
         BaseMod.addMonster("dreaming_journey_to_the_west:MonkeyKingPhantom", MonkeyKingPhantom.NAME,() -> new MonsterGroup(new AbstractMonster[] { new MonkeyKingPhantom() }));
         BaseMod.addMonster(ExterminateImmortalSword.ID, ExterminateImmortalSword.NAME,() -> new MonsterGroup(new AbstractMonster[] { new ExterminateImmortalSword() }));
@@ -255,7 +358,7 @@ public class MonkeyKingMod implements  PostInitializeSubscriber,EditKeywordsSubs
         BaseMod.addBoss("TheEnding",TheSovereignofTheTongtianSect.ID,"img/monsters/boss/tongtian.png","img/monsters/boss/tongtian_outline.png");
 
         BaseMod.addMonster("dreaming_journey_to_the_west:DrakeDemonKing", DrakeDemonKing.NAME,() -> new MonsterGroup(new AbstractMonster[] { new DrakeDemonKing() }));
-        BaseMod.addEliteEncounter(Exordium.ID, new MonsterInfo(DrakeDemonKing.ID, 1F));
+        BaseMod.addEliteEncounter(Exordium.ID, new MonsterInfo(DrakeDemonKing.ID, 9F));
 
         BaseMod.addMonster(RocDemonKing.ID,() -> new MonsterGroup(new AbstractMonster[] { new RocDemonKing() }));
         BaseMod.addBoss(Exordium.ID, RocDemonKing.ID,"img/monsters/boss/roc_boss.png","img/monsters/boss/roc_boss_outline.png");
@@ -263,7 +366,19 @@ public class MonkeyKingMod implements  PostInitializeSubscriber,EditKeywordsSubs
         BaseMod.addMonster(BullDemonKingHand.ID,BullDemonKingHand.NAME,() -> new MonsterGroup(new AbstractMonster[] { new BullDemonKingHand() }));
 
         BaseMod.addMonster(BullDemonKing.ID,() -> new MonsterGroup(new AbstractMonster[] { new BullDemonKing() }));
-        BaseMod.addBoss(Exordium.ID, BullDemonKing.ID,"img/monsters/boss/roc_boss.png","img/monsters/boss/roc_boss_outline.png");
+        BaseMod.addBoss(Exordium.ID, BullDemonKing.ID,"img/monsters/boss/bull_boss.png","img/monsters/boss/bull_boss_outline.png");
+
+        BaseMod.addMonster(Gear.ID,Gear.NAME,() -> new MonsterGroup(new AbstractMonster[] { new Gear() }));
+
+        BaseMod.addMonster(WheelTurningKing.ID,() -> new MonsterGroup(new AbstractMonster[] { new WheelTurningKing() }));
+        BaseMod.addBoss(TheCity.ID, WheelTurningKing.ID,"img/monsters/boss/zlw_boss.png","img/monsters/boss/zlw_boss_outline.png");
+
+        BaseMod.addMonster(TheDeifiedDog.ID,TheDeifiedDog.NAME,() -> new MonsterGroup(new AbstractMonster[] { new TheDeifiedDog() }));
+        BaseMod.addMonster(YangJian.ID,YangJian.NAME,() -> new MonsterGroup(new AbstractMonster[] { new YangJian() ,new TheDeifiedDog(-400.0F,0.0F)}));
+
+        BaseMod.addBoss(TheBeyond.ID, YangJian.ID,"img/monsters/boss/yangjian_boss.png","img/monsters/boss/yangjian_outline.png");
+
+
     }
     @SpireEnum
     public static AbstractCard.CardTags BOXING;

@@ -1,6 +1,7 @@
 package monsters.act1;
 
 import Helpers.ModHelper;
+import basemod.helpers.VfxBuilder;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.MathUtils;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
@@ -15,10 +16,12 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
+import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.StrengthPower;
 import com.megacrit.cardcrawl.powers.WeakPower;
+import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import com.megacrit.cardcrawl.vfx.combat.BiteEffect;
 import com.megacrit.cardcrawl.vfx.combat.LightningEffect;
 import vfx.ColourfulLightingEffect;
@@ -34,14 +37,14 @@ public class KingYurong extends AbstractMonster {
     public static final String[] DIALOG = monsterStrings.DIALOG;
     public int turn_count = 0;
     private static final float IDLE_TIMESCALE = 0.8F;
-    private static final int HP_MIN = 70;
-    private static final int HP_MAX = 86;
-    private static final int A_2_HP_MIN = 74;
-    private static final int A_2_HP_MAX = 90;
-    private static final int DMG1 = 12;
-    private static final int DMG2 = 1;
+    private static final int HP_MIN = 110;
+    private static final int HP_MAX = 120;
+    private static final int A_2_HP_MIN = 120;
+    private static final int A_2_HP_MAX = 130;
+    private static final int DMG1 = 15;
+    private static final int DMG2 = 2;
     private static final int FURY_HITS = 3;
-    private static final int A_2_DMG1 = 14;
+    private static final int A_2_DMG1 = 17;
     private static final int A_2_DMG2 = 3;
     private int Dmg1;
     private int Dmg2;
@@ -59,9 +62,9 @@ public class KingYurong extends AbstractMonster {
     public KingYurong(float x, float y) {//Elite
         super(NAME, ID, 80, 0.0F, 0.0F, 280.0F, 300.0F, IMG,x,y);
         if (AbstractDungeon.ascensionLevel >= 8) {
-            setHp(HP_MIN, HP_MAX);
-        } else {
             setHp(A_2_HP_MIN, A_2_HP_MAX);
+        } else {
+            setHp(HP_MIN, HP_MAX);
         }
         if (AbstractDungeon.ascensionLevel >= 3) {
             this.Dmg1 = A_2_DMG1;
@@ -90,7 +93,14 @@ public class KingYurong extends AbstractMonster {
                 this.addToBot(new DamageAction(AbstractDungeon.player, (DamageInfo)this.damage.get(0), AbstractGameAction.AttackEffect.NONE));
                 this.addToBot(new ApplyPowerAction(AbstractDungeon.player, this, new WeakPower(AbstractDungeon.player, this.strengthAmt, true), this.strengthAmt));
                 this.addToBot(new WaitAction(0.25F));
-                this.addToBot(new VFXAction(new ColourfulLightingEffect(AbstractDungeon.player.hb.cX, AbstractDungeon.player.hb.cY,Color.PURPLE), 0.05F));
+                AbstractGameEffect LIGHT_ = new VfxBuilder(ImageMaster.vfxAtlas.findRegion("combat/lightning"),0.8f)
+                        .scale(1.5f, 1f, VfxBuilder.Interpolations.SWING)
+                        .moveY(p.drawY,p.drawY, VfxBuilder.Interpolations.EXP5IN)
+                        .moveX(p.drawX,p.drawX, VfxBuilder.Interpolations.EXP5IN)
+                        .playSoundAt(0.35F,"ORB_LIGHTNING_EVOKE")
+                        .setColor(Color.GOLDENROD)
+                        .build();
+                this.addToBot(new VFXAction(LIGHT_));
                 if (turn_count==1){
                     this.addToBot((new TalkAction(this,DIALOG[0], 2.5F, 2.5F)));
                 }
@@ -107,9 +117,15 @@ public class KingYurong extends AbstractMonster {
                     if (i >= HitNum) {
                         break label;
                     }
+                    AbstractGameEffect LIGHT = new VfxBuilder(ImageMaster.vfxAtlas.findRegion("combat/lightning"),0.8f)
+                            .scale(1.5f, 1f, VfxBuilder.Interpolations.SWING)
+                            .moveY(p.drawY,p.drawY, VfxBuilder.Interpolations.EXP5IN)
+                            .moveX(p.drawX,p.drawX, VfxBuilder.Interpolations.EXP5IN)
+                            .playSoundAt(0.35F,"ORB_LIGHTNING_EVOKE")
+                            .setColor(new Color(0.5F, 0.1F, 0.7F, 0.0F))
+                            .build();
+                    this.addToBot(new VFXAction(LIGHT));
                     this.addToBot(new DamageAction(p, (DamageInfo)this.damage.get(1), AbstractGameAction.AttackEffect.NONE, true));
-
-                    this.addToBot(new VFXAction(new ColourfulLightingEffect(AbstractDungeon.player.hb.cX + MathUtils.random(-50.0F, 50.0F) * Settings.scale, AbstractDungeon.player.hb.cY + MathUtils.random(-50.0F, 50.0F) * Settings.scale,new Color(0.5F, 0.1F, 0.7F, 0.0F)), 0.05F));
                     ++i;
                 }
 

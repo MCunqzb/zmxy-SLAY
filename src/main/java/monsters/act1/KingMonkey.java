@@ -31,20 +31,21 @@ public class KingMonkey extends AbstractMonster {
 
     public int turn_count = 0;
     private static final float IDLE_TIMESCALE = 0.8F;
-    private static final int HP_MIN = 86;
-    private static final int HP_MAX = 96;
-    private static final int A_2_HP_MIN = 84;
-    private static final int A_2_HP_MAX = 100;
-    private static final int DMG1 = 14;
+    private static final int HP_MIN = 110;
+    private static final int HP_MAX = 120;
+    private static final int A_2_HP_MIN = 120;
+    private static final int A_2_HP_MAX = 130;
+    private static final int DMG1 = 18;
     private static final int DMG2 = 3;
     private static final int HITS = 4;
-    private static final int A_2_DMG1 = 17;
+    private static final int A_2_DMG1 = 21;
     private static final int A_2_DMG2  = 4;
     private int Dmg1;
     private int Dmg2;
     private int HitTime;
     private int strengthAmt;
-    private int BLOCK_AMOUNT = 4;
+    private int magic;
+    private int BLOCK_AMOUNT = 9;
     private int A_17_BLOCK_AMOUNT = 20;
     private static final byte SLASH = 1;
     private static final byte PROTECT = 2;
@@ -56,9 +57,9 @@ public class KingMonkey extends AbstractMonster {
         //Elite
         super(NAME, ID, 80, 0.0F, 0.0F, 280.0F, 300.0F, IMG,x,y);
         if (AbstractDungeon.ascensionLevel >= 8) {
-            setHp(HP_MIN, HP_MAX);
-        } else {
             setHp(A_2_HP_MIN, A_2_HP_MAX);
+        } else {
+            setHp(HP_MIN, HP_MAX);
         }
         if (AbstractDungeon.ascensionLevel >= 3) {
             this.Dmg1 = A_2_DMG1;
@@ -70,8 +71,10 @@ public class KingMonkey extends AbstractMonster {
         this.HitTime=HITS;
         if (AbstractDungeon.ascensionLevel >= 18) {
             this.strengthAmt = 2;
+            this.magic= 5;
         } else {
             this.strengthAmt = 1;
+            this.magic= 4;
         }
         this.damage.add(new DamageInfo(this, this.Dmg1));
         this.damage.add(new DamageInfo(this, this.Dmg2));
@@ -84,14 +87,8 @@ public class KingMonkey extends AbstractMonster {
         AbstractCreature p = AbstractDungeon.player;
         switch(this.nextMove) {
             case 1:
-                if (turn_count==1){
-                    this.addToBot((new TalkAction(this,DIALOG[0], 2.5F, 2.5F)));
-                    this.addToBot(new ApplyPowerAction(this,this,new BlownSandPower(this,2),2));
-                }
-                else {
-                    this.addToBot(new DamageAction(AbstractDungeon.player, (DamageInfo)this.damage.get(0), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
-                    this.addToBot(new GainBlockAction(this,BLOCK_AMOUNT));
-                }
+                this.addToBot(new DamageAction(AbstractDungeon.player, (DamageInfo)this.damage.get(0), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
+                this.addToBot(new GainBlockAction(this,BLOCK_AMOUNT));
                 break;
             case 2:
                 this.addToBot(new SFXAction("VO_NEMESIS_1C"));
@@ -99,17 +96,21 @@ public class KingMonkey extends AbstractMonster {
                 this.addToBot(new WaitAction(0.25F));
                 //this.addToBot(new ApplyPowerAction(AbstractDungeon.player,this,new FrailPower(AbstractDungeon.player,this.strengthAmt,true),this.strengthAmt));
                 this.addToBot(new ApplyPowerAction(AbstractDungeon.player,this,new VulnerablePower(AbstractDungeon.player,this.strengthAmt,true),this.strengthAmt));
-                this.addToBot(new MakeTempCardInDiscardAction(new BlownSand(), 2));
+                this.addToBot(new MakeTempCardInDiscardAction(new BlownSand(), this.magic));
 
                 break;
             case 3:
-
                 this.addToBot(new WaitAction(0.15F));
                 for(int i = 0; i < this.HitTime; ++i) {
                     AbstractDungeon.actionManager.addToBottom(new SFXAction("ATTACK_HEAVY"));
                     AbstractDungeon.actionManager.addToBottom(new VFXAction(this, new CleaveEffect(true), 0.15F));
                     this.addToBot(new DamageAction(p, (DamageInfo)this.damage.get(1), AbstractGameAction.AttackEffect.NONE, true));
                 }
+                break;
+            case 4:
+                this.addToBot((new TalkAction(this,DIALOG[0], 2.5F, 2.5F)));
+                this.addToBot(new ApplyPowerAction(this,this,new BlownSandPower(this,4),4));
+                break;
 
         }
         this.addToBot(new RollMoveAction(this));
@@ -117,9 +118,9 @@ public class KingMonkey extends AbstractMonster {
 
     @Override
     protected void getMove(int i) {
-
-        if (AbstractDungeon.ascensionLevel >= 18 && turn_count == 0) {
-            this.setMove(MOVES[3], (byte) 1,Intent.BUFF);
+        ++turn_count;
+        if (AbstractDungeon.ascensionLevel >= 18 && !this.hasPower(BlownSandPower.POWER_ID)) {
+            this.setMove(MOVES[3], (byte) 4,Intent.BUFF);
         }else {
             if (this.lastMove((byte)2)){
                 this.setMove(MOVES[2],(byte)3, Intent.ATTACK, ((DamageInfo)this.damage.get(1)).base,this.HitTime,true);
@@ -128,14 +129,14 @@ public class KingMonkey extends AbstractMonster {
                 this.setMove(MOVES[1], (byte)2, Intent.STRONG_DEBUFF);
             }
             else {
-                if (turn_count==1) {
-                    this.setMove(MOVES[3], (byte) 1,Intent.BUFF);
+                if (!this.hasPower(BlownSandPower.POWER_ID)) {
+                    this.setMove(MOVES[3], (byte) 4,Intent.BUFF);
                 }else {
                     this.setMove(MOVES[0], (byte) 1, Intent.ATTACK_DEFEND, ((DamageInfo) this.damage.get(0)).base);
                 }
             }
         }
-        ++turn_count;
+
     }
 
     @Override

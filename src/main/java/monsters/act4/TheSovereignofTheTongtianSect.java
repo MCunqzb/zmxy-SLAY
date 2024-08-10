@@ -38,9 +38,9 @@ public class TheSovereignofTheTongtianSect extends AbstractMonster {
 
     public int turn_count = 0;
     private static final float IDLE_TIMESCALE = 0.8F;
-    private static final int HP_MIN = 480;
+    private static final int HP_MIN = 500;
     private static final int HP_MAX = 520;
-    private static final int A_2_HP_MIN = 510;
+    private static final int A_2_HP_MIN = 525;
     private static final int A_2_HP_MAX = 550;
     private static final int DMG1 = 2;
     private static final int A_2_DMG1 = 2;
@@ -80,9 +80,9 @@ public class TheSovereignofTheTongtianSect extends AbstractMonster {
     public TheSovereignofTheTongtianSect(float x, float y) {//Elite
         super(NAME, ID, AbstractDungeon.monsterHpRng.random(HP_MIN, HP_MAX), 0.0F, 0.0F, 280.0F, 300.0F, IMG,x,y);
         if (AbstractDungeon.ascensionLevel >= 9) {
-            setHp(HP_MIN, HP_MAX);
-        } else {
             setHp(A_2_HP_MIN, A_2_HP_MAX);
+        } else {
+            setHp(HP_MIN, HP_MAX);
         }
         if (AbstractDungeon.ascensionLevel >= 4) {
             this.Dmg1 = A_2_DMG1;
@@ -122,14 +122,14 @@ public class TheSovereignofTheTongtianSect extends AbstractMonster {
             case 1:
                 //???
                 this.addToBot((new TalkAction(this,DIALOG[0], 2.5F, 2.5F)));
-                this.addToBot(new WaitAction(3F));
+                this.addToBot(new WaitAction(2F));
                 this.addToBot((new TalkAction(this,DIALOG[1], 2.5F, 2.5F)));
-                this.addToBot(new WaitAction(3F));
+                this.addToBot(new WaitAction(2F));
 
-                this.addToBot(new SpawnMonsterAction(new ExterminateImmortalSword(-300F, 75.0F), true));
-                this.addToBot(new SpawnMonsterAction(new AnnihilateImmortalSword(-200.0F, 340.0F), true));
-                this.addToBot(new SpawnMonsterAction(new TrapImmortalSword(200.0F, 340F), true));
-                this.addToBot(new SpawnMonsterAction(new SlayingImmortalSword(300.0F, 75.0F), true));
+                this.addToBot(new SpawnMonsterAction(new ExterminateImmortalSword(-300F, 75.0F), false));
+                this.addToBot(new SpawnMonsterAction(new AnnihilateImmortalSword(-200.0F, 340.0F), false));
+                this.addToBot(new SpawnMonsterAction(new TrapImmortalSword(200.0F, 340F), false));
+                this.addToBot(new SpawnMonsterAction(new SlayingImmortalSword(300.0F, 75.0F), false));
                 break;
             case 2:
                 //ATK_HITS
@@ -316,7 +316,7 @@ public class TheSovereignofTheTongtianSect extends AbstractMonster {
             this.setMove(MOVES[0], (byte) 1,Intent.UNKNOWN);
             this.isFirstMove = false;
         }else {
-            if (this.has_sword){
+            if (this.has_sword && !this.is_heal){
                 if ((lastMove((byte) 4)&&lastMoveBefore((byte) 5))||(lastMove((byte) 5)&&lastMoveBefore((byte) 4))){
                     this.setMove(MOVES[5], (byte) 6, Intent.BUFF);
                 }else {

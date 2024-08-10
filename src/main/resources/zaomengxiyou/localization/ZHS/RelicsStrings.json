@@ -10,14 +10,14 @@
     "NAME": "手环",
     "FLAVOR": "对拳击有些许帮助的护具。",
     "DESCRIPTIONS": [
-      "打出带 #y拳击 的 #y攻击牌 时获得 #b1 点 #y坚韧 。 打出带 #y拳击 的 #y技能牌 时获得 #b1 点 #y活力 。"
+      "打出带 #y拳击 的 #y攻击牌 时获得 #b1 点 #ydreaming_journey_to_the_west:坚韧 。 打出带 #y拳击 的 #y技能牌 时获得 #b1 点 #y活力 。"
     ]
   },
   "dreaming_journey_to_the_west:FuriousRing": {
     "NAME": "嗔怒之戒",
     "FLAVOR": "受辱愤慨，不喜则嗔。",
     "DESCRIPTIONS": [
-      "在每场战斗开始时，获得 #b2 点 #y力量 ，当你的生命值等于或低于 #b50% 时，获得 #y嗔怒。 在营地休息降低 #r4 点最大生命值。"
+      "在每场战斗开始时，获得 #b2 点 #y力量 ，当你的生命值等于或低于 #b50% 时，获得 #ydreaming_journey_to_the_west:嗔怒 。 在营地休息降低 #r4 点最大生命值。"
     ]
   },
   "dreaming_journey_to_the_west:GreedRing": {
@@ -31,14 +31,21 @@
     "NAME": "痴迷之戒",
     "FLAVOR": "不明事理，是非不分。",
     "DESCRIPTIONS": [
-      "失去 [E] ，每回合结束获得 #b1 点 #y格挡 , 获得 #r负面效果 时随机获得 #b1层 #y增益效果。"
+      "失去 [E] ，每回合结束获得 #b8 点 #y格挡 , 获得 #r负面效果 时随机获得 #b1层 原版的 #y增益效果。"
     ]
   },
   "dreaming_journey_to_the_west:EmergingBoxingGloves": {
     "NAME": "新锐拳套",
     "FLAVOR": "五岳拽力内，百川倾意中。",
     "DESCRIPTIONS": [
-      "替换 #r手环 。打出带 #y拳击 的 #y攻击牌 时获得 #b2 点 #y坚韧  。 打出带 #y拳击 的 #y技能牌 时获得 #b2 点 #y活力 。"
+      "替换 #r手环 。打出带 #y拳击 的 #y攻击牌 时获得 #b2 点 #ydreaming_journey_to_the_west:坚韧 。 打出带 #y拳击 的 #y技能牌 时获得 #b2 点 #y活力 。"
+    ]
+  },
+  "dreaming_journey_to_the_west:BloodSirenShell": {
+    "NAME": "血海妖壳",
+    "FLAVOR": "在血池里浸泡数载而出，坚如磐石，固若金汤。",
+    "DESCRIPTIONS": [
+      "当你有 #y格挡 时打出带 #y格挡 的牌，获得 #b1 层 #y反伤 。"
     ]
   }
 }

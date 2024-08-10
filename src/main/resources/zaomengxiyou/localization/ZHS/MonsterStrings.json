@@ -159,6 +159,62 @@
       "@还没完呢！@",
       "看来只能用 NL 黑衣人给我的力量了"
     ]
+  },
+  "dreaming_journey_to_the_west:Gear": {
+    "MOVES": [
+    ""
+    ],
+    "NAME": "齿轮",
+    "DIALOG": [
+    ""
+    ]
+  },
+  "dreaming_journey_to_the_west:WheelTurningKing": {
+  "MOVES": [
+    "",
+    "三转轮回",
+    "日转轮",
+    "圣轮庇佑",
+    "轮回",
+    "轮回归一",
+    "",
+    "致命转轮",
+    "圣轮天陨",
+    "九转轮回"
+
+  ],
+  "NAME": "转轮王",
+  "DIALOG": [
+    "",
+    "~轮回已然开始~",
+    "让你见识一下 NL @幽冥真正的力量！@"
+  ]
+},
+  "dreaming_journey_to_the_west:TheDeifiedDog": {
+    "MOVES": [
+      "",
+      "幽犬猛击",
+      "恶犬咆哮",
+      "天狗食日",
+      "恶犬冲击"
+    ],
+    "NAME": "哮天犬",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "dreaming_journey_to_the_west:YangJian": {
+    "MOVES": [
+      "",
+      "割裂击",
+      "瞬影杀",
+      "幽震天地",
+      "三眼封印"
+    ],
+    "NAME": "杨戬",
+    "DIALOG": [
+      "~我只是将这腐朽不堪的天庭推翻~ NL #r@何错之有！@"
+    ]
   }
 
 

@@ -11,10 +11,15 @@ import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
+import com.megacrit.cardcrawl.helpers.ModHelper;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.*;
+import com.megacrit.cardcrawl.relics.AbstractRelic;
+import com.megacrit.cardcrawl.relics.IceCream;
+import com.megacrit.cardcrawl.rewards.RewardItem;
 import powers.ReboundDamagePower;
+import relics.BloodSirenShell;
 
 public class DrakeDemonKing extends AbstractMonster {
     public static final String ID = "dreaming_journey_to_the_west:DrakeDemonKing";
@@ -34,12 +39,12 @@ public class DrakeDemonKing extends AbstractMonster {
     private static final int DMG1 = 14;
     private static final int DMG2 = 3;
     private static final int HITS = 3;
-    private static final int A_DMG1 = 18;
+    private static final int A_DMG1 = 17;
     private static final int A_DMG2  = 4;
-    private static final int BLOCK1 = 15;
+    private static final int BLOCK1 = 16;
     private static final int A_BLOCK1 = 20;
-    private static final int BLOCK2 = 7;
-    private static final int A_BLOCK2 = 10;
+    private static final int BLOCK2 = 9;
+    private static final int A_BLOCK2 = 11;
     private static final int MGC1 = 1;
     private static final int A_MGC1 = 2;
     private static final int MGC2 = 3;
@@ -60,9 +65,10 @@ public class DrakeDemonKing extends AbstractMonster {
     public DrakeDemonKing(float x, float y) {//Elite
         super(NAME, ID, AbstractDungeon.monsterHpRng.random(HP_MIN, HP_MAX), 0.0F, 0.0F, 280.0F, 300.0F, IMG,x,y);
         if (AbstractDungeon.ascensionLevel >= 8) {
-            setHp(HP_MIN, HP_MAX);
-        } else {
             setHp(A_2_HP_MIN, A_2_HP_MAX);
+        } else {
+            setHp(HP_MIN, HP_MAX);
+
         }
         if (AbstractDungeon.ascensionLevel >= 4) {
             this.Dmg1 = A_DMG1;
@@ -90,12 +96,14 @@ public class DrakeDemonKing extends AbstractMonster {
 
     public void usePreBattleAction() {
         if (AbstractDungeon.ascensionLevel >= 18){
+            this.addToBot(new GainBlockAction(this,20));
             this.addToBot(new ApplyPowerAction(this,this,new ReboundDamagePower(this,4,true)));
         }else {
             this.addToBot(new ApplyPowerAction(this,this,new ReboundDamagePower(this,3,true)));
+            this.addToBot(new GainBlockAction(this,17));
         }
         this.addToBot(new ApplyPowerAction(this,this,new BarricadePower(this)));
-        this.addToBot(new GainBlockAction(this,25));
+
     }
 
     @Override
@@ -133,12 +141,12 @@ public class DrakeDemonKing extends AbstractMonster {
                 this.setMove(MOVES[2], (byte) 3,Intent.DEFEND_BUFF);
                 this.block_turn=0;
             }else {
-                if (lastMove((byte) 1)){
-                    this.setMove(MOVES[3], (byte) 4,Intent.DEFEND);
+                if (!lastMove((byte) 1) && !lastMoveBefore((byte) 4)){
+                    this.setMove(MOVES[0],(byte) 1 ,Intent.ATTACK, this.damage.get(0).base);
                 }else if (lastMove((byte) 4) && lastMoveBefore((byte) 1)){
                     this.setMove(MOVES[1], (byte) 2,Intent.BUFF);
                 }else {
-                    this.setMove(MOVES[0],(byte)1, Intent.ATTACK, (this.damage.get(0)).base);
+                    this.setMove(MOVES[3], (byte) 4,Intent.DEFEND);
                 }
             }
             if (!(this.currentBlock>0)){
@@ -157,9 +165,29 @@ public class DrakeDemonKing extends AbstractMonster {
         }
 
     }
+
     @Override
     public void die() {
         super.die();
         this.playDeathSfx();
+        //AbstractDungeon.getCurrRoom().rewards.clear();
+        //if (!AbstractDungeon.player.hasRelic(BloodSirenShell.ID)) {
+        //
+        //    AbstractDungeon.getCurrRoom().addRelicToRewards(new relics.BloodSirenShell());
+        //}
+
+    }
+
+    private AbstractRelic.RelicTier returnRandomRelicTier() {
+        int roll = AbstractDungeon.relicRng.random(0, 99);
+        if (ModHelper.isModEnabled("Elite Swarm")) {
+            roll += 10;
+        }
+
+        if (roll < 50) {
+            return AbstractRelic.RelicTier.COMMON;
+        } else {
+            return roll > 82 ? AbstractRelic.RelicTier.RARE : AbstractRelic.RelicTier.UNCOMMON;
+        }
     }
 }

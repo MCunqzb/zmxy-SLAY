@@ -1,0 +1,81 @@
+{
+"skeleton": {
+	"hash": "exdcThWXtdq4fmaU33/HVn25cZY",
+	"spine": "3.8.75",
+	"x": -267,
+	"y": 5,
+	"width": 530,
+	"height": 725,
+	"images": "",
+	"audio": ""
+},
+"bones": [
+	{ "name": "root", "x": -1, "y": -3 },
+	{ "name": "bone", "parent": "root", "x": 40.1, "y": 286.77 },
+	{ "name": "bone2", "parent": "bone", "length": 137.54, "rotation": 87, "y": -1 },
+	{ "name": "bone3", "parent": "bone", "length": 53.08, "rotation": -47.29, "x": 82, "y": -122 },
+	{ "name": "bone4", "parent": "bone", "length": 35.47, "rotation": -139.57, "x": -123, "y": -146 }
+],
+"slots": [
+	{ "name": "蓝色轮3", "bone": "bone4", "attachment": "蓝色轮" },
+	{ "name": "蓝色轮2", "bone": "bone3", "attachment": "蓝色轮" },
+	{ "name": "蓝色轮", "bone": "bone2", "attachment": "蓝色轮" },
+	{ "name": "wheel_turning_king_1_0", "bone": "root", "attachment": "wheel_turning_king_1_0" }
+],
+"animations": {
+	"absorb_gear": {
+		"bones": {
+			"bone2": {
+				"rotate": [
+					{ "angle": -87, "time": 0.0 },
+					{ "time": 0.3, "angle": 3 },
+					{ "time": 0.6, "angle": 93 },
+					{ "time": 0.9, "angle": -177 },
+					{ "time": 1.2, "angle": -87 }
+				]
+			},
+			"bone3": {
+				"rotate": [
+					{ "angle": 47.29, "time": 0.0 },
+					{ "time": 0.2, "angle": -77.36 },
+					{ "time": 0.4, "angle": 160.53 },
+					{ "time": 0.6, "angle": 47.29 },
+					{ "time": 0.8, "angle": -77.36 },
+					{ "time": 1, "angle": 160.53 },
+					{ "time": 1.2, "angle": 47.29 }
+				]
+			},
+			"bone4": {
+				"rotate": [
+					{ "angle": -130.43, "time": 0.0 },
+					{ "time": 0.1333, "angle": 57.33 },
+					{ "time": 0.2667, "angle": -53.81 },
+					{ "time": 0.4, "angle": -130.43 },
+					{ "time": 0.5333, "angle": 57.33 },
+					{ "time": 0.6667, "angle": -53.81 },
+					{ "time": 0.8, "angle": -130.43 },
+					{ "time": 0.9333, "angle": 57.33 },
+					{ "time": 1.0667, "angle": -53.81 },
+					{ "time": 1.2, "angle": -130.43 }
+				]
+			}
+		}
+	}
+},
+"skins": {
+	"default": {
+		"wheel_turning_king_1_0": {
+			"wheel_turning_king_1_0": { "x": -1, "y": 370.5, "width": 530, "height": 725 }
+		},
+		"蓝色轮": {
+			"蓝色轮": { "x": -1.77, "y": 0.01, "scaleX": 3, "scaleY": 3, "rotation": -87, "width": 87, "height": 85 }
+		},
+		"蓝色轮2": {
+			"蓝色轮": { "x": 0.71, "y": 0.03, "scaleX": 1.5, "scaleY": 1.5, "rotation": 47.29, "width": 87, "height": 85 }
+		},
+		"蓝色轮3": {
+			"蓝色轮": { "x": -1.35, "y": -0.82, "rotation": 139.57, "width": 87, "height": 85 }
+		}
+	}
+}
+}

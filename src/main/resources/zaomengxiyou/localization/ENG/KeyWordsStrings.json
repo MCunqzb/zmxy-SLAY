@@ -18,7 +18,7 @@
       "BloodThirsty",
       "bloodthirsty"
     ],
-    "DESCRIPTION": "Heal HP equal to unblocked damage*0.33 ."
+    "DESCRIPTION": "Heal HP equal to one third unblocked damage."
   },
   {
     "NAMES": [
@@ -52,5 +52,11 @@
       "Tenacity"
     ],
     "DESCRIPTION": "Improves Block gained from cards."
+  },
+  {
+    "NAMES": [
+      "嗔怒"
+    ],
+    "DESCRIPTION": "每回合开始，获得力量，失去生命。"
   }
 ]

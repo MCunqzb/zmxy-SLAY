@@ -35,7 +35,12 @@ public class ObsessionRing extends CustomRelic implements OnReceivePowerRelic {
 
     public void onEquip() {
         --AbstractDungeon.player.energy.energyMaster;
+    }
 
+    public void onPlayerEndTurn() {
+            this.flash();
+            this.addToTop(new GainBlockAction(AbstractDungeon.player, AbstractDungeon.player, 8));
+            this.addToTop(new RelicAboveCreatureAction(AbstractDungeon.player, this));
     }
 
 

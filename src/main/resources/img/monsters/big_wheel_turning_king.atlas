@@ -1,0 +1,27 @@
+
+big_wheel_turning_king.png
+size: 1584,474
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+gear
+  rotate: false
+  xy: 1024, 42
+  size: 430, 430
+  orig: 462, 462
+  offset: 11, 21
+  index: -1
+wheel_turning_king_2_0
+  rotate: false
+  xy: 2, 2
+  size: 1020, 470
+  orig: 1030, 640
+  offset: 0, 0
+  index: -1
+wheel_turning_king_2_1
+  rotate: true
+  xy: 1456, 60
+  size: 412, 126
+  orig: 412, 126
+  offset: 0, 0
+  index: -1

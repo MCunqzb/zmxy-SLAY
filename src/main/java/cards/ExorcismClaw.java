@@ -24,7 +24,7 @@ public class ExorcismClaw extends CustomCard {
     public static final String IMG_PATH = "img/cards/exorcism_claw.png";
     private static final int COST = 2;
     private static final int ATTACK_DMG = 13;
-    private static final int MAGIC_NUM = 2;
+    private static final int MAGIC_NUM = 3;
     public static final String ID = "ExorcismClaw";
 
     public ExorcismClaw() {
@@ -38,7 +38,7 @@ public class ExorcismClaw extends CustomCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeDamage(2);
+            this.upgradeDamage(4);
             this.upgradeMagicNumber(1);
         }
     }

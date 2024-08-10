@@ -13,7 +13,7 @@
   },
   "dreaming_journey_to_the_west:Anger": {
     "NAME": "愤怒",
-    "DESCRIPTION": "获得 !M! 层  dreaming_journey_to_the_west:坚韧 。 NL 获得 !M! 层 活力 。"
+    "DESCRIPTION": "获得 !M! 层 dreaming_journey_to_the_west:坚韧 。 NL 获得 !M! 层 活力 。"
   },
   "dreaming_journey_to_the_west:FireBlitz": {
     "NAME": "火炎突击",
@@ -71,7 +71,7 @@
   },
   "dreaming_journey_to_the_west:BloodThirsty": {
     "NAME": "嗜血",
-    "DESCRIPTION":  "获得 !M! 层 dreaming_journey_to_the_west:嗜血 NL 每回合开始失去 3* !M! 点生命。"
+    "DESCRIPTION":  "获得 !M! 层 dreaming_journey_to_the_west:嗜血 "
   },
   "dreaming_journey_to_the_west:Dodge": {
     "NAME": "闪身",
@@ -79,7 +79,7 @@
   },
   "dreaming_journey_to_the_west:StepFloor": {
     "NAME": "踏地",
-    "DESCRIPTION":  "打出抽牌堆顶部的牌 !M! 次。 NL dreaming_journey_to_the_west:拳击 NL 消耗 "
+    "DESCRIPTION":  "打出抽牌堆顶部的 !M! 张牌。 NL dreaming_journey_to_the_west:拳击 NL 消耗 "
   },
   "dreaming_journey_to_the_west:HelpfulHairs": {
     "NAME": "救命毫毛·锦绳",
@@ -128,8 +128,8 @@
   },
   "dreaming_journey_to_the_west:FireApeStrikes": {
     "NAME": "火猿出击",
-    "DESCRIPTION":  " 虚无 。 NL 每打出一张带 dreaming_journey_to_the_west:拳击 的攻击牌，随机造成 7* !M! 点伤害。 NL 每打出一张带 dreaming_journey_to_the_west:拳击 的技能牌，获得 !M! 点 *多层护甲 。",
-    "UPGRADE_DESCRIPTION":"每打出一张带 dreaming_journey_to_the_west:拳击 的攻击牌，随机造成 7* !M! 点伤害。 NL 每打出一张带 dreaming_journey_to_the_west:拳击 的技能牌，获得 !M! 点 *多层护甲 。"
+    "DESCRIPTION":  " 虚无 。 NL 每打出一张带 dreaming_journey_to_the_west:拳击 的攻击牌，随机造成 7 点伤害。 NL 每打出一张带 dreaming_journey_to_the_west:拳击 的技能牌，获得 !M! 点 *多层护甲 。",
+    "UPGRADE_DESCRIPTION":"每打出一张带 dreaming_journey_to_the_west:拳击 的攻击牌，随机造成 7 点伤害。 NL 每打出一张带 dreaming_journey_to_the_west:拳击 的技能牌，获得 !M! 点 *多层护甲 。"
   },
   "dreaming_journey_to_the_west:AttackMirage": {
     "NAME": "攻击幻影",
@@ -209,7 +209,7 @@
   "dreaming_journey_to_the_west:ExtraPhantom": {
     "NAME": "法外分身",
     "DESCRIPTION": "增加 !M! 张随机攻击牌到你的手牌。 NL 这张牌在本回合耗能变为0。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": "增加 !M! 张随机攻击牌或无色牌到你的手牌。 NL 这张牌在本回合耗能变为0。 NL 消耗 。"
+    "UPGRADE_DESCRIPTION": "增加 !M! 张随机攻击牌和无色牌到你的手牌。 NL 这张牌在本回合耗能变为0。 NL 消耗 。"
   },
   "dreaming_journey_to_the_west:PhantomStab": {
     "NAME": "分身刺",
@@ -230,8 +230,8 @@
   },
   "dreaming_journey_to_the_west:ControlPhantom": {
     "NAME": "控制分身",
-    "DESCRIPTION": "在你的回合开始时，从左至右打出 (1+ 临时生命) 张牌。",
-    "UPGRADE_DESCRIPTION": " 在你的回合开始时，从左至右打出 (1+ 临时生命) 张牌。"
+    "DESCRIPTION": "在你的回合开始时，失去所有临时生命，从左至右打出手中的 临时生命数量+1 张无色牌。 NL 并抽 临时生命数量 张牌。",
+    "UPGRADE_DESCRIPTION": " 在你的回合开始时，失去所有临时生命，从左至右打出手中的 临时生命数量+1 张无色牌。 NL 并抽 临时生命数量 张牌。"
   },
   "dreaming_journey_to_the_west:PhantomDestruction": {
     "NAME": "幻灭",
@@ -303,8 +303,8 @@
   },
   "dreaming_journey_to_the_west:FaceTheDifficulty": {
     "NAME": "迎难而上",
-    "DESCRIPTION": " 获得所有敌人Power中最大值点 活力 。 NL 消耗 。",
-    "UPGRADE_DESCRIPTION": " 获得所有敌人Power总数点 活力 。 NL 消耗 。"
+    "DESCRIPTION": "获取敌人状态栏中最大数值的 活力 。 NL 消耗 。",
+    "UPGRADE_DESCRIPTION": "获取敌人状态栏中所有数值和的 活力 。 NL 消耗 。"
   },
   "dreaming_journey_to_the_west:Thump": {
     "NAME": "重击",
@@ -330,8 +330,16 @@
   },
   "dreaming_journey_to_the_west:FightingBuddhaForm": {
     "NAME": "斗战胜佛",
-    "DESCRIPTION":  "每打败一个精英费用降低 2 点。 NL 每当张卡被保留 它在本场战斗中的耗能减少 1 点。 NL 获得 9 点 力量 。 NL 获得 9 点 敏捷 。 NL 获得 8 点 再生 。 NL 获得 1 点 人工制品 。",
-    "UPGRADE_DESCRIPTION":"固有 。 NL 每打败一个精英费用降低 2 点。 NL 每当张卡被保留 它在本场战斗中的耗能减少 1 点。 NL 获得 9 点 力量 。 NL 获得 9 点 敏捷 。 NL 获得 8 点 再生 。 NL 获得 1 点 人工制品 。"
+    "DESCRIPTION":  "每打败一个精英费用降低 1 点。 NL 每当张卡被保留 它在本场战斗中的耗能减少 1 点。 NL 获得 9 点 力量 。 NL 获得 9 点 敏捷 。 NL 恢复 8点 生命 。 NL 获得 1 点 人工制品 。",
+    "UPGRADE_DESCRIPTION":"固有 。 NL 每打败一个精英费用降低 1 点。 NL 每当张卡被保留 它在本场战斗中的耗能减少 1 点。 NL 获得 9 点 力量 。 NL 获得 9 点 敏捷 。 NL 恢复 8点 生命 。 NL 获得 1 点 人工制品 。"
+  },
+  "dreaming_journey_to_the_west:Gear": {
+    "NAME": "齿轮旋转",
+    "DESCRIPTION":  "改变你的朝向。 NL 使得转轮王增加1点 力量 。 NL 消耗。 "
+  },
+  "dreaming_journey_to_the_west:BleedCard": {
+    "NAME": "流血",
+    "DESCRIPTION":  "不能被打出 。 NL 在你的回合结束时，你失去 !M! 点生命。"
   }
 
 

@@ -11,7 +11,7 @@ import relics.FuriousRing;
 public class SleepHealthPatch {
     @SpirePostfixPatch
     public static void SleepHealthPatch(CampfireSleepEffect __instance) {
-            if (AbstractDungeon.player.hasRelic(FuriousRing.ID)) {
+            if (AbstractDungeon.player.hasRelic(FuriousRing.ID) && __instance.duration < __instance.startingDuration / 2.0F) {
                 AbstractDungeon.player.getRelic(FuriousRing.ID).flash();
                 AbstractDungeon.player.decreaseMaxHealth(4);
             }

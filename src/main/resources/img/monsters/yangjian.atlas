@@ -1,0 +1,181 @@
+
+yangjian.png
+size: 690,532
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+armor
+  rotate: true
+  xy: 596, 267
+  size: 78, 77
+  orig: 82, 82
+  offset: 1, 5
+  index: -1
+belt
+  rotate: true
+  xy: 626, 123
+  size: 66, 42
+  orig: 86, 49
+  offset: 17, 0
+  index: -1
+changqiang
+  rotate: false
+  xy: 2, 360
+  size: 356, 170
+  orig: 363, 173
+  offset: 2, 2
+  index: -1
+cope
+  rotate: false
+  xy: 198, 6
+  size: 168, 156
+  orig: 177, 167
+  offset: 7, 1
+  index: -1
+head
+  rotate: true
+  xy: 2, 2
+  size: 160, 194
+  orig: 168, 197
+  offset: 1, 1
+  index: -1
+hear
+  rotate: false
+  xy: 368, 7
+  size: 104, 142
+  orig: 109, 173
+  offset: 1, 28
+  index: -1
+leftarm
+  rotate: false
+  xy: 652, 217
+  size: 36, 48
+  orig: 40, 50
+  offset: 1, 1
+  index: -1
+leftarmor
+  rotate: true
+  xy: 570, 38
+  size: 66, 54
+  orig: 86, 67
+  offset: 19, 13
+  index: -1
+lefthand
+  rotate: false
+  xy: 650, 422
+  size: 32, 28
+  orig: 50, 31
+  offset: 15, 2
+  index: -1
+lefthandarmor
+  rotate: false
+  xy: 314, 168
+  size: 42, 54
+  orig: 47, 76
+  offset: 2, 17
+  index: -1
+leg0
+  rotate: false
+  xy: 626, 55
+  size: 40, 66
+  orig: 50, 84
+  offset: 2, 2
+  index: -1
+leg1
+  rotate: false
+  xy: 570, 106
+  size: 54, 67
+  orig: 91, 87
+  offset: 25, 6
+  index: -1
+legarmor0
+  rotate: false
+  xy: 564, 175
+  size: 31, 84
+  orig: 63, 99
+  offset: 18, 15
+  index: -1
+legarmor1
+  rotate: false
+  xy: 597, 191
+  size: 53, 74
+  orig: 57, 82
+  offset: 0, 4
+  index: -1
+legarmor2
+  rotate: false
+  xy: 632, 452
+  size: 53, 78
+  orig: 59, 89
+  offset: 3, 6
+  index: -1
+rightarm
+  rotate: true
+  xy: 570, 2
+  size: 34, 48
+  orig: 40, 50
+  offset: 3, 1
+  index: -1
+rightarmor
+  rotate: true
+  xy: 626, 11
+  size: 42, 54
+  orig: 86, 61
+  offset: 41, 5
+  index: -1
+righthand
+  rotate: true
+  xy: 314, 224
+  size: 49, 52
+  orig: 86, 63
+  offset: 21, 5
+  index: -1
+tx1
+  rotate: false
+  xy: 388, 261
+  size: 206, 84
+  orig: 207, 84
+  offset: 1, 0
+  index: -1
+tx2
+  rotate: false
+  xy: 2, 275
+  size: 384, 83
+  orig: 385, 83
+  offset: 0, 0
+  index: -1
+tx3
+  rotate: false
+  xy: 388, 347
+  size: 260, 75
+  orig: 262, 75
+  offset: 2, 0
+  index: -1
+tx4
+  rotate: false
+  xy: 2, 164
+  size: 310, 109
+  orig: 333, 109
+  offset: 0, 0
+  index: -1
+tx5
+  rotate: false
+  xy: 360, 424
+  size: 270, 106
+  orig: 291, 108
+  offset: 0, 2
+  index: -1
+tx5-0
+  rotate: true
+  xy: 474, 22
+  size: 127, 94
+  orig: 129, 94
+  offset: 2, 0
+  index: -1
+tx5-2
+  rotate: false
+  xy: 368, 151
+  size: 194, 108
+  orig: 194, 108
+  offset: 0, 0
+  index: -1

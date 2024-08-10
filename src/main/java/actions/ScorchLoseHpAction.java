@@ -40,6 +40,7 @@ public class ScorchLoseHpAction extends AbstractGameAction {
                     this.target.damage(new DamageInfo(this.source, this.amount, DamageInfo.DamageType.HP_LOSS));
                 }
                 AbstractPower p = this.target.getPower("dreaming_journey_to_the_west:ScorchPower");
+
                 if (p != null && this.target.currentHealth > 0 && this.target.hasPower(VulnerablePower.POWER_ID)) {
                     this.target.damage(new DamageInfo(this.source, this.amount, DamageInfo.DamageType.HP_LOSS));
                     AbstractPower abstractPower = p;
@@ -48,9 +49,14 @@ public class ScorchLoseHpAction extends AbstractGameAction {
                 }
                 else{
                     if (p != null && this.target.currentHealth > 0 && !this.target.hasPower(WeakPower.POWER_ID)) {
-                        AbstractPower abstractPower = p;
-                        this.target.powers.remove(p);
-                        p.updateDescription();
+                        if (p != null) {
+                            p.amount=(int) (p.amount*0.5);
+                            if (p.amount == 0) {
+                                this.target.powers.remove(p);
+                            } else {
+                                p.updateDescription();
+                            }
+                        }
 
                     }
                 }

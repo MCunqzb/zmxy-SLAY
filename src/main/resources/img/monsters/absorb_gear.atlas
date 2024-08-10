@@ -1,0 +1,20 @@
+
+absorb_gear.png
+size: 365,208
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+wheel_turning_king_1_0
+  rotate: true
+  xy: 2, 2
+  size: 204, 274
+  orig: 530, 725
+  offset: 182, 0
+  index: -1
+蓝色轮
+  rotate: true
+  xy: 278, 119
+  size: 87, 85
+  orig: 87, 85
+  offset: 0, 0
+  index: -1

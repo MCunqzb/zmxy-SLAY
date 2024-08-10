@@ -27,7 +27,7 @@ public class BloodApeBoxing extends CustomCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    private static final int COST = 2;
+    private static final int COST = 1;
     private static final int ATTACK_AMT = 9;
     private static final int UPGRADE_PLUS_ATTACK = 4;
     private static final int BLOCK_AMT = 13;
@@ -43,7 +43,6 @@ public class BloodApeBoxing extends CustomCard {
         this.baseMagicNumber=MAGIC_AMT;
         this.magicNumber=this.baseMagicNumber;
         this.tags.add(MonkeyKingMod.BOXING);
-        this.exhaust=true;
     }
 
     public void use(AbstractPlayer p, AbstractMonster m) {

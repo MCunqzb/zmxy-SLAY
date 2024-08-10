@@ -23,7 +23,7 @@
   "dreaming_journey_to_the_west:BloodThirstyPower": {
     "NAME": "嗜血",
     "DESCRIPTIONS": [
-      "回复未被 格挡 的伤害 #b%d /3 点生命。每回合开始失去 #b%d 生命"
+      "回复未被 格挡 的伤害 #b/3 点生命。持续 #b%d 回合。"
     ]
   },
   "dreaming_journey_to_the_west:SeventyTwoSlashesPower": {
@@ -89,7 +89,7 @@
   "dreaming_journey_to_the_west:ControlPhantomPower": {
     "NAME": "控制分身",
     "DESCRIPTIONS": [
-      "在你的回合开始时，从左至右打出 #b%d 张牌(1+临时生命)"
+      "在你的回合开始时，失去所有临时生命，从左至右打出 #b%d 张无色牌，并抽 #b%d 张牌。"
     ]
   },
   "dreaming_journey_to_the_west:ConcentrateEnergy": {
@@ -156,6 +156,30 @@
     "NAME": "反伤",
     "DESCRIPTIONS": [
       "将未击穿格挡的攻击， #y全部 返回给攻击者。持续 #b%d 回合。 "
+    ]
+  },
+  "dreaming_journey_to_the_west:GearAttackPower": {
+    "NAME": "齿轮攻击",
+    "DESCRIPTIONS": [
+      "从前方对你攻击，造成的伤害减少 #b50% 。从后方对你攻击，造成的伤害增加 #b50% 。"
+    ]
+  },
+  "dreaming_journey_to_the_west:GearAttackPlayerPower": {
+    "NAME": "齿轮夹击",
+    "DESCRIPTIONS": [
+      "用 #b齿轮 改变朝向。当前受到齿轮伤害： #r%d"
+    ]
+  },
+  "dreaming_journey_to_the_west:CanineTeethPower": {
+    "NAME": "尖牙利爪",
+    "DESCRIPTIONS": [
+      "每当这个敌人对你造成伤害时，在你的弃牌堆里增加 #b1张 #y流血 。"
+    ]
+  },
+  "dreaming_journey_to_the_west:ThreeEyesSealPower": {
+    "NAME": "三眼封印",
+    "DESCRIPTIONS": [
+      "被施加三眼封印，随着层数提高封印效果愈加明显。 #b1 层，战斗中的回复效果降低 #r50 %% 。 #b2 层，造成伤害减少 #r%d %%。从卡牌中获得的 #y格挡 减少 #r%d %%。 #b3 层，无法打出能力牌。 #b6 层，无法打出技能牌。"
     ]
   }
 }

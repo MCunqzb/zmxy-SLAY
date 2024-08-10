@@ -27,7 +27,7 @@ public class ColorfulThrowDaggerEffect extends AbstractGameEffect {
         }else {
             this.x = x + MathUtils.random(320.0F, 360.0F) - (float)this.img.packedWidth / 2.0F;
         }
-        this.destY = y;
+        this.destY = y+MathUtils.random(-10.0F, 10.0F);
         this.y = this.destY + MathUtils.random(-25.0F, 25.0F) * Settings.scale - (float)this.img.packedHeight / 2.0F;
         this.startingDuration = 0.4F;
         this.duration = 0.4F;

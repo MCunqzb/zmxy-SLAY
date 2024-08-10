@@ -35,12 +35,12 @@ public class ReboundDamagePower extends AbstractPower {
     }
 
     public int onAttacked(DamageInfo info, int damageAmount) {
-        if (info.owner != null && info.owner != this.owner && info.type != DamageInfo.DamageType.HP_LOSS && info.type != DamageInfo.DamageType.THORNS && damageAmount <= 0 && info.output > 0) {
+        if (info.type != DamageInfo.DamageType.THORNS && info.type != DamageInfo.DamageType.HP_LOSS && info.owner != null && info.owner != this.owner && damageAmount <= 0 && info.output > 0) {
             flash();
             this.addToTop(new DamageAction(info.owner, new DamageInfo(this.owner, info.output, DamageInfo.DamageType.THORNS), AbstractGameAction.AttackEffect.SLASH_HORIZONTAL, true));
-        }else if(info.owner instanceof DrakeDemonKing && info.owner != null && info.type != DamageInfo.DamageType.HP_LOSS && info.type != DamageInfo.DamageType.THORNS && damageAmount > 0 && damageAmount < this.owner.currentHealth){
-            this.addToBot(new RollMoveAction((AbstractMonster)this.owner));
-            BaseMod.logger.info("BLOCK BROKEN");
+            BaseMod.logger.info(info);
+            BaseMod.logger.info(info.owner);
+            BaseMod.logger.info(this.owner);
         }
         return damageAmount;
     }

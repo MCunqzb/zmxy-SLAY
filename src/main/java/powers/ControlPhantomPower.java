@@ -5,10 +5,13 @@ import actions.ControlPhantomAction;
 import cards.PhantomStab;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.TextureAtlas;
+import com.evacipated.cardcrawl.mod.stslib.actions.tempHp.RemoveAllTemporaryHPAction;
 import com.evacipated.cardcrawl.mod.stslib.patches.core.AbstractCreature.TempHPField;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.common.MakeTempCardInHandAction;
 import com.megacrit.cardcrawl.actions.common.PlayTopCardAction;
+import com.megacrit.cardcrawl.actions.utility.UseCardAction;
+import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
@@ -47,6 +50,11 @@ public class ControlPhantomPower extends AbstractPower {
         }
     }
 
+    public void onAfterUseCard(AbstractCard card, UseCardAction action) {
+        this.AM = (TempHPField.tempHp.get(this.owner))+1;
+        this.updateDescription();
+    }
+
     public void atStartOfTurnPostDraw() {
         this.flash();
         //for(int i = 0; i < (int)(TempHPField.tempHp.get(this.owner)/3)+1; ++i) {
@@ -58,9 +66,10 @@ public class ControlPhantomPower extends AbstractPower {
         //    });
         //}
         this.addToBot(new ControlPhantomAction((int)(TempHPField.tempHp.get(this.owner))+1));
+        this.addToBot(new RemoveAllTemporaryHPAction(this.owner,this.owner));
     }
 
     public void updateDescription() {
-        this.description = String.format(DESCRIPTIONS[0],AM);
+        this.description = String.format(DESCRIPTIONS[0],AM,AM-1);
     }
 }

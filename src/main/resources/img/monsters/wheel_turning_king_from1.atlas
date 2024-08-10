@@ -1,0 +1,34 @@
+
+wheel_turning_king_from1.png
+size: 1057,434
+format: RGBA8888
+filter: Linear,Linear
+repeat: none
+blue_big_gear
+  rotate: false
+  xy: 2, 2
+  size: 430, 430
+  orig: 462, 462
+  offset: 11, 21
+  index: -1
+blue_gear
+  rotate: false
+  xy: 851, 71
+  size: 87, 85
+  orig: 87, 85
+  offset: 0, 0
+  index: -1
+gear0001
+  rotate: false
+  xy: 434, 15
+  size: 415, 417
+  orig: 468, 468
+  offset: 22, 31
+  index: -1
+wheel_turning_king_1_0
+  rotate: false
+  xy: 851, 158
+  size: 204, 274
+  orig: 530, 725
+  offset: 182, 0
+  index: -1

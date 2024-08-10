@@ -13,7 +13,7 @@
   },
   "dreaming_journey_to_the_west:Anger": {
     "NAME": "Anger",
-    "DESCRIPTION": "Gain  !M! Vigor . NL Gain !M! dreaming_journey_to_the_west:Tenacity ."
+    "DESCRIPTION": "Gain  !M! Vigor . NL NL Gain !M! dreaming_journey_to_the_west:Tenacity ."
   },
   "dreaming_journey_to_the_west:FireBlitz": {
   "NAME": "FireBlitz",
@@ -71,7 +71,7 @@
   },
   "dreaming_journey_to_the_west:BloodThirsty": {
     "NAME": "Blood Thirsty",
-    "DESCRIPTION":  "Gain !M! dreaming_journey_to_the_west:BloodThirsty NL Lose 3* !M! HP at the start of your turn."
+    "DESCRIPTION":  "Gain !M! dreaming_journey_to_the_west:BloodThirsty ."
   },
   "dreaming_journey_to_the_west:Dodge": {
     "NAME": "Dodge",
@@ -79,7 +79,7 @@
   },
   "dreaming_journey_to_the_west:StepFloor": {
     "NAME": "Step Floor",
-    "DESCRIPTION":  "Play the top card of your draw pile !M! time. NL dreaming_journey_to_the_west:boxing NL Exhaust "
+    "DESCRIPTION":  "Play !M! cards at the top card of your draw pile. NL dreaming_journey_to_the_west:boxing NL Exhaust "
   },
   "dreaming_journey_to_the_west:HelpfulHairs": {
     "NAME": "Helpful Hairs Ⅰ",
@@ -209,7 +209,7 @@
   "dreaming_journey_to_the_west:ExtraPhantom": {
     "NAME": "Extra Phantom",
     "DESCRIPTION": "Add !M! random Attack card into your hand. NL It costs 0 this turn. NL Exhaust .",
-    "UPGRADE_DESCRIPTION": "Add !M! random Attack or Colorless card into your hand. NL It costs 0 this turn. NL Exhaust ."
+    "UPGRADE_DESCRIPTION": "Add !M! random Attack and Colorless card into your hand. NL It costs 0 this turn. NL Exhaust ."
   },
   "dreaming_journey_to_the_west:PhantomStab": {
     "NAME": "Phantom Stab",
@@ -329,8 +329,16 @@
   },
   "dreaming_journey_to_the_west:FightingBuddhaForm": {
     "NAME": "Fighting Buddha Form",
-    "DESCRIPTION":  "Every defeated Elite reduces cost by 2. NL Whenever this card is retained, its energy cost in this battle is reduced by 1. Gain 9 Strength, 9 Dexterity,  8 Regeneration, 1 Artifact. NL Retain .",
-    "UPGRADE_DESCRIPTION":  " Innate NL Every defeated Elite reduces cost by 2. NL Whenever this card is retained, its energy cost in this battle is reduced by 1. Gain 9 Strength, 9 Dexterity,  8 Regeneration, 1 Artifact. NL Retain ."
+    "DESCRIPTION":  "Every defeated Elite reduces cost by 2. NL Whenever this card is retained, its energy cost in this battle is reduced by 1. Gain 9 Strength, 9 Dexterity,  8 HP, 1 Artifact. NL Retain .",
+    "UPGRADE_DESCRIPTION":  " Innate NL Every defeated Elite reduces cost by 2. NL Whenever this card is retained, its energy cost in this battle is reduced by 1. Gain 9 Strength, 9 Dexterity,  8 HP, 1 Artifact. NL Retain ."
+  },
+  "dreaming_journey_to_the_west:Gear": {
+  "NAME": "Gear",
+  "DESCRIPTION":  "Change your orientation. Apply 1 Strength to Wheel Turning King. NL Exhaust ."
+},
+  "dreaming_journey_to_the_west:BleedCard": {
+    "NAME": "Bleed",
+    "DESCRIPTION":  "Unplayable. NL At the end of your turn, lose !M! HP."
   }
 
 

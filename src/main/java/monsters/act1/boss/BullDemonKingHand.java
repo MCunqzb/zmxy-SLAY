@@ -71,9 +71,9 @@ public class BullDemonKingHand extends AbstractMonster {
     public BullDemonKingHand(float x, float y) {
         super(NAME, ID, AbstractDungeon.monsterHpRng.random(HP_MIN, HP_MAX), 0.0F, 0.0F, 150.0F, 250.0F, IMG,x,y);
         if (AbstractDungeon.ascensionLevel >= 9) {
-            setHp(HP_MIN, HP_MAX);
-        } else {
             setHp(A_HP_MIN, A_HP_MAX);
+        } else {
+            setHp(HP_MIN, HP_MAX);
         }
         if (AbstractDungeon.ascensionLevel >= 4) {
             this.Dmg1 = A_DMG1;

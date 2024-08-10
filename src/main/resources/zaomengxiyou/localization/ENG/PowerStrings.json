@@ -23,7 +23,7 @@
   "dreaming_journey_to_the_west:BloodThirstyPower": {
     "NAME": "Blood Thirsty",
     "DESCRIPTIONS": [
-      "Heal HP equal to unblocked damage x0.33 #b%d . Loses #b%d HP at the start of each turn."
+      "Heal HP equal to unblocked damage x0.33 for #b%d turn(s)."
     ]
   },
   "dreaming_journey_to_the_west:SeventyTwoSlashesPower": {
@@ -89,7 +89,7 @@
   "dreaming_journey_to_the_west:ControlPhantomPower": {
     "NAME": "Control Phantom",
     "DESCRIPTIONS": [
-      "At the start of your turn, play  your #b%d (1+ expansioncontent:Temp_HP)cards from left to right. "
+      "At the start of your turn, lose all Temporary HP. Play the next #b%d  Special cards from left to right, and draw #b%d cards."
     ]
   },
   "dreaming_journey_to_the_west:ConcentrateEnergy": {
@@ -157,5 +157,30 @@
     "DESCRIPTIONS": [
       "In #b%d turns, whenever you completely block damage, deal that much damage to the attacker."
     ]
+  },
+  "dreaming_journey_to_the_west:GearAttackPower": {
+    "NAME": "Gear Attack",
+    "DESCRIPTIONS": [
+      "Attacks from the front reduce damage taken by #b50%. Attacks from the rear increase damage taken by #b50%."
+    ]
+  },
+  "dreaming_journey_to_the_west:GearAttackPlayerPower": {
+    "NAME": "Gear Pincer Attack",
+    "DESCRIPTIONS": [
+      " Use #bGear to change your orientation. Your receive damage from Gear: #r%d"
+    ]
+  },
+  "dreaming_journey_to_the_west:CanineTeethPower": {
+    "NAME": "Canine Teeth",
+    "DESCRIPTIONS": [
+      "Whenever you receive attack damage from this enemy, add a #yBleed into your discard pile."
+    ]
+  },
+  "dreaming_journey_to_the_west:ThreeEyesSealPower": {
+    "NAME": "Three Eyes Seal",
+    "DESCRIPTIONS": [
+      "Affected by the Three Eyes Seal, the sealing effect intensifies with each layer. #b1 layer, healing effects during combat reduced by #r50%. #b2 layers, damage dealt reduced by #r%d %%. Block gained from cards reduced by #r%d %%. #b3 layers, unable to play Power cards. #b6 layers, unable to play Skill cards."
+    ]
   }
+
 }

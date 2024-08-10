@@ -7,6 +7,7 @@ import basemod.BaseMod;
 import basemod.abstracts.CustomCard;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.GainBlockAction;
+import com.megacrit.cardcrawl.actions.common.HealAction;
 import com.megacrit.cardcrawl.actions.common.ReduceCostAction;
 import com.megacrit.cardcrawl.cards.AbstractCard;
 import com.megacrit.cardcrawl.characters.AbstractPlayer;
@@ -53,7 +54,7 @@ public class FightingBuddhaForm extends CustomCard {
     public void use(AbstractPlayer p, AbstractMonster m) {
         this.addToBot(new ApplyPowerAction(p,p,new StrengthPower(p,9),9));
         this.addToBot(new ApplyPowerAction(p,p,new DexterityPower(p,9),9));
-        this.addToBot(new ApplyPowerAction(p,p,new RegenPower(p,8),8));
+        this.addToBot(new HealAction(p,p,8));
         this.addToBot(new ApplyPowerAction(p,p,new ArtifactPower(p,1),1));
     }
 
@@ -65,7 +66,7 @@ public class FightingBuddhaForm extends CustomCard {
         //BaseMod.logger.warn((CardCrawlGame.elites1Slain+CardCrawlGame.elites2Slain+CardCrawlGame.elites3Slain));
         if (!dec){
             int cost1 = (CardCrawlGame.elites1Slain+CardCrawlGame.elites2Slain+CardCrawlGame.elites3Slain);
-            this.addToBot(new IncreaseCostAction(this.uuid, -cost1*2));
+            this.addToBot(new IncreaseCostAction(this.uuid, -cost1*1));
             BaseMod.logger.info("FightingBuddhaForm cost:"+cost1);
             dec=true;
         }

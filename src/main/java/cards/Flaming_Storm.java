@@ -26,9 +26,9 @@ public class Flaming_Storm extends CustomCard{
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "img/cards/flaming_storm.png";
     private static final int COST = 2;
-    private static final int ATTACK_DMG = 3;
-    private static final int UPGRADE_PLUS_DMG = 1;
-    private static final int MAGIC_NUM = 3;
+    private static final int ATTACK_DMG = 6;
+    private static final int UPGRADE_PLUS_DMG = 2;
+    private static final int MAGIC_NUM = 2;
     private static final int UPGRADE_MAGIC_NUM = 1;
     public static final String ID = "Flaming_Storm";
 
@@ -63,7 +63,8 @@ public class Flaming_Storm extends CustomCard{
 
         if (!this.upgraded) {
             upgradeName();
-            this.upgradeMagicNumber(UPGRADE_MAGIC_NUM);
+
+            this.upgradeDamage(UPGRADE_PLUS_DMG);
         }
     }
 }

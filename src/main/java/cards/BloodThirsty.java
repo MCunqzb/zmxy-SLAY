@@ -26,8 +26,8 @@ public class BloodThirsty extends CustomCard {
     public static final String NAME = cardStrings.NAME;
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String UPGRADE_DESCRIPTION = cardStrings.UPGRADE_DESCRIPTION;
-    private static final int COST = 3;
-    private static final int M = 1;
+    private static final int COST = 2;
+    private static final int M = 4;
 
     public static final String IMG_PATH = "img/cards/blood_thirsty.png";
 

@@ -41,7 +41,7 @@ public class CrackingFist extends CustomCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeDamage(1);
+            this.upgradeDamage(6);
             this.upgradeMagicNumber(-1);
         }
     }

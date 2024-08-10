@@ -40,11 +40,8 @@ public class ExtraPhantom extends CustomCard {
         c.setCostForTurn(0);
         c1.setCostForTurn(0);
         if (this.upgraded){
-            int i = (int) ((Math.random()*100) + 1);
-            if (i >50)
-                this.addToBot(new MakeTempCardInHandAction(c, 1));
-            else
-                this.addToBot(new MakeTempCardInHandAction(c1, 1));
+            this.addToBot(new MakeTempCardInHandAction(c, 1));
+            this.addToBot(new MakeTempCardInHandAction(c1, 1));
         }else{
             this.addToBot(new MakeTempCardInHandAction(c1, 1));
         }

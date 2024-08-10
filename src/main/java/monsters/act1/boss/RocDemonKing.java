@@ -1,13 +1,16 @@
 package monsters.act1.boss;
 
+import basemod.BaseMod;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.MathUtils;
+import com.badlogic.gdx.utils.compression.lzma.Base;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
 import com.megacrit.cardcrawl.actions.ClearCardQueueAction;
 import com.megacrit.cardcrawl.actions.animations.ShoutAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.*;
 import com.megacrit.cardcrawl.actions.unique.CanLoseAction;
+import com.megacrit.cardcrawl.actions.unique.VampireDamageAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.status.Burn;
 import com.megacrit.cardcrawl.core.AbstractCreature;
@@ -37,23 +40,23 @@ public class RocDemonKing extends AbstractMonster {
 
 
     private static final float IDLE_TIMESCALE = 0.8F;
-    private static final int HP_MIN = 90;
-    private static final int HP_MAX = 94;
-    private static final int A_HP_MIN = 97;
-    private static final int A_HP_MAX = 101;
+    private static final int HP_MIN = 85;
+    private static final int HP_MAX = 89;
+    private static final int A_HP_MIN = 91;
+    private static final int A_HP_MAX = 95;
     private static final int DMG1 = 13;
-    private static final int DMG2 = 6;
+    private static final int DMG2 = 5;
     private static final int HITS = 2;
     private static final int A_DMG1 = 17;
-    private static final int A_DMG2  = 7;
+    private static final int A_DMG2  = 6;
     private static final int BLOCK1 = 5;
     private static final int A_BLOCK1 = 7;
     private static final int BLOCK2 = 7;
     private static final int A_BLOCK2 = 10;
     private static final int MGC1 = 3;
     private static final int A_MGC1 = 4;
-    private static final int MGC2 = 5;
-    private static final int A_MGC2 = 7;
+    private static final int MGC2 = 2;
+    private static final int A_MGC2 = 3;
     private boolean recover = false;
     private int Dmg1;
     private int Dmg2;
@@ -65,6 +68,7 @@ public class RocDemonKing extends AbstractMonster {
     public int turn_count = 0 ;
     private int egg_turn = 0 ;
     private boolean is_egg ;
+    private int hit_add;
 
 
     public RocDemonKing() {
@@ -73,9 +77,9 @@ public class RocDemonKing extends AbstractMonster {
     public RocDemonKing(float x, float y) {//Elite
         super(NAME, ID, AbstractDungeon.monsterHpRng.random(HP_MIN, HP_MAX), 0.0F, 0.0F, 280.0F, 300.0F, IMG,x,y);
         if (AbstractDungeon.ascensionLevel >= 9) {
-            setHp(HP_MIN, HP_MAX);
-        } else {
             setHp(A_HP_MIN, A_HP_MAX);
+        } else {
+            setHp(HP_MIN, HP_MAX);
         }
         if (AbstractDungeon.ascensionLevel >= 4) {
             this.Dmg1 = A_DMG1;
@@ -112,6 +116,7 @@ public class RocDemonKing extends AbstractMonster {
     @Override
     public void takeTurn() {
         AbstractCreature p = AbstractDungeon.player;
+        label:
         switch(this.nextMove) {
             case 1:
                 //fly BUFF
@@ -124,11 +129,20 @@ public class RocDemonKing extends AbstractMonster {
                 break;
             case 3:
                 //Attack hits
-                this.addToTop(new VFXAction(new ColorfulThrowDaggerEffect(p.hb.cX, p.hb.cY, Color.ORANGE,true)));
-                this.addToBot(new DamageAction(p, this.damage.get(1), AbstractGameAction.AttackEffect.NONE));
-                this.addToTop(new VFXAction(new ColorfulThrowDaggerEffect(p.hb.cX, p.hb.cY, Color.ORANGE,true)));
-                this.addToBot(new DamageAction(p, this.damage.get(1), AbstractGameAction.AttackEffect.NONE));
-                break;
+                if (this.hasPower("Flight") &&  this.getPower("Flight") !=null && !this.recover) {
+                    this.hit_add = Math.max(this.getPower("Flight").amount, 0);
+                    this.HitTime = HITS + this.hit_add;
+                }
+                int i = 0;
+                while(true) {
+                    if (i >= this.HitTime) {
+                        break label;
+                    }
+                    this.addToTop(new VFXAction(new ColorfulThrowDaggerEffect(p.hb.cX, p.hb.cY, Color.ORANGE,true)));
+                    this.addToBot(new DamageAction(p, this.damage.get(1), AbstractGameAction.AttackEffect.NONE));
+                    i++;
+                }
+
             case 4:
                 //DEBUFF
 
@@ -171,6 +185,10 @@ public class RocDemonKing extends AbstractMonster {
         if (this.hasPower("Flame Barrier")) {
             this.addToBot(new RemoveSpecificPowerAction(this, this, "Flame Barrier"));
         }
+        if (this.hasPower("Flight") &&  this.getPower("Flight") !=null && !this.recover) {
+            this.hit_add = Math.max(this.getPower("Flight").amount, 0);
+            this.HitTime = HITS + this.hit_add;
+        }
         if (!this.is_egg) {
             if (this.hasPower("Flight")) {
                 if (AbstractDungeon.ascensionLevel >= 19 && turn_count ==1) {
@@ -179,14 +197,14 @@ public class RocDemonKing extends AbstractMonster {
                     if (AbstractDungeon.aiRng.randomBoolean(0.1F) || ((lastMove((byte) 2) && lastMoveBefore((byte) 3)) || (lastMove((byte) 3) && lastMoveBefore((byte) 2)))) {
                         this.setMove(MOVES[3], (byte) 4, Intent.DEBUFF);
                     } else if (lastMove((byte) 2)) {
-                        this.setMove(MOVES[2], (byte) 3, Intent.ATTACK_BUFF, (this.damage.get(1)).base, this.HitTime, true);
+                        this.setMove(MOVES[2], (byte) 3, Intent.ATTACK, (this.damage.get(1)).base, this.HitTime, true);
                     } else if (lastMove((byte) 3)) {
                         this.setMove(MOVES[1], (byte) 2, Intent.ATTACK, (this.damage.get(0)).base);
                     } else {
                         if ( this.getPower("Flight").amount > 2 ) {
                             this.setMove(MOVES[1], (byte) 2, Intent.ATTACK, (this.damage.get(0)).base);
                         } else {
-                            this.setMove(MOVES[2], (byte) 3, Intent.ATTACK_BUFF, (this.damage.get(1)).base, this.HitTime, true);
+                            this.setMove(MOVES[2], (byte) 3, Intent.ATTACK, (this.damage.get(1)).base, this.HitTime, true);
                         }
                     }
                 }
@@ -195,7 +213,7 @@ public class RocDemonKing extends AbstractMonster {
                 this.setMove(MOVES[0], (byte) 1, Intent.BUFF);
                 }else {
                     if (lastMove((byte) 2)) {
-                        this.setMove(MOVES[2], (byte) 3, Intent.ATTACK_BUFF, (this.damage.get(1)).base, this.HitTime, true);
+                        this.setMove(MOVES[2], (byte) 3, Intent.ATTACK, (this.damage.get(1)).base, this.HitTime, true);
                     } else if (lastMove((byte) 3)) {
                         this.setMove(MOVES[1], (byte) 2, Intent.ATTACK, (this.damage.get(0)).base);
                     }
@@ -235,6 +253,39 @@ public class RocDemonKing extends AbstractMonster {
 
     public void damage (DamageInfo info){
         super.damage(info);
+
+        if (this.moveName != null && MOVES != null && MOVES.length > 2 && MOVES[2] != null && this.moveName.equals(MOVES[2])
+                && info != null && info.owner != null && info.type != DamageInfo.DamageType.THORNS && info.output > 0){
+            if (!this.recover) {
+                if (this.hasPower("Flight") && this.getPower("Flight") != null) {
+                    this.hit_add = Math.max(this.getPower("Flight").amount - 1, 0);
+                    this.HitTime = HITS + this.hit_add;
+                    BaseMod.logger.info(this.hit_add + "Flight");
+                    BaseMod.logger.info(this.HitTime + "hit");
+                    this.setMove(MOVES[2], (byte) 3, Intent.ATTACK, (this.damage.get(1)).base, this.HitTime, true);
+                    this.createIntent();
+                    this.addToBot(new SetMoveAction(this, MOVES[2], (byte) 3, Intent.ATTACK, (this.damage.get(1)).base, this.HitTime, true));
+                }
+                if (this.hasPower("Flight") && this.getPower("Flight").amount == 1) {
+                    this.setMove(MOVES[2], (byte) 3, Intent.ATTACK, (this.damage.get(1)).base, 2, true);
+                    this.createIntent();
+                    this.addToBot(new SetMoveAction(this, MOVES[2], (byte) 3, Intent.ATTACK, (this.damage.get(1)).base, 2, true));
+                }
+            }
+        }else {
+            // 处理其中一个或多个值为空的情况
+            if (this.moveName == null) {
+                BaseMod.logger.info("this.moveName 为空");
+            }
+            if (MOVES == null || MOVES.length <= 2 || MOVES[2] == null) {
+                BaseMod.logger.info("MOVES 数组未正确初始化");
+            }
+            if (info == null) {
+                BaseMod.logger.info("info 为空");
+            } else if (info.owner == null) {
+                BaseMod.logger.info("info.owner 为空");
+            }
+        }
         if (!this.is_egg) {
             if (this.hasPower("Flight") && this.getPower("Flight").amount >1 ) {
                 this.img = ImageMaster.loadImage(IMG);
@@ -242,6 +293,7 @@ public class RocDemonKing extends AbstractMonster {
                 this.img = ImageMaster.loadImage(LAND);
             }
         }
+
         if (this.currentHealth <= 0 && !this.halfDead && this.is_egg ==false) {
             if (AbstractDungeon.getCurrRoom().cannotLose) {
                 this.halfDead = true;

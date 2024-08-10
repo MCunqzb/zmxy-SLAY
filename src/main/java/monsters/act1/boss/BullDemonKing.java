@@ -92,9 +92,10 @@ public class BullDemonKing extends AbstractMonster {
     public BullDemonKing(float x, float y) {//Elite
         super(NAME, ID, AbstractDungeon.monsterHpRng.random(HP_MIN, HP_MAX), 0.0F, 0.0F, 280.0F, 300.0F, FROM1,x,y);
         if (AbstractDungeon.ascensionLevel >= 9) {
-            setHp(HP_MIN, HP_MAX);
-        } else {
             setHp(A_HP_MIN, A_HP_MAX);
+        } else {
+            setHp(HP_MIN, HP_MAX);
+
         }
         if (AbstractDungeon.ascensionLevel >= 4) {
             this.Dmg1 = A_DMG1;
@@ -156,7 +157,7 @@ public class BullDemonKing extends AbstractMonster {
                     if (i >= this.HitTime) {
                         break label;
                     }
-                this.addToBot(new VampireDamageAction(p,this.damage.get(2), AbstractGameAction.AttackEffect.FIRE));
+                    this.addToBot(new VampireDamageAction(p,this.damage.get(2), AbstractGameAction.AttackEffect.FIRE));
                     i++;
                 }
             case 4:
@@ -204,7 +205,7 @@ public class BullDemonKing extends AbstractMonster {
             case 8:
                 //??? from1 to 2
 
-                this.maxHealth = AbstractDungeon.monsterHpRng.random(HP_MIN+25, HP_MAX+30);
+                this.maxHealth = AbstractDungeon.monsterHpRng.random(this.maxHealth+25, this.maxHealth+30);
                 this.addToBot(new HealAction(this, this, this.maxHealth));
                 this.from = 2;
                 this.img  = ImageMaster.loadImage(FROM2);
@@ -213,7 +214,7 @@ public class BullDemonKing extends AbstractMonster {
             case 9:
                 //??? from2 to 3
 
-                this.maxHealth = AbstractDungeon.monsterHpRng.random(HP_MIN+45, HP_MAX+50);
+                this.maxHealth = AbstractDungeon.monsterHpRng.random(this.maxHealth+45, this.maxHealth+50);
                 this.addToBot(new HealAction(this, this, this.maxHealth));
                 this.from = 3;
                 this.img  = ImageMaster.loadImage(FROM3);
@@ -294,7 +295,7 @@ public class BullDemonKing extends AbstractMonster {
         byte var3 = -1;
         if (stateName.equals("WST")) {
             var3 = 1;
-                }
+        }
         else if (stateName.equals("ATTACK")) {
             var3 = 0;
         }

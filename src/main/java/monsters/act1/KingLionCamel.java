@@ -35,21 +35,21 @@ public class KingLionCamel extends AbstractMonster {
 
     public int turn_count = 0;
     private static final float IDLE_TIMESCALE = 0.8F;
-    private static final int HP_MIN = 89;
-    private static final int HP_MAX = 96;
-    private static final int A_2_HP_MIN = 95;
-    private static final int A_2_HP_MAX = 101;
+    private static final int HP_MIN = 110;
+    private static final int HP_MAX = 120;
+    private static final int A_2_HP_MIN = 115;
+    private static final int A_2_HP_MAX = 129;
     private static final int DMG1 = 6;
-    private static final int DMG2 = 5;
+    private static final int DMG2 = 12;
     private static final int DMG3 = 16;
     private static final int MAGIC_NUM  = 3;
-    private static final int BLOCK_NUM  = 5;
+    private static final int BLOCK_NUM  = 10;
     private static final int HITS = 2;
     private static final int A_2_DMG1 = 8;
-    private static final int A_2_DMG2  = 7;
+    private static final int A_2_DMG2  = 14;
     private static final int A_2_DMG3  = 18;
     private static final int A_2_BLOCK_NUM  = 7;
-    private static final int A_2_MAGIC_NUM  = 5;
+    private static final int A_2_MAGIC_NUM  = 12;
     private int dmg1;
     private int dmg2;
     private int dmg3;
@@ -62,10 +62,10 @@ public class KingLionCamel extends AbstractMonster {
     public KingLionCamel(float x, float y) {//Elite
         super(NAME, ID, HP_MAX, 0.0F, 0.0F, 280.0F, 300.0F, IMG,x,y);
         if (AbstractDungeon.ascensionLevel >= 8) {
-            setHp(HP_MIN, HP_MAX);
+            setHp(A_2_HP_MIN, A_2_HP_MAX);
             this.block=A_2_BLOCK_NUM;
         } else {
-            setHp(A_2_HP_MIN, A_2_HP_MAX);
+            setHp(HP_MIN, HP_MAX);
             this.block=BLOCK_NUM;
         }
         if (AbstractDungeon.ascensionLevel >= 3) {

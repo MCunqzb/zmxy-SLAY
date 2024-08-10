@@ -21,7 +21,7 @@ public class RisingDragonSlash extends CustomCard {
     public static final String DESCRIPTION = cardStrings.DESCRIPTION;
     public static final String IMG_PATH = "img/cards/rising_dragon_slash.png";
     private static final int COST = 1;
-    private static final int ATTACK_DMG = 5;
+    private static final int ATTACK_DMG = 8;
     private static final int MAGIC_NUM = 1;
     public static final String ID = "RisingDragonSlash";
 
@@ -35,7 +35,7 @@ public class RisingDragonSlash extends CustomCard {
     public void upgrade() {
         if (!this.upgraded) {
             this.upgradeName();
-            this.upgradeMagicNumber(1);
+            this.upgradeDamage(3);
         }
     }
 

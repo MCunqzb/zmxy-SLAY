@@ -31,7 +31,7 @@
     "NAME": "Obsession Ring",
     "FLAVOR": "There is no distinction between right and wrong.",
     "DESCRIPTIONS": [
-      "Lose [E] ，At the end of your turn, gain #b1 #yblock ,whenever you gain a #rDebuff ,gain #b1 extra #yBuffer . "
+      "Lose [E] ，At the end of your turn, gain #b8 #yblock ,whenever you gain a #rDebuff ,gain #b1 extra #yBuffer . "
     ]
   },
   "dreaming_journey_to_the_west:EmergingBoxingGloves": {
@@ -39,6 +39,13 @@
     "FLAVOR": "Five mountains pull force, all rivers pour into the intention.",
     "DESCRIPTIONS": [
       "Replace #rBracelets .Whenever you play an #yAttack with #yBoxing , gain #b2 #yTenacity . Whenever you play an #ySkill with #yBoxing  gain #b2 #yVigor ."
+    ]
+  },
+  "dreaming_journey_to_the_west:BloodSirenShell": {
+    "NAME": "Blood Siren Shell",
+    "FLAVOR": "Soaked in blood for years, solid as a rock, impenetrable.",
+    "DESCRIPTIONS": [
+      "Whenever you have #yBlock, play a card with #yBlock. Gain #b1 stack of #yReboundDamage ."
     ]
   }
 }

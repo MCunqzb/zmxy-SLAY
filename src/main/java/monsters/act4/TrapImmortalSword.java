@@ -29,10 +29,10 @@ public class TrapImmortalSword extends AbstractMonster {
 
     public int turn_count = 0;
     private static final float IDLE_TIMESCALE = 0.8F;
-    private static final int HP_MIN = 36;
-    private static final int HP_MAX = 42;
-    private static final int A_2_HP_MIN = 39;
-    private static final int A_2_HP_MAX = 45;
+    private static final int HP_MIN = 56;
+    private static final int HP_MAX = 62;
+    private static final int A_2_HP_MIN = 59;
+    private static final int A_2_HP_MAX = 65;
     private static final int DMG1 = 9;
     private static final int A_2_DMG1 = 12;
 
@@ -59,9 +59,10 @@ public class TrapImmortalSword extends AbstractMonster {
     public TrapImmortalSword(float x, float y) {//Elite
         super(NAME, ID, AbstractDungeon.monsterHpRng.random(HP_MIN, HP_MAX), 0.0F, 0.0F, 160.0F, 160.0F, IMG,x,y);
         if (AbstractDungeon.ascensionLevel >= 8) {
-            setHp(HP_MIN, HP_MAX);
-        } else {
+
             setHp(A_2_HP_MIN, A_2_HP_MAX);
+        } else {
+            setHp(HP_MIN, HP_MAX);
         }
         if (AbstractDungeon.ascensionLevel >= 3) {
             this.Dmg1 = A_2_DMG1;
@@ -97,7 +98,7 @@ public class TrapImmortalSword extends AbstractMonster {
                 this.addToBot(new WaitAction(1.0F));
                 this.addToBot(new ApplyPowerAction(p,this,new ThumpPower(p,this.magicAmt1),this.magicAmt1));
                 if (!this.hasPower("Flight")) {
-                    this.addToBot(new ApplyPowerAction(this, this, new FlightPower(this, 3), 3));
+                    this.addToBot(new ApplyPowerAction(this, this, new FlightPower(this, 2), 2));
                 }
                 break;
         }
@@ -107,7 +108,7 @@ public class TrapImmortalSword extends AbstractMonster {
     @Override
     protected void getMove(int i) {
         ++turn_count;
-        if (AbstractDungeon.ascensionLevel >= 18) {
+        if (AbstractDungeon.ascensionLevel >= 18 && this.turn_count<=1) {
             this.setMove(MOVES[1], (byte) 2,Intent.BUFF);
         }else {
             if (this.lastTwoMoves((byte)1)){

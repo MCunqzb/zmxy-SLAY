@@ -60,6 +60,6 @@ public class FireApeStrikesPower extends AbstractPower {
 
 
     public void updateDescription() {
-        this.description = String.format(DESCRIPTIONS[0], this.amount*6 , this.amount);
+        this.description = String.format(DESCRIPTIONS[0], this.amount*7 , this.amount);
     }
 }

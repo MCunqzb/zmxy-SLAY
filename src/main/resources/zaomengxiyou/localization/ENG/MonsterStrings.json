@@ -138,5 +138,77 @@
     "DIALOG": [
       ""
     ]
+  },"dreaming_journey_to_the_west:BullDemonKing": {
+  "MOVES": [
+    "",
+    "Barbarian Bull Charge",
+    "Splitting Heaven and Earth",
+    "Soul Destroyer",
+    "Secret Heart",
+    "Fiery Charge",
+    "Magma Fury",
+    "???",
+    "Reveal True Form",
+    "Dharma Avatar·Demon"
+  ],
+  "NAME": "Bull Demon King",
+  "DIALOG": [
+    "I, Old Bull, have been trapped in the Eight Trigrams Furnace @for so many years@ NL #r@It's time to use my rage to destroy the Three Realms!@ ",
+    "@It's not over yet!@",
+    "It seems I must use NL the power given to me by the Men in Black"
+  ]
+},
+  "dreaming_journey_to_the_west:Gear": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "Gear",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "dreaming_journey_to_the_west:WheelTurningKing": {
+    "MOVES": [
+      "",
+      "Three Cycles of Reincarnation",
+      "Sun Cycle",
+      "Holy Wheel's Blessing",
+      "Reincarnation",
+      "Reincarnation to Unity",
+      "",
+      "Fatal Wheel",
+      "Holy Wheel Heavenfall",
+      "Nine Cycles of Reincarnation"
+    ],
+    "NAME": "Wheel Turning King",
+    "DIALOG": [
+      "",
+      "~The cycle of reincarnation has already begun~",
+      "Let me show you NL @the true power of the Netherworld!@"
+    ]
+  },
+  "dreaming_journey_to_the_west:TheDeifiedDog": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "The Deified Dog",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "dreaming_journey_to_the_west:YangJian": {
+    "MOVES": [
+      "",
+      "Severing Strike",
+      "Instant Shadow Kill",
+      "Ethereal Tremor",
+      "Three-eyed Seal"
+    ],
+    "NAME": "YangJian",
+    "DIALOG": [
+      ""
+    ]
   }
+
+
 }

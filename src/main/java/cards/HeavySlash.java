@@ -39,17 +39,20 @@ public class HeavySlash extends CustomCard {
     public void onRetained() {
         this.upgradeDamage(this.magicNumber);
         TURN = TURN+1;
-        this.name = cardStrings.NAME + "+" + (this.timesUpgraded+TURN);
+        if (this.upgraded){
+        this.name = cardStrings.NAME + "+" + (1+TURN);
+        }else {
+            this.name = cardStrings.NAME + "+" + TURN;
+        }
     }
 
     @Override
     public void upgrade() {
         if (!this.upgraded) {
-            this.upgradeDamage(UPGRADE_NUM + this.timesUpgraded);
+            this.upgradeDamage(UPGRADE_NUM + 1);
             this.upgradeMagicNumber(UPGRADE_NUM);
-            ++this.timesUpgraded;
             this.upgraded = true;
-            this.name = cardStrings.NAME + "+" + (this.timesUpgraded+TURN);
+            this.name = cardStrings.NAME + "+" + 1;
             this.initializeTitle();
         }
     }
@@ -60,6 +63,7 @@ public class HeavySlash extends CustomCard {
         AbstractDungeon.actionManager.addToBottom((AbstractGameAction)new DamageAction((AbstractCreature)m, new DamageInfo((AbstractCreature)p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
         this.upgradeDamage(-this.magicNumber*TURN);
         TURN = 0;
+        this.initializeTitle();
     }
 
     @Override
