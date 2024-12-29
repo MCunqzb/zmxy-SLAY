@@ -47,5 +47,15 @@
     "DESCRIPTIONS": [
       "Whenever you have #yBlock, play a card with #yBlock. Gain #b1 stack of #yReboundDamage ."
     ]
+  },
+  "dreaming_journey_to_the_west:RuyiJingguBang": {
+    "NAME": "如意金箍棒",
+    "FLAVOR": "那块铁，挽着些儿就死，磕着些儿就亡，挨挨儿皮破，擦擦儿筋伤！",
+    "DESCRIPTIONS": [
+      "Cards containing \"Strike\" reduce #b",
+      " damage.",
+      "Cards not containing \"Strike\" deal #b",
+      " additional damage."
+    ]
   }
 }

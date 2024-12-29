@@ -1,4 +1,4 @@
-package monsters.act2;
+package monsters.act2.boss;
 
 import basemod.BaseMod;
 import basemod.helpers.VfxBuilder;
@@ -290,7 +290,7 @@ public class WheelTurningKing extends AbstractMonster {
                 this.addToBot(new ApplyPowerAction(this, this, new WeakPower(this, 1,true)));
                 //generate gear from2
                 List<AbstractMonster> monsters = AbstractDungeon.getMonsters().monsters;
-                List<Float> gearXPositions = new ArrayList<>();
+                List<Integer> gearXPositions = new ArrayList<>();
                 int j = 0;
                 Iterator var2 = AbstractDungeon.getMonsters().monsters.iterator();
                 while (true){
@@ -300,17 +300,23 @@ public class WheelTurningKing extends AbstractMonster {
                     AbstractMonster mo = (AbstractMonster)var2.next();
                     if (mo instanceof Gear && !mo.isDying){
                         j++;
-                        BaseMod.logger.info("Gear draw X"+mo.drawX);
-                        gearXPositions.add(mo.drawX);
+                        BaseMod.logger.info("Gear draw X"+(int)(mo.drawX));
+                        gearXPositions.add((int)(mo.drawX));
+                        BaseMod.logger.info("Gear x positions"+gearXPositions);
+                        //this.drawX = (float)Settings.WIDTH * 0.75F + offsetX * Settings.xScale;
+                        //240=1920*0.75-1200
                     }
                 }
                 if (j <= 5) {
                     float y = 30f;
                     if (!gearXPositions.isEmpty()) {
                         List<Integer> resultList = new ArrayList<>();
-
+                        int first_position = (int) (Settings.WIDTH * 0.75F + (-1200F) * Settings.xScale);
+                        float space = 200 * Settings.xScale;
+                        BaseMod.logger.info("first_position "+first_position);
+                        BaseMod.logger.info("space "+space);
                         for (float position : gearXPositions) {
-                            int result = (int)((position - 240) / 200);
+                            int result = (int)((position - first_position) / space);
                             resultList.add(result);
                         }
                         BaseMod.logger.info("Gear INT"+resultList);

@@ -1,36 +1,24 @@
 package monsters.act3;
 
 import actions.WaitActionPassFast;
-import actions.YangJianAdditiveSlashImpactEffect;
-import com.badlogic.gdx.graphics.Color;
+import vfx.YangJianAdditiveSlashImpactEffect;
 import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.animations.AnimateFastAttackAction;
 import com.megacrit.cardcrawl.actions.animations.TalkAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.ApplyPowerAction;
 import com.megacrit.cardcrawl.actions.common.DamageAction;
-import com.megacrit.cardcrawl.actions.common.MakeTempCardInDiscardAction;
 import com.megacrit.cardcrawl.actions.common.RollMoveAction;
-import com.megacrit.cardcrawl.actions.utility.WaitAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
-import com.megacrit.cardcrawl.cards.status.Dazed;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.ScreenShake;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.*;
-import com.megacrit.cardcrawl.vfx.BorderLongFlashEffect;
-import com.megacrit.cardcrawl.vfx.CollectorCurseEffect;
-import com.megacrit.cardcrawl.vfx.combat.ClashEffect;
 import com.megacrit.cardcrawl.vfx.combat.HeartMegaDebuffEffect;
-import com.megacrit.cardcrawl.vfx.combat.RoomTintEffect;
-import com.megacrit.cardcrawl.vfx.combat.ShockWaveEffect;
-import powers.CanineTeethPower;
 import powers.ThreeEyesSealPower;
 
 public class YangJian extends AbstractMonster {
@@ -201,27 +189,27 @@ public class YangJian extends AbstractMonster {
         }
         if (AbstractDungeon.ascensionLevel >= 19) {
             if (AbstractDungeon.aiRng.randomBoolean(0.4F)&& !lastMove((byte)2)){
-                this.setMove((byte) 2, Intent.ATTACK, (this.damage.get(1)).base,this.HitTime,true);
+                this.setMove(MOVES[2],(byte) 2, Intent.ATTACK, (this.damage.get(1)).base,this.HitTime,true);
             }else if (AbstractDungeon.aiRng.randomBoolean(0.6F)){
-                this.setMove((byte) 4, Intent.STRONG_DEBUFF);
+                this.setMove(MOVES[4],(byte) 4, Intent.STRONG_DEBUFF);
             }else if (AbstractDungeon.aiRng.randomBoolean(0.35F) && !lastMove((byte)3) && !lastMoveBefore((byte)3)){
-                this.setMove((byte) 3, Intent.BUFF);
+                this.setMove(MOVES[3],(byte) 3, Intent.BUFF);
             } else if (!lastTwoMoves((byte) 1)){
-                this.setMove((byte) 1, Intent.ATTACK, (this.damage.get(0)).base,2,true);
+                this.setMove(MOVES[1],(byte) 1, Intent.ATTACK, (this.damage.get(0)).base,2,true);
             }else {
-                this.setMove((byte) 3, Intent.BUFF);
+                this.setMove(MOVES[3],(byte) 3, Intent.BUFF);
             }
         }else {
             if (AbstractDungeon.aiRng.randomBoolean(0.45F) && !lastMove((byte)2) && !lastMoveBefore((byte)2)){
-                this.setMove((byte) 2, Intent.ATTACK, (this.damage.get(1)).base,this.HitTime,true);
+                this.setMove(MOVES[2],(byte) 2, Intent.ATTACK, (this.damage.get(1)).base,this.HitTime,true);
             }else if (AbstractDungeon.aiRng.randomBoolean(0.6F) && !lastMoveBefore((byte)4)){
-                this.setMove((byte) 4, Intent.STRONG_DEBUFF);
+                this.setMove(MOVES[4],(byte) 4, Intent.STRONG_DEBUFF);
             }else if (AbstractDungeon.aiRng.randomBoolean(0.3F) && !lastMove((byte)3) && !lastMoveBefore((byte)3)){
-                this.setMove((byte) 3, Intent.BUFF);
+                this.setMove(MOVES[3],(byte) 3, Intent.BUFF);
             } else if (!lastTwoMoves((byte) 1)){
-                this.setMove((byte) 1, Intent.ATTACK, (this.damage.get(0)).base,2,true);
+                this.setMove(MOVES[1],(byte) 1, Intent.ATTACK, (this.damage.get(0)).base,2,true);
             }else {
-                this.setMove((byte) 1, Intent.ATTACK, (this.damage.get(0)).base, 2, true);
+                this.setMove(MOVES[1],(byte) 1, Intent.ATTACK, (this.damage.get(0)).base, 2, true);
             }
         }
     }

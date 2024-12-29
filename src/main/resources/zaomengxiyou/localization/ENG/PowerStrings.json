@@ -47,7 +47,7 @@
   "dreaming_journey_to_the_west:IndignationPower": {
     "NAME": "Indignation",
     "DESCRIPTIONS": [
-      "At the start of your turn, gain #b%d #yStrength ,lose #r%d HP。"
+      "At the start of your turn, gain #b%d #yStrength ,lose #r%d HP."
     ]
   },
   "dreaming_journey_to_the_west:AttackMiragePower": {
@@ -180,6 +180,36 @@
     "NAME": "Three Eyes Seal",
     "DESCRIPTIONS": [
       "Affected by the Three Eyes Seal, the sealing effect intensifies with each layer. #b1 layer, healing effects during combat reduced by #r50%. #b2 layers, damage dealt reduced by #r%d %%. Block gained from cards reduced by #r%d %%. #b3 layers, unable to play Power cards. #b6 layers, unable to play Skill cards."
+    ]
+  },
+  "dreaming_journey_to_the_west:BloodSeaArmorPower": {
+    "NAME": "Blood Sea Armor Power",
+    "DESCRIPTIONS": [
+      "At the start of your turn, gain #b%d #yStrength ,lose #r%d HP."
+    ]
+  },
+  "dreaming_journey_to_the_west:FakeSharkBloodThirstPower": {
+    "NAME": "Shark Blood Thirst",
+    "DESCRIPTIONS": [
+      "Whenever an Attack deals unblocked damage,restore same amount #yHP ."
+    ]
+  },
+  "dreaming_journey_to_the_west:IceThornPower": {
+    "NAME": "Ice Thorn",
+    "DESCRIPTIONS": [
+      "The next time you receive #yAttack damage, deal #b%d damage back ,then remove power."
+    ]
+  },
+  "dreaming_journey_to_the_west:ChasingGhostPower": {
+    "NAME": "Chasing Ghost",
+    "DESCRIPTIONS": [
+      "When #yattacked ,damage the attacker and remove power."
+    ]
+  },
+  "dreaming_journey_to_the_west:DodgePower": {
+    "NAME": "Dodge",
+    "DESCRIPTIONS": [
+      "Receives 50% less attack damage. Cancelled if dealt attack damage."
     ]
   }
 

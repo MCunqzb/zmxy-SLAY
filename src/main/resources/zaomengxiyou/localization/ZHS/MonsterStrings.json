@@ -215,6 +215,95 @@
     "DIALOG": [
       "~我只是将这腐朽不堪的天庭推翻~ NL #r@何错之有！@"
     ]
+  },
+  "dreaming_journey_to_the_west:Shark": {
+    "MOVES": [
+      "",
+      "嗜血魔刃",
+      "护主魔刃"
+    ],
+    "NAME": "鲨鱼",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "dreaming_journey_to_the_west:SharkDemonKing": {
+    "MOVES": [
+      "",
+      "狂鲨怒袭",
+      "鲨鱼波",
+      "水狱牢笼",
+      "舔血",
+      "鲨刃护体"
+    ],
+    "NAME": "鲨魔王",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "dreaming_journey_to_the_west:Loong": {
+    "MOVES": [
+      "",
+      "玄冰锥",
+      "千年冰雪",
+      "神龙护体",
+      "玄冰破"
+    ],
+    "NAME": "龙王",
+    "DIALOG": [
+      "吾乃东海龙王敖光，今日又擅闯龙宫，此罪当诛。"
+    ]
+  },
+  "dreaming_journey_to_the_west:UAV": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "飞行炸弹",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "dreaming_journey_to_the_west:QinGuangKing": {
+    "MOVES": [
+      "",
+      "毒球",
+      "厉鬼锁魂",
+      "无人机"
+    ],
+    "NAME": "秦广王",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "dreaming_journey_to_the_west:Lamp": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "灯",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "dreaming_journey_to_the_west:Judge": {
+    "MOVES": [
+      "",
+      "审判之火",
+      "神行千里",
+      "闪避",
+      "妙笔生花·雷",
+      "妙笔生花·水",
+      "生死审判",
+      " ",
+      "  ",
+      "   ",
+      "    ",
+      "     "
+    ],
+    "NAME": "判官",
+    "DIALOG": [
+      "~灯灭，魄散~",
+      "#r@七灯灭，魂魄散！@"
+    ]
   }
 
 

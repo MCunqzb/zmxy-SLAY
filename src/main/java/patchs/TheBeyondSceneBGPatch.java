@@ -10,7 +10,6 @@ import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.scenes.TheBeyondScene;
-import monsters.act2.WheelTurningKing;
 import monsters.act3.YangJian;
 
 

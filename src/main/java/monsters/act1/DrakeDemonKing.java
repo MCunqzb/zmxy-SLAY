@@ -36,13 +36,13 @@ public class DrakeDemonKing extends AbstractMonster {
     private static final int HP_MAX = 60;
     private static final int A_2_HP_MIN = 56;
     private static final int A_2_HP_MAX = 66;
-    private static final int DMG1 = 14;
+    private static final int DMG1 = 6;
     private static final int DMG2 = 3;
     private static final int HITS = 3;
-    private static final int A_DMG1 = 17;
+    private static final int A_DMG1 = 9;
     private static final int A_DMG2  = 4;
-    private static final int BLOCK1 = 16;
-    private static final int A_BLOCK1 = 20;
+    private static final int BLOCK1 = 11;
+    private static final int A_BLOCK1 = 16;
     private static final int BLOCK2 = 9;
     private static final int A_BLOCK2 = 11;
     private static final int MGC1 = 1;
@@ -122,7 +122,7 @@ public class DrakeDemonKing extends AbstractMonster {
                 this.addToBot(new GainBlockAction(this,this.b2));
                 break;
             case 4:
-                this.addToBot(new GainBlockAction(this,this.b1));
+                this.addToBot(new GainBlockAction(this, this.b1));
                 break;
         }
         this.addToBot(new RollMoveAction(this));
@@ -130,6 +130,7 @@ public class DrakeDemonKing extends AbstractMonster {
 
     @Override
     protected void getMove(int i) {
+
 
         if (this.currentBlock>0){
             this.block_turn=this.block_turn+1;
@@ -141,7 +142,7 @@ public class DrakeDemonKing extends AbstractMonster {
                 this.setMove(MOVES[2], (byte) 3,Intent.DEFEND_BUFF);
                 this.block_turn=0;
             }else {
-                if (!lastMove((byte) 1) && !lastMoveBefore((byte) 4)){
+                if (!lastMove((byte) 1)){
                     this.setMove(MOVES[0],(byte) 1 ,Intent.ATTACK, this.damage.get(0).base);
                 }else if (lastMove((byte) 4) && lastMoveBefore((byte) 1)){
                     this.setMove(MOVES[1], (byte) 2,Intent.BUFF);

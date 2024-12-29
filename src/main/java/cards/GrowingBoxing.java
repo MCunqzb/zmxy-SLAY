@@ -31,10 +31,10 @@ public class GrowingBoxing extends CustomCard {
 
     public GrowingBoxing() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.ATTACK, AbstractCardEnum.MonkeyKing_RED, CardRarity.UNCOMMON, CardTarget.ENEMY);
-        this.misc =ATTACK_AMT;
-        this.baseDamage=this.misc;
-        this.baseMagicNumber = MAGIC_AMT;
+        this.misc = 1;
+        this.baseMagicNumber = 2;
         this.magicNumber = this.baseMagicNumber;
+        this.baseDamage=this.misc;
         this.exhaust = true;
         this.tags.add(MonkeyKingMod.BOXING);
     }
@@ -43,6 +43,7 @@ public class GrowingBoxing extends CustomCard {
         this.addToBot(new IncreaseMiscAction(this.uuid, this.misc, this.magicNumber));
         this.addToBot(new DamageAction(m, new DamageInfo(p, this.damage, this.damageTypeForTurn), AbstractGameAction.AttackEffect.BLUNT_HEAVY));
     }
+
     public void applyPowers() {
         this.baseDamage = this.misc;
         super.applyPowers();

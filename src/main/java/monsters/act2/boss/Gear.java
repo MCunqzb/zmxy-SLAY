@@ -1,4 +1,4 @@
-package monsters.act2;
+package monsters.act2.boss;
 
 
 import com.badlogic.gdx.math.MathUtils;
@@ -16,13 +16,8 @@ import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
-import com.megacrit.cardcrawl.powers.FlightPower;
-import com.megacrit.cardcrawl.powers.VulnerablePower;
-import com.megacrit.cardcrawl.powers.WeakPower;
 import powers.GearAttackPlayerPower;
 import powers.GearAttackPower;
-
-import javax.xml.bind.Element;
 
 public class Gear extends AbstractMonster {
     public static final String ID = "dreaming_journey_to_the_west:Gear";

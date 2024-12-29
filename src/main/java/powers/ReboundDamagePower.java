@@ -55,11 +55,21 @@ public class ReboundDamagePower extends AbstractPower {
         } else {
             this.addToBot(new ReducePowerAction(this.owner, this.owner, this.ID, 1));
         }
+        if (this.owner != null && this.owner instanceof DrakeDemonKing){
+             if (this.owner.currentBlock > this.amount*5){
+                 int dec_b = this.owner.currentBlock - this.amount*5;
+                 this.owner.loseBlock(dec_b);
+             }
+        }
     }
 
 
     public void updateDescription() {
-        this.description = String.format(DESCRIPTIONS[0], this.amount);
+        if (this.owner != null && this.owner instanceof DrakeDemonKing) {
+            this.description = String.format(DESCRIPTIONS[1], this.amount,this.amount*5);
+        }else {
+            this.description = String.format(DESCRIPTIONS[0], this.amount);
+        }
     }
 
 

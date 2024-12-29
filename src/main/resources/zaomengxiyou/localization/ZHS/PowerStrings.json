@@ -155,7 +155,8 @@
   "dreaming_journey_to_the_west:ReboundDamagePower": {
     "NAME": "反伤",
     "DESCRIPTIONS": [
-      "将未击穿格挡的攻击， #y全部 返回给攻击者。持续 #b%d 回合。 "
+      "将未击穿格挡的攻击， #y全部 返回给攻击者。持续 #b%d 回合。 ",
+      "将未击穿格挡的攻击， #y全部 返回给攻击者。持续 #b%d 回合。 在本回合结束时，蛟魔王最多可保留 #b%d #y格挡 。"
     ]
   },
   "dreaming_journey_to_the_west:GearAttackPower": {
@@ -180,6 +181,36 @@
     "NAME": "三眼封印",
     "DESCRIPTIONS": [
       "被施加三眼封印，随着层数提高封印效果愈加明显。 #b1 层，战斗中的回复效果降低 #r50 %% 。 #b2 层，造成伤害减少 #r%d %%。从卡牌中获得的 #y格挡 减少 #r%d %%。 #b3 层，无法打出能力牌。 #b6 层，无法打出技能牌。"
+    ]
+  },
+  "dreaming_journey_to_the_west:BloodSeaArmorPower": {
+    "NAME": "血海魔甲",
+    "DESCRIPTIONS": [
+      "每回合开始，获得 #b%d 点 #y力量，失去 #r%d 点生命。"
+    ]
+  },
+  "dreaming_journey_to_the_west:FakeSharkBloodThirstPower": {
+    "NAME": "嗜血",
+    "DESCRIPTIONS": [
+      "恢复攻击造成未被格挡的伤害的 #y生命 。"
+    ]
+  },
+  "dreaming_journey_to_the_west:IceThornPower": {
+    "NAME": "冰刺",
+    "DESCRIPTIONS": [
+      "被 #y攻击 时，给予攻击者 #b%d 点伤害并移除所有层数。"
+    ]
+  },
+  "dreaming_journey_to_the_west:ChasingGhostPower": {
+    "NAME": "追命鬼魂",
+    "DESCRIPTIONS": [
+      "被 #y攻击 时，给予攻击者等同攻击的伤害并移除。"
+    ]
+  },
+  "dreaming_journey_to_the_west:DodgePower": {
+    "NAME": "闪避",
+    "DESCRIPTIONS": [
+      "将所受到的 #y攻击 伤害降低 #b50%，如果在一个回合内被 #y攻击 就会取消。"
     ]
   }
 }

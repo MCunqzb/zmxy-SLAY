@@ -1,6 +1,7 @@
 package monsters.act1;
 
 import Helpers.ModHelper;
+import actions.WaitActionPassFast;
 import basemod.helpers.VfxBuilder;
 import com.badlogic.gdx.graphics.Color;
 import com.badlogic.gdx.math.MathUtils;
@@ -41,11 +42,11 @@ public class KingYurong extends AbstractMonster {
     private static final int HP_MAX = 120;
     private static final int A_2_HP_MIN = 120;
     private static final int A_2_HP_MAX = 130;
-    private static final int DMG1 = 15;
-    private static final int DMG2 = 2;
+    private static final int DMG1 = 13;
+    private static final int DMG2 = 1;
     private static final int FURY_HITS = 3;
-    private static final int A_2_DMG1 = 17;
-    private static final int A_2_DMG2 = 3;
+    private static final int A_2_DMG1 = 15;
+    private static final int A_2_DMG2 = 2;
     private int Dmg1;
     private int Dmg2;
     private int HitNum;
@@ -90,17 +91,19 @@ public class KingYurong extends AbstractMonster {
         label:
         switch(this.nextMove) {
             case 1:
-                this.addToBot(new DamageAction(AbstractDungeon.player, (DamageInfo)this.damage.get(0), AbstractGameAction.AttackEffect.NONE));
-                this.addToBot(new ApplyPowerAction(AbstractDungeon.player, this, new WeakPower(AbstractDungeon.player, this.strengthAmt, true), this.strengthAmt));
-                this.addToBot(new WaitAction(0.25F));
                 AbstractGameEffect LIGHT_ = new VfxBuilder(ImageMaster.vfxAtlas.findRegion("combat/lightning"),0.8f)
-                        .scale(1.5f, 1f, VfxBuilder.Interpolations.SWING)
+                        .scale(1F, 1f, VfxBuilder.Interpolations.SWING)
                         .moveY(p.drawY,p.drawY, VfxBuilder.Interpolations.EXP5IN)
                         .moveX(p.drawX,p.drawX, VfxBuilder.Interpolations.EXP5IN)
                         .playSoundAt(0.35F,"ORB_LIGHTNING_EVOKE")
-                        .setColor(Color.GOLDENROD)
+                        .setColor(Color.PURPLE)
                         .build();
                 this.addToBot(new VFXAction(LIGHT_));
+                this.addToBot(new WaitActionPassFast(0.8f));
+                this.addToBot(new DamageAction(AbstractDungeon.player, (DamageInfo)this.damage.get(0), AbstractGameAction.AttackEffect.NONE));
+                this.addToBot(new ApplyPowerAction(AbstractDungeon.player, this, new WeakPower(AbstractDungeon.player, this.strengthAmt, true), this.strengthAmt));
+
+
                 if (turn_count==1){
                     this.addToBot((new TalkAction(this,DIALOG[0], 2.5F, 2.5F)));
                 }

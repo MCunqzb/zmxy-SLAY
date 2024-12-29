@@ -39,17 +39,18 @@ public class KingLionCamel extends AbstractMonster {
     private static final int HP_MAX = 120;
     private static final int A_2_HP_MIN = 115;
     private static final int A_2_HP_MAX = 129;
-    private static final int DMG1 = 6;
-    private static final int DMG2 = 12;
-    private static final int DMG3 = 16;
+    private static final int DMG1 = 5;
+    private static final int DMG2 = 11;
+    private static final int DMG3 = 20;
     private static final int MAGIC_NUM  = 3;
+    private static final int A_2_MAGIC_NUM  = 5;
     private static final int BLOCK_NUM  = 10;
     private static final int HITS = 2;
-    private static final int A_2_DMG1 = 8;
-    private static final int A_2_DMG2  = 14;
-    private static final int A_2_DMG3  = 18;
+    private static final int A_2_DMG1 = 6;
+    private static final int A_2_DMG2  = 12;
+    private static final int A_2_DMG3  = 22;
     private static final int A_2_BLOCK_NUM  = 7;
-    private static final int A_2_MAGIC_NUM  = 12;
+
     private int dmg1;
     private int dmg2;
     private int dmg3;
@@ -64,19 +65,19 @@ public class KingLionCamel extends AbstractMonster {
         if (AbstractDungeon.ascensionLevel >= 8) {
             setHp(A_2_HP_MIN, A_2_HP_MAX);
             this.block=A_2_BLOCK_NUM;
-        } else {
-            setHp(HP_MIN, HP_MAX);
-            this.block=BLOCK_NUM;
-        }
+            } else {
+                setHp(HP_MIN, HP_MAX);
+                this.block=BLOCK_NUM;
+            }
         if (AbstractDungeon.ascensionLevel >= 3) {
             this.dmg1 = A_2_DMG1;
             this.dmg2 = A_2_DMG2;
             this.dmg3 = A_2_DMG3;
-        } else {
-            this.dmg1 = DMG1;
-            this.dmg2 = DMG2;
-            this.dmg3 = DMG3;
-        }
+            } else {
+                this.dmg1 = DMG1;
+                this.dmg2 = DMG2;
+                this.dmg3 = DMG3;
+            }
         this.hitTime=HITS;
         if (AbstractDungeon.ascensionLevel >= 18) {
             this.magic_num = A_2_MAGIC_NUM;

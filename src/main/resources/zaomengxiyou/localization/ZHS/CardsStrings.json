@@ -133,11 +133,11 @@
   },
   "dreaming_journey_to_the_west:AttackMirage": {
     "NAME": "攻击幻影",
-    "DESCRIPTION":  "每打出一张 dreaming_journey_to_the_west:拳击 牌，获得 !M! 活力 。"
+    "DESCRIPTION":  "dreaming_journey_to_the_west:拳击 NL 每打出一张 dreaming_journey_to_the_west:拳击 牌，获得 !M! 活力 。"
   },
   "dreaming_journey_to_the_west:DefenceMirage": {
     "NAME": "防御幻影",
-    "DESCRIPTION":  "每打出一张 dreaming_journey_to_the_west:拳击 牌，获得 !M! dreaming_journey_to_the_west:坚韧 。"
+    "DESCRIPTION":  "dreaming_journey_to_the_west:拳击 NL 每打出一张 dreaming_journey_to_the_west:拳击 牌，获得 !M! dreaming_journey_to_the_west:坚韧 。"
   },
   "dreaming_journey_to_the_west:SurgeBoxing": {
     "NAME": "涌动之拳",

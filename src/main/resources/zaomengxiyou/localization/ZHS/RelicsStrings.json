@@ -47,5 +47,15 @@
     "DESCRIPTIONS": [
       "当你有 #y格挡 时打出带 #y格挡 的牌，获得 #b1 层 #y反伤 。"
     ]
+  },
+  "dreaming_journey_to_the_west:RuyiJingguBang": {
+    "NAME": "如意金箍棒",
+    "FLAVOR": "那块铁，挽着些儿就死，磕着些儿就亡，挨挨儿皮破，擦擦儿筋伤！",
+    "DESCRIPTIONS": [
+      "带 #y拳击 的卡牌减少 #r",
+      " 点伤害。",
+      "非 #y拳击 的卡牌造成 #b",
+      " 点额外伤害。"
+    ]
   }
 }

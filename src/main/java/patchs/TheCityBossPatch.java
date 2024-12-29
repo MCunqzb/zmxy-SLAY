@@ -5,9 +5,7 @@ import com.evacipated.cardcrawl.modthespire.lib.SpirePostfixPatch;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
 import com.megacrit.cardcrawl.dungeons.TheCity;
 import demoMod.MonkeyKingMod;
-import monsters.act1.boss.BullDemonKing;
-import monsters.act1.boss.RocDemonKing;
-import monsters.act2.WheelTurningKing;
+import monsters.act2.boss.WheelTurningKing;
 import pathes.ThmodClassEnum;
 
 @SpirePatch(clz = TheCity.class, method = "initializeBoss")

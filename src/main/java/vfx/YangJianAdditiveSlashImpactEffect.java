@@ -1,4 +1,4 @@
-package actions;
+package vfx;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.graphics.Color;

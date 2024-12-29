@@ -1,42 +1,24 @@
 package monsters.act3;
 
-import basemod.BaseMod;
-import basemod.helpers.VfxBuilder;
-import cards.GearCard;
 import com.badlogic.gdx.graphics.Color;
-import com.badlogic.gdx.graphics.g2d.TextureAtlas;
 import com.badlogic.gdx.math.MathUtils;
 import com.esotericsoftware.spine.AnimationState;
 import com.megacrit.cardcrawl.actions.AbstractGameAction;
-import com.megacrit.cardcrawl.actions.ClearCardQueueAction;
-import com.megacrit.cardcrawl.actions.animations.ShoutAction;
 import com.megacrit.cardcrawl.actions.animations.VFXAction;
 import com.megacrit.cardcrawl.actions.common.*;
-import com.megacrit.cardcrawl.actions.utility.HideHealthBarAction;
 import com.megacrit.cardcrawl.cards.DamageInfo;
 import com.megacrit.cardcrawl.cards.status.Dazed;
-import com.megacrit.cardcrawl.characters.AbstractPlayer;
 import com.megacrit.cardcrawl.core.AbstractCreature;
 import com.megacrit.cardcrawl.core.CardCrawlGame;
 import com.megacrit.cardcrawl.core.Settings;
 import com.megacrit.cardcrawl.dungeons.AbstractDungeon;
-import com.megacrit.cardcrawl.helpers.ImageMaster;
 import com.megacrit.cardcrawl.localization.MonsterStrings;
 import com.megacrit.cardcrawl.monsters.AbstractMonster;
 import com.megacrit.cardcrawl.powers.*;
-import com.megacrit.cardcrawl.relics.AbstractRelic;
-import com.megacrit.cardcrawl.vfx.AbstractGameEffect;
 import com.megacrit.cardcrawl.vfx.combat.ClashEffect;
 import com.megacrit.cardcrawl.vfx.combat.HeartMegaDebuffEffect;
-import com.megacrit.cardcrawl.vfx.combat.InflameEffect;
 import com.megacrit.cardcrawl.vfx.combat.ShockWaveEffect;
-import monsters.act2.Gear;
 import powers.CanineTeethPower;
-import powers.GearAttackPlayerPower;
-
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
 
 public class TheDeifiedDog extends AbstractMonster {
     public static final String ID = "dreaming_journey_to_the_west:TheDeifiedDog";

@@ -208,6 +208,94 @@
     "DIALOG": [
       ""
     ]
+  },
+  "dreaming_journey_to_the_west:Shark": {
+    "MOVES": [
+      "",
+      "Bloodthirsty Blade",
+      "Protector of the Master Blade"
+    ],
+    "NAME": "Shark",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "dreaming_journey_to_the_west:SharkDemonKing": {
+    "MOVES": [
+      "",
+      "Shark Rage ",
+      "Sharkwave ",
+      "Water Prison ",
+      "Licking blood",
+      "Shark blade protector"
+    ],
+    "NAME": "Shark Demon King",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "dreaming_journey_to_the_west:Loong": {
+    "MOVES": [
+      "",
+      "Dark Ice Pick ",
+      "Thousand years of ice and snow ",
+      "Dragon Protector."
+    ],
+    "NAME": "Loong",
+    "DIALOG": [
+      "I am Ao Guang, the loong of the East China Sea. Today, You trespass into the Dragon Palace again. This crime shall be punished."
+    ]
+  },
+  "dreaming_journey_to_the_west:UAV": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "Flying bomb",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "dreaming_journey_to_the_west:QinGuangKing": {
+    "MOVES": [
+      "",
+      "Poison Ball",
+      "Chasing Ghost",
+      "UAV"
+    ],
+    "NAME": "Qin Guang King",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "dreaming_journey_to_the_west:Lamp": {
+    "MOVES": [
+      ""
+    ],
+    "NAME": "Lamp",
+    "DIALOG": [
+      ""
+    ]
+  },
+  "dreaming_journey_to_the_west:Judge": {
+    "MOVES": [
+      "",
+      "Judgmental Flame",
+      "Divine Travel Thousand Miles",
+      "Evasion",
+      "Wondrous Brushwork·Thunder",
+      "Wondrous Brushwork·Water",
+      "Life and Death Judgment",
+      " ",
+      "  ",
+      "   ",
+      "    ",
+      "     "
+    ],
+    "NAME": "Judge",
+    "DIALOG": [
+      "~The light goes out, the spirit disperses~",
+      "#r@All seven lights go out, the soul and spirit disperse!@"
+    ]
   }
 
 

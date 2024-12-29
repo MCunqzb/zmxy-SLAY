@@ -41,8 +41,6 @@ public class FightingBuddhaForm extends CustomCard {
 
     public FightingBuddhaForm() {
         super(ID, NAME, IMG_PATH, COST, DESCRIPTION, CardType.POWER, AbstractCardEnum.MonkeyKing_RED, CardRarity.RARE, CardTarget.SELF);
-        this.baseBlock=BLOCK_AMT;
-        this.block=this.baseBlock;
         this.baseMagicNumber = MAGIC_AMT;
         this.magicNumber = this.baseMagicNumber;
         this.selfRetain = true;

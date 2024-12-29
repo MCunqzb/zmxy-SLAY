@@ -16,6 +16,7 @@ import monsters.act1.KingMonkey;
 import monsters.act1.KingYurong;
 import monsters.act1.boss.BullDemonKing;
 import monsters.act1.boss.RocDemonKing;
+import monsters.act1.boss.SharkDemonKing;
 
 @SpirePatch(clz = TheBottomScene.class, method = "renderCombatRoomBg")
 public class TheBottomSceneBGPatch {
@@ -51,7 +52,7 @@ public class TheBottomSceneBGPatch {
                         sb.draw(changed_bg2.getTexture(), changed_bg2.offsetX * Settings.scale, changed_bg2.offsetY * Settings.scale, 0.0F, 0.0F, (float) changed_bg2.packedWidth, (float) changed_bg2.packedHeight, Settings.scale, Settings.scale, 0.0F, changed_bg2.getRegionX(), changed_bg2.getRegionY(), changed_bg2.getRegionWidth(), changed_bg2.getRegionHeight(), false, false);
                     }
                     break;
-                }else if (mo != null && (mo instanceof DrakeDemonKing )) {
+                }else if (mo != null && (mo instanceof DrakeDemonKing || mo instanceof SharkDemonKing)) {
                     if (Settings.isFourByThree) {
                         sb.draw(changed_bg3.getTexture(), changed_bg3.offsetX * Settings.scale, changed_bg3.offsetY * Settings.yScale, 0.0F, 0.0F, (float) changed_bg3.packedWidth, (float) changed_bg3.packedHeight, Settings.scale, Settings.yScale, 0.0F, changed_bg3.getRegionX(), changed_bg3.getRegionY(), changed_bg3.getRegionWidth(), changed_bg3.getRegionHeight(), false, false);
                     } else if (Settings.isLetterbox) {
